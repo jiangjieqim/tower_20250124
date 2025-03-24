@@ -1,0 +1,160 @@
+
+Card_fire.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ka
+  rotate: false
+  xy: 518, 576
+  size: 79, 118
+  orig: 79, 118
+  offset: 0, 0
+  index: -1
+ranshao_00000
+  rotate: false
+  xy: 358, 347
+  size: 142, 218
+  orig: 180, 270
+  offset: 19, 26
+  index: -1
+ranshao_00004
+  rotate: false
+  xy: 357, 566
+  size: 160, 233
+  orig: 180, 270
+  offset: 1, 11
+  index: -1
+ranshao_00005
+  rotate: false
+  xy: 179, 107
+  size: 161, 229
+  orig: 180, 270
+  offset: 0, 15
+  index: -1
+ranshao_00006
+  rotate: false
+  xy: 0, 88
+  size: 178, 223
+  orig: 180, 270
+  offset: 0, 21
+  index: -1
+ranshao_00007
+  rotate: false
+  xy: 0, 312
+  size: 177, 231
+  orig: 180, 270
+  offset: 3, 26
+  index: -1
+ranshao_00008
+  rotate: false
+  xy: 0, 544
+  size: 176, 236
+  orig: 180, 270
+  offset: 4, 26
+  index: -1
+ranshao_00010
+  rotate: false
+  xy: 0, 781
+  size: 180, 241
+  orig: 180, 270
+  offset: 0, 28
+  index: -1
+ranshao_00012
+  rotate: false
+  xy: 177, 553
+  size: 179, 227
+  orig: 180, 270
+  offset: 1, 43
+  index: -1
+ranshao_00013
+  rotate: false
+  xy: 181, 800
+  size: 179, 222
+  orig: 180, 270
+  offset: 1, 48
+  index: -1
+ranshao_00014
+  rotate: false
+  xy: 178, 337
+  size: 179, 215
+  orig: 180, 270
+  offset: 1, 55
+  index: -1
+ranshao_00015
+  rotate: false
+  xy: 361, 818
+  size: 179, 204
+  orig: 180, 270
+  offset: 1, 66
+  index: -1
+ranshao_00016
+  rotate: false
+  xy: 341, 141
+  size: 178, 195
+  orig: 180, 270
+  offset: 2, 75
+  index: -1
+ranshao_00018
+  rotate: false
+  xy: 501, 412
+  size: 157, 153
+  orig: 180, 270
+  offset: 5, 93
+  index: -1
+ranshao_00020
+  rotate: false
+  xy: 585, 91
+  size: 143, 136
+  orig: 180, 270
+  offset: 18, 115
+  index: -1
+ranshao_00022
+  rotate: false
+  xy: 428, 0
+  size: 156, 140
+  orig: 180, 270
+  offset: 5, 130
+  index: -1
+ranshao_00023
+  rotate: false
+  xy: 520, 228
+  size: 155, 131
+  orig: 180, 270
+  offset: 6, 139
+  index: -1
+ranshao_00024
+  rotate: false
+  xy: 518, 695
+  size: 154, 122
+  orig: 180, 270
+  offset: 7, 148
+  index: -1
+ranshao_00025
+  rotate: false
+  xy: 0, 0
+  size: 142, 87
+  orig: 180, 270
+  offset: 19, 157
+  index: -1
+ranshao_00026
+  rotate: false
+  xy: 143, 8
+  size: 142, 79
+  orig: 180, 270
+  offset: 19, 165
+  index: -1
+ranshao_00028
+  rotate: false
+  xy: 286, 47
+  size: 141, 59
+  orig: 180, 270
+  offset: 19, 185
+  index: -1
+ranshao_00029
+  rotate: false
+  xy: 501, 360
+  size: 140, 51
+  orig: 180, 270
+  offset: 19, 193
+  index: -1

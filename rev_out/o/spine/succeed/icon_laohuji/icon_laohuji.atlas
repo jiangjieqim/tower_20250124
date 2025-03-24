@@ -1,0 +1,174 @@
+
+icon_laohuji.png
+size: 192,192
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+TX
+  rotate: true
+  xy: 117, 132
+  size: 60, 58
+  orig: 60, 58
+  offset: 0, 0
+  index: -1
+anniu1
+  rotate: true
+  xy: 151, 37
+  size: 57, 16
+  orig: 57, 16
+  offset: 0, 0
+  index: -1
+anniu2
+  rotate: true
+  xy: 168, 38
+  size: 56, 15
+  orig: 56, 15
+  offset: 0, 0
+  index: -1
+hua1
+  rotate: true
+  xy: 173, 105
+  size: 12, 10
+  orig: 12, 10
+  offset: 0, 0
+  index: -1
+hua2
+  rotate: true
+  xy: 162, 25
+  size: 11, 10
+  orig: 11, 10
+  offset: 0, 0
+  index: -1
+hua3
+  rotate: false
+  xy: 98, 141
+  size: 12, 14
+  orig: 12, 14
+  offset: 0, 0
+  index: -1
+hua4
+  rotate: false
+  xy: 162, 14
+  size: 11, 10
+  orig: 11, 10
+  offset: 0, 0
+  index: -1
+hua5
+  rotate: true
+  xy: 173, 118
+  size: 13, 11
+  orig: 13, 11
+  offset: 0, 0
+  index: -1
+jiangquan1
+  rotate: true
+  xy: 93, 0
+  size: 29, 30
+  orig: 29, 30
+  offset: 0, 0
+  index: -1
+jiangquan2
+  rotate: false
+  xy: 124, 7
+  size: 37, 22
+  orig: 37, 22
+  offset: 0, 0
+  index: -1
+jiangquan3
+  rotate: true
+  xy: 151, 95
+  size: 36, 21
+  orig: 36, 21
+  offset: 0, 0
+  index: -1
+jiangquan4
+  rotate: true
+  xy: 61, 9
+  size: 34, 31
+  orig: 34, 31
+  offset: 0, 0
+  index: -1
+jitai
+  rotate: false
+  xy: 0, 44
+  size: 97, 111
+  orig: 97, 111
+  offset: 0, 0
+  index: -1
+pingmu
+  rotate: false
+  xy: 0, 6
+  size: 60, 37
+  orig: 60, 37
+  offset: 0, 0
+  index: -1
+sp1
+  rotate: false
+  xy: 173, 27
+  size: 10, 10
+  orig: 10, 10
+  offset: 0, 0
+  index: -1
+sp2
+  rotate: false
+  xy: 174, 16
+  size: 10, 10
+  orig: 10, 10
+  offset: 0, 0
+  index: -1
+sp3
+  rotate: false
+  xy: 174, 5
+  size: 10, 10
+  orig: 10, 10
+  offset: 0, 0
+  index: -1
+sp4
+  rotate: false
+  xy: 162, 3
+  size: 10, 10
+  orig: 10, 10
+  offset: 0, 0
+  index: -1
+sp5
+  rotate: false
+  xy: 176, 182
+  size: 10, 10
+  orig: 10, 10
+  offset: 0, 0
+  index: -1
+sp6
+  rotate: false
+  xy: 176, 171
+  size: 10, 10
+  orig: 10, 10
+  offset: 0, 0
+  index: -1
+sp7
+  rotate: false
+  xy: 176, 160
+  size: 10, 10
+  orig: 10, 10
+  offset: 0, 0
+  index: -1
+sp8
+  rotate: false
+  xy: 176, 149
+  size: 10, 10
+  orig: 10, 10
+  offset: 0, 0
+  index: -1
+tx_zsbz
+  rotate: false
+  xy: 0, 156
+  size: 116, 36
+  orig: 116, 36
+  offset: 0, 0
+  index: -1
+yun
+  rotate: true
+  xy: 98, 30
+  size: 101, 52
+  orig: 101, 52
+  offset: 0, 0
+  index: -1

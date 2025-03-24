@@ -1,0 +1,27 @@
+
+40009.png
+size: 144,144
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+guangxian
+  rotate: false
+  xy: 99, 0
+  size: 31, 144
+  orig: 33, 150
+  offset: 2, 6
+  index: -1
+jiahao
+  rotate: false
+  xy: 0, 21
+  size: 26, 25
+  orig: 32, 32
+  offset: 3, 3
+  index: -1
+quan2
+  rotate: false
+  xy: 0, 47
+  size: 98, 97
+  orig: 99, 99
+  offset: 0, 1
+  index: -1

@@ -1,0 +1,62 @@
+
+40003.png
+size: 624,252
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+xiaomie_00001
+  rotate: false
+  xy: 594, 89
+  size: 23, 41
+  orig: 300, 230
+  offset: 136, 174
+  index: -1
+xiaomie_00003
+  rotate: false
+  xy: 0, 0
+  size: 49, 124
+  orig: 300, 230
+  offset: 123, 64
+  index: -1
+xiaomie_00005
+  rotate: false
+  xy: 0, 125
+  size: 155, 125
+  orig: 300, 230
+  offset: 70, 15
+  index: -1
+xiaomie_00007
+  rotate: false
+  xy: 400, 131
+  size: 221, 119
+  orig: 300, 230
+  offset: 36, 13
+  index: -1
+xiaomie_00009
+  rotate: false
+  xy: 297, 9
+  size: 241, 120
+  orig: 300, 230
+  offset: 29, 11
+  index: -1
+xiaomie_00011
+  rotate: false
+  xy: 50, 1
+  size: 246, 123
+  orig: 300, 230
+  offset: 28, 10
+  index: -1
+xiaomie_00013
+  rotate: false
+  xy: 156, 130
+  size: 243, 120
+  orig: 300, 230
+  offset: 30, 11
+  index: -1
+xiaomie_00015
+  rotate: false
+  xy: 539, 69
+  size: 54, 61
+  orig: 300, 230
+  offset: 39, 44
+  index: -1

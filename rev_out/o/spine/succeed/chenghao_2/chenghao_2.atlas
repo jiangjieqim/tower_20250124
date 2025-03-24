@@ -1,0 +1,41 @@
+
+chenghao_2.png
+size: 256,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+guang
+  rotate: true
+  xy: 208, 177
+  size: 65, 34
+  orig: 65, 34
+  offset: 0, 0
+  index: -1
+t1
+  rotate: false
+  xy: 0, 210
+  size: 63, 32
+  orig: 65, 34
+  offset: 1, 1
+  index: -1
+t2
+  rotate: false
+  xy: 64, 210
+  size: 73, 32
+  orig: 75, 34
+  offset: 1, 1
+  index: -1
+t3
+  rotate: false
+  xy: 138, 210
+  size: 69, 32
+  orig: 71, 34
+  offset: 1, 1
+  index: -1
+t4
+  rotate: false
+  xy: 0, 143
+  size: 200, 66
+  orig: 202, 68
+  offset: 1, 1
+  index: -1

@@ -1,0 +1,139 @@
+
+houzi.png
+size: 392,392
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+beads
+  rotate: true
+  xy: 189, 16
+  size: 96, 59
+  orig: 96, 59
+  offset: 0, 0
+  index: -1
+cloud
+  rotate: true
+  xy: 284, 176
+  size: 216, 102
+  orig: 216, 102
+  offset: 0, 0
+  index: -1
+ear
+  rotate: true
+  xy: 298, 51
+  size: 40, 42
+  orig: 40, 42
+  offset: 0, 0
+  index: -1
+eye
+  rotate: false
+  xy: 84, 277
+  size: 64, 13
+  orig: 64, 13
+  offset: 0, 0
+  index: -1
+eyebrow
+  rotate: false
+  xy: 189, 260
+  size: 88, 30
+  orig: 88, 30
+  offset: 0, 0
+  index: -1
+face
+  rotate: true
+  xy: 0, 177
+  size: 113, 83
+  orig: 113, 83
+  offset: 0, 0
+  index: -1
+foot1
+  rotate: false
+  xy: 298, 92
+  size: 54, 38
+  orig: 54, 38
+  offset: 0, 0
+  index: -1
+foot2
+  rotate: true
+  xy: 298, 12
+  size: 38, 35
+  orig: 38, 35
+  offset: 0, 0
+  index: -1
+hand1
+  rotate: true
+  xy: 334, 15
+  size: 35, 34
+  orig: 35, 34
+  offset: 0, 0
+  index: -1
+hand2
+  rotate: true
+  xy: 353, 89
+  size: 41, 39
+  orig: 41, 39
+  offset: 0, 0
+  index: -1
+head
+  rotate: false
+  xy: 0, 13
+  size: 188, 162
+  orig: 188, 162
+  offset: 0, 0
+  index: -1
+jianjia
+  rotate: false
+  xy: 298, 131
+  size: 65, 44
+  orig: 65, 44
+  offset: 0, 0
+  index: -1
+jianjiadaizi
+  rotate: false
+  xy: 189, 113
+  size: 79, 66
+  orig: 79, 66
+  offset: 0, 0
+  index: -1
+jingubang
+  rotate: false
+  xy: 0, 291
+  size: 283, 101
+  orig: 283, 101
+  offset: 0, 0
+  index: -1
+skirt
+  rotate: true
+  xy: 151, 203
+  size: 87, 36
+  orig: 87, 36
+  offset: 0, 0
+  index: -1
+sleeves1
+  rotate: true
+  xy: 84, 178
+  size: 81, 66
+  orig: 81, 66
+  offset: 0, 0
+  index: -1
+sleeves2
+  rotate: true
+  xy: 188, 180
+  size: 79, 69
+  orig: 79, 69
+  offset: 0, 0
+  index: -1
+weiba2
+  rotate: true
+  xy: 269, 26
+  size: 149, 28
+  orig: 149, 28
+  offset: 0, 0
+  index: -1
+yunqiu
+  rotate: false
+  xy: 364, 148
+  size: 27, 27
+  orig: 27, 27
+  offset: 0, 0
+  index: -1

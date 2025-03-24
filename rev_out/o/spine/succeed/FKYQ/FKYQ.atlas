@@ -1,0 +1,111 @@
+
+FKYQ.png
+size: 228,228
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+TXT
+  rotate: true
+  xy: 104, 65
+  size: 160, 52
+  orig: 160, 52
+  offset: 0, 0
+  index: -1
+dian1
+  rotate: false
+  xy: 49, 5
+  size: 30, 58
+  orig: 30, 58
+  offset: 0, 0
+  index: -1
+dian2
+  rotate: false
+  xy: 117, 11
+  size: 28, 53
+  orig: 28, 53
+  offset: 0, 0
+  index: -1
+dian3
+  rotate: false
+  xy: 80, 3
+  size: 36, 47
+  orig: 36, 47
+  offset: 0, 0
+  index: -1
+heye
+  rotate: true
+  xy: 146, 16
+  size: 48, 26
+  orig: 48, 26
+  offset: 0, 0
+  index: -1
+qipao1
+  rotate: false
+  xy: 80, 51
+  size: 19, 18
+  orig: 19, 18
+  offset: 0, 0
+  index: -1
+qipao2
+  rotate: true
+  xy: 0, 0
+  size: 13, 12
+  orig: 13, 12
+  offset: 0, 0
+  index: -1
+qipao3
+  rotate: false
+  xy: 157, 200
+  size: 25, 25
+  orig: 25, 25
+  offset: 0, 0
+  index: -1
+shui
+  rotate: false
+  xy: 0, 129
+  size: 103, 96
+  orig: 103, 96
+  offset: 0, 0
+  index: -1
+shuidi1
+  rotate: false
+  xy: 13, 0
+  size: 12, 13
+  orig: 12, 14
+  offset: 0, 1
+  index: -1
+shuidi2
+  rotate: false
+  xy: 26, 0
+  size: 11, 13
+  orig: 11, 13
+  offset: 0, 0
+  index: -1
+shuidi3
+  rotate: false
+  xy: 100, 53
+  size: 11, 11
+  orig: 11, 11
+  offset: 0, 0
+  index: -1
+yu1
+  rotate: true
+  xy: 0, 14
+  size: 49, 48
+  orig: 49, 48
+  offset: 0, 0
+  index: -1
+yugan
+  rotate: true
+  xy: 0, 64
+  size: 64, 79
+  orig: 64, 79
+  offset: 0, 0
+  index: -1
+yuxian
+  rotate: false
+  xy: 80, 70
+  size: 16, 58
+  orig: 16, 58
+  offset: 0, 0
+  index: -1

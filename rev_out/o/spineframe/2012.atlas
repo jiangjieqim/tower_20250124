@@ -1,0 +1,139 @@
+
+2012.png
+size: 460,448
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+2012-0_00
+  rotate: false
+  xy: 260, 193
+  size: 99, 86
+  orig: 185, 138
+  offset: 44, 24
+  index: -1
+2012-0_01
+  rotate: false
+  xy: 361, 278
+  size: 99, 88
+  orig: 185, 138
+  offset: 44, 24
+  index: -1
+2012-0_02
+  rotate: false
+  xy: 164, 71
+  size: 96, 90
+  orig: 185, 138
+  offset: 45, 25
+  index: -1
+2012-0_03
+  rotate: false
+  xy: 151, 162
+  size: 97, 90
+  orig: 185, 138
+  offset: 43, 25
+  index: -1
+2012-0_04
+  rotate: false
+  xy: 360, 191
+  size: 99, 86
+  orig: 185, 138
+  offset: 41, 26
+  index: -1
+2012-0_05
+  rotate: false
+  xy: 360, 105
+  size: 99, 85
+  orig: 185, 138
+  offset: 40, 26
+  index: -1
+2012-0_06
+  rotate: false
+  xy: 261, 18
+  size: 96, 87
+  orig: 185, 138
+  offset: 42, 26
+  index: -1
+2012-0_07
+  rotate: false
+  xy: 358, 15
+  size: 93, 89
+  orig: 185, 138
+  offset: 44, 26
+  index: -1
+2012-0_08
+  rotate: false
+  xy: 164, 253
+  size: 95, 88
+  orig: 185, 138
+  offset: 44, 26
+  index: -1
+2012-0_09
+  rotate: false
+  xy: 261, 106
+  size: 98, 86
+  orig: 185, 138
+  offset: 44, 25
+  index: -1
+2012-1_0
+  rotate: false
+  xy: 260, 280
+  size: 100, 86
+  orig: 185, 138
+  offset: 43, 24
+  index: -1
+2012-1_1
+  rotate: false
+  xy: 133, 342
+  size: 126, 105
+  orig: 185, 138
+  offset: 33, 14
+  index: -1
+2012-1_2
+  rotate: false
+  xy: 0, 330
+  size: 132, 117
+  orig: 185, 138
+  offset: 27, 9
+  index: -1
+2012-1_3
+  rotate: false
+  xy: 0, 219
+  size: 129, 110
+  orig: 185, 138
+  offset: 27, 12
+  index: -1
+2012-1_4
+  rotate: false
+  xy: 260, 367
+  size: 149, 80
+  orig: 185, 138
+  offset: 17, 19
+  index: -1
+2012-1_5
+  rotate: false
+  xy: 0, 146
+  size: 150, 72
+  orig: 185, 138
+  offset: 15, 21
+  index: -1
+2012-1_6
+  rotate: false
+  xy: 0, 96
+  size: 163, 49
+  orig: 185, 138
+  offset: 3, 20
+  index: -1
+2012-1_7
+  rotate: false
+  xy: 0, 48
+  size: 163, 47
+  orig: 185, 138
+  offset: 3, 21
+  index: -1
+2012-1_8
+  rotate: false
+  xy: 0, 0
+  size: 165, 47
+  orig: 185, 138
+  offset: 1, 21
+  index: -1

@@ -1,0 +1,174 @@
+
+taozi.png
+size: 856,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+foguang_00000
+  rotate: false
+  xy: 0, 242
+  size: 265, 268
+  orig: 285, 298
+  offset: 10, 12
+  index: -1
+guangtiao
+  rotate: false
+  xy: 770, 230
+  size: 83, 280
+  orig: 85, 286
+  offset: 1, 5
+  index: -1
+tao
+  rotate: false
+  xy: 0, 130
+  size: 133, 111
+  orig: 133, 111
+  offset: 0, 0
+  index: -1
+taozi_00000
+  rotate: false
+  xy: 440, 149
+  size: 109, 119
+  orig: 110, 125
+  offset: 1, 0
+  index: -1
+taozi_00001
+  rotate: false
+  xy: 440, 29
+  size: 109, 119
+  orig: 110, 125
+  offset: 1, 0
+  index: -1
+taozi_00002
+  rotate: false
+  xy: 0, 9
+  size: 109, 120
+  orig: 110, 125
+  offset: 1, 0
+  index: -1
+taozi_00003
+  rotate: false
+  xy: 110, 9
+  size: 109, 120
+  orig: 110, 125
+  offset: 1, 0
+  index: -1
+taozi_00004
+  rotate: false
+  xy: 220, 121
+  size: 109, 120
+  orig: 110, 125
+  offset: 1, 0
+  index: -1
+taozi_00005
+  rotate: false
+  xy: 220, 0
+  size: 109, 120
+  orig: 110, 125
+  offset: 1, 0
+  index: -1
+taozi_00006
+  rotate: false
+  xy: 266, 390
+  size: 109, 120
+  orig: 110, 125
+  offset: 1, 0
+  index: -1
+taozi_00007
+  rotate: false
+  xy: 486, 391
+  size: 109, 119
+  orig: 110, 125
+  offset: 1, 0
+  index: -1
+taozi_00008
+  rotate: false
+  xy: 486, 271
+  size: 109, 119
+  orig: 110, 125
+  offset: 1, 0
+  index: -1
+taozi_00009
+  rotate: false
+  xy: 550, 151
+  size: 109, 119
+  orig: 110, 125
+  offset: 1, 0
+  index: -1
+taozi_00010
+  rotate: false
+  xy: 550, 31
+  size: 109, 119
+  orig: 110, 125
+  offset: 1, 0
+  index: -1
+taozi_00011
+  rotate: false
+  xy: 596, 391
+  size: 109, 119
+  orig: 110, 125
+  offset: 1, 0
+  index: -1
+taozi_00012
+  rotate: false
+  xy: 596, 271
+  size: 109, 119
+  orig: 110, 125
+  offset: 1, 0
+  index: -1
+taozi_00013
+  rotate: false
+  xy: 660, 151
+  size: 109, 119
+  orig: 110, 125
+  offset: 1, 0
+  index: -1
+taozi_00014
+  rotate: false
+  xy: 660, 31
+  size: 109, 119
+  orig: 110, 125
+  offset: 1, 0
+  index: -1
+taozi_00015
+  rotate: false
+  xy: 266, 269
+  size: 109, 120
+  orig: 110, 125
+  offset: 1, 0
+  index: -1
+taozi_00016
+  rotate: false
+  xy: 330, 148
+  size: 109, 120
+  orig: 110, 125
+  offset: 1, 0
+  index: -1
+taozi_00017
+  rotate: false
+  xy: 330, 27
+  size: 109, 120
+  orig: 110, 125
+  offset: 1, 0
+  index: -1
+taozi_00018
+  rotate: false
+  xy: 376, 390
+  size: 109, 120
+  orig: 110, 125
+  offset: 1, 0
+  index: -1
+taozi_00019
+  rotate: false
+  xy: 376, 269
+  size: 109, 120
+  orig: 110, 125
+  offset: 1, 0
+  index: -1
+xingxing
+  rotate: false
+  xy: 770, 95
+  size: 82, 134
+  orig: 113, 150
+  offset: 16, 8
+  index: -1

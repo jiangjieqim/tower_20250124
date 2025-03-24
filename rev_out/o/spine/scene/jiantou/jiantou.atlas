@@ -1,0 +1,20 @@
+
+jiantou.png
+size: 64,64
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+icon_ts
+  rotate: false
+  xy: 0, 28
+  size: 22, 27
+  orig: 22, 27
+  offset: 0, 0
+  index: -1
+icon_ts_1
+  rotate: false
+  xy: 0, 0
+  size: 22, 27
+  orig: 22, 27
+  offset: 0, 0
+  index: -1

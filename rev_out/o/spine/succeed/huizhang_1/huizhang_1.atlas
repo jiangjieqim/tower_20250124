@@ -1,0 +1,48 @@
+
+huizhang_1.png
+size: 328,328
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1_1
+  rotate: false
+  xy: 148, 166
+  size: 85, 157
+  orig: 85, 158
+  offset: 0, 1
+  index: -1
+1_2
+  rotate: false
+  xy: 2, 22
+  size: 133, 138
+  orig: 133, 139
+  offset: 0, 0
+  index: -1
+1_3
+  rotate: true
+  xy: 235, 168
+  size: 155, 70
+  orig: 157, 71
+  offset: 1, 0
+  index: -1
+1_4
+  rotate: false
+  xy: 137, 62
+  size: 186, 98
+  orig: 187, 99
+  offset: 0, 1
+  index: -1
+1_5
+  rotate: false
+  xy: 2, 162
+  size: 144, 161
+  orig: 144, 185
+  offset: 0, 0
+  index: -1
+1_6
+  rotate: true
+  xy: 137, 17
+  size: 43, 97
+  orig: 43, 97
+  offset: 0, 0
+  index: -1

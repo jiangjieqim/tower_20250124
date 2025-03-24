@@ -1,0 +1,55 @@
+
+diaoluo_houzi.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+G1_00000
+  rotate: false
+  xy: 0, 16
+  size: 169, 169
+  orig: 180, 180
+  offset: 11, 0
+  index: -1
+guangxian
+  rotate: false
+  xy: 0, 186
+  size: 43, 201
+  orig: 46, 209
+  offset: 3, 8
+  index: -1
+houzi_1
+  rotate: false
+  xy: 170, 0
+  size: 129, 117
+  orig: 150, 150
+  offset: 11, 16
+  index: -1
+lizi
+  rotate: false
+  xy: 44, 253
+  size: 137, 134
+  orig: 150, 150
+  offset: 7, 8
+  index: -1
+lizi_1
+  rotate: false
+  xy: 170, 118
+  size: 137, 134
+  orig: 150, 150
+  offset: 7, 8
+  index: -1
+qipao
+  rotate: false
+  xy: 182, 257
+  size: 130, 130
+  orig: 169, 163
+  offset: 20, 18
+  index: -1
+xingxing
+  rotate: false
+  xy: 44, 186
+  size: 41, 66
+  orig: 57, 75
+  offset: 8, 4
+  index: -1

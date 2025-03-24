@@ -1,0 +1,90 @@
+
+2.png
+size: 128,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arm1
+  rotate: false
+  xy: 91, 20
+  size: 32, 32
+  orig: 32, 33
+  offset: 0, 1
+  index: -1
+arms
+  rotate: true
+  xy: 0, 138
+  size: 33, 88
+  orig: 34, 88
+  offset: 1, 0
+  index: -1
+beard
+  rotate: false
+  xy: 69, 53
+  size: 58, 44
+  orig: 59, 46
+  offset: 1, 2
+  index: -1
+body
+  rotate: false
+  xy: 0, 31
+  size: 47, 33
+  orig: 47, 34
+  offset: 0, 1
+  index: -1
+eyebrow1
+  rotate: true
+  xy: 89, 98
+  size: 41, 34
+  orig: 43, 35
+  offset: 1, 1
+  index: -1
+eyebrow2
+  rotate: false
+  xy: 48, 21
+  size: 42, 31
+  orig: 46, 34
+  offset: 2, 2
+  index: -1
+face
+  rotate: false
+  xy: 0, 93
+  size: 68, 44
+  orig: 72, 48
+  offset: 2, 2
+  index: -1
+hand1
+  rotate: false
+  xy: 69, 120
+  size: 19, 17
+  orig: 20, 19
+  offset: 0, 1
+  index: -1
+hand2
+  rotate: false
+  xy: 69, 101
+  size: 18, 18
+  orig: 20, 21
+  offset: 1, 2
+  index: -1
+hat
+  rotate: false
+  xy: 0, 65
+  size: 50, 27
+  orig: 52, 29
+  offset: 1, 1
+  index: -1
+sleeves1
+  rotate: false
+  xy: 89, 140
+  size: 35, 31
+  orig: 36, 33
+  offset: 1, 1
+  index: -1
+sleeves2
+  rotate: false
+  xy: 0, 0
+  size: 40, 30
+  orig: 44, 32
+  offset: 2, 1
+  index: -1

@@ -1,0 +1,90 @@
+
+chenghao_9.png
+size: 300,300
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+guang1
+  rotate: false
+  xy: 203, 106
+  size: 94, 126
+  orig: 117, 155
+  offset: 11, 15
+  index: -1
+x1
+  rotate: false
+  xy: 0, 135
+  size: 114, 29
+  orig: 116, 31
+  offset: 1, 1
+  index: -1
+x1_1
+  rotate: false
+  xy: 0, 55
+  size: 193, 50
+  orig: 193, 50
+  offset: 0, 0
+  index: -1
+x1_2
+  rotate: false
+  xy: 0, 25
+  size: 114, 29
+  orig: 116, 31
+  offset: 1, 1
+  index: -1
+x2
+  rotate: false
+  xy: 240, 24
+  size: 57, 30
+  orig: 59, 32
+  offset: 1, 1
+  index: -1
+x3
+  rotate: false
+  xy: 246, 233
+  size: 52, 65
+  orig: 54, 67
+  offset: 1, 1
+  index: -1
+x4
+  rotate: true
+  xy: 115, 119
+  size: 45, 74
+  orig: 47, 76
+  offset: 1, 1
+  index: -1
+x5
+  rotate: false
+  xy: 194, 31
+  size: 45, 74
+  orig: 47, 76
+  offset: 1, 1
+  index: -1
+x6
+  rotate: false
+  xy: 115, 9
+  size: 50, 45
+  orig: 52, 47
+  offset: 1, 1
+  index: -1
+x7
+  rotate: true
+  xy: 240, 55
+  size: 50, 45
+  orig: 52, 47
+  offset: 1, 1
+  index: -1
+x8
+  rotate: false
+  xy: 0, 239
+  size: 245, 59
+  orig: 245, 59
+  offset: 0, 0
+  index: -1
+x9
+  rotate: false
+  xy: 0, 165
+  size: 202, 67
+  orig: 204, 69
+  offset: 1, 1
+  index: -1

@@ -1,0 +1,13 @@
+
+treasure.png
+size: 120,120
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+2_2
+  rotate: false
+  xy: 0, 0
+  size: 118, 118
+  orig: 128, 128
+  offset: 5, 5
+  index: -1

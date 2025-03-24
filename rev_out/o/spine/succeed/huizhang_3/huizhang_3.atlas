@@ -1,0 +1,111 @@
+
+huizhang_3.png
+size: 408,408
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+3_1
+  rotate: false
+  xy: 313, 239
+  size: 86, 75
+  orig: 86, 75
+  offset: 0, 0
+  index: -1
+3_10
+  rotate: false
+  xy: 2, 272
+  size: 162, 134
+  orig: 162, 134
+  offset: 0, 0
+  index: -1
+3_11
+  rotate: false
+  xy: 249, 79
+  size: 38, 65
+  orig: 38, 65
+  offset: 0, 0
+  index: -1
+3_12
+  rotate: true
+  xy: 337, 10
+  size: 38, 65
+  orig: 38, 65
+  offset: 0, 0
+  index: -1
+3_2
+  rotate: true
+  xy: 126, 2
+  size: 133, 121
+  orig: 133, 122
+  offset: 0, 1
+  index: -1
+3_3
+  rotate: false
+  xy: 249, 2
+  size: 86, 75
+  orig: 86, 75
+  offset: 0, 0
+  index: -1
+3_4
+  rotate: true
+  xy: 2, 2
+  size: 133, 122
+  orig: 133, 122
+  offset: 0, 0
+  index: -1
+3_5
+  rotate: true
+  xy: 2, 137
+  size: 133, 135
+  orig: 133, 135
+  offset: 0, 0
+  index: -1
+3_6
+  rotate: false
+  xy: 313, 316
+  size: 90, 90
+  orig: 90, 90
+  offset: 0, 0
+  index: -1
+3_7
+  rotate: true
+  xy: 166, 266
+  size: 140, 145
+  orig: 140, 146
+  offset: 0, 0
+  index: -1
+3_8
+  rotate: false
+  xy: 139, 146
+  size: 75, 118
+  orig: 75, 118
+  offset: 0, 0
+  index: -1
+3_88
+  rotate: true
+  xy: 291, 165
+  size: 72, 112
+  orig: 72, 112
+  offset: 0, 0
+  index: -1
+3_9
+  rotate: false
+  xy: 216, 146
+  size: 73, 118
+  orig: 73, 118
+  offset: 0, 0
+  index: -1
+3_99
+  rotate: true
+  xy: 291, 93
+  size: 70, 112
+  orig: 70, 112
+  offset: 0, 0
+  index: -1
+xingxing
+  rotate: true
+  xy: 337, 50
+  size: 41, 67
+  orig: 57, 75
+  offset: 8, 4
+  index: -1

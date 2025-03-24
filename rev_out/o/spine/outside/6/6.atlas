@@ -1,0 +1,104 @@
+
+6.png
+size: 256,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+biti1
+  rotate: false
+  xy: 121, 22
+  size: 11, 13
+  orig: 11, 14
+  offset: 0, 1
+  index: -1
+biti2
+  rotate: true
+  xy: 113, 76
+  size: 11, 28
+  orig: 12, 28
+  offset: 0, 0
+  index: -1
+body
+  rotate: true
+  xy: 0, 4
+  size: 64, 45
+  orig: 64, 45
+  offset: 0, 0
+  index: -1
+hair1
+  rotate: true
+  xy: 147, 59
+  size: 36, 23
+  orig: 36, 23
+  offset: 0, 0
+  index: -1
+hair2
+  rotate: false
+  xy: 121, 36
+  size: 25, 39
+  orig: 25, 39
+  offset: 0, 0
+  index: -1
+hair3
+  rotate: false
+  xy: 113, 88
+  size: 28, 40
+  orig: 28, 40
+  offset: 0, 0
+  index: -1
+hand1
+  rotate: false
+  xy: 142, 96
+  size: 28, 32
+  orig: 28, 32
+  offset: 0, 0
+  index: -1
+hand2
+  rotate: false
+  xy: 136, 5
+  size: 30, 30
+  orig: 30, 30
+  offset: 0, 0
+  index: -1
+head
+  rotate: true
+  xy: 0, 69
+  size: 59, 53
+  orig: 59, 53
+  offset: 0, 0
+  index: -1
+mouth
+  rotate: true
+  xy: 88, 75
+  size: 53, 24
+  orig: 53, 24
+  offset: 0, 0
+  index: -1
+necklace
+  rotate: true
+  xy: 54, 74
+  size: 54, 33
+  orig: 54, 33
+  offset: 0, 0
+  index: -1
+sunglasses
+  rotate: false
+  xy: 87, 1
+  size: 48, 20
+  orig: 48, 20
+  offset: 0, 0
+  index: -1
+sunglasses_1
+  rotate: true
+  xy: 46, 0
+  size: 68, 40
+  orig: 68, 40
+  offset: 0, 0
+  index: -1
+zui2
+  rotate: true
+  xy: 87, 22
+  size: 51, 33
+  orig: 51, 33
+  offset: 0, 0
+  index: -1

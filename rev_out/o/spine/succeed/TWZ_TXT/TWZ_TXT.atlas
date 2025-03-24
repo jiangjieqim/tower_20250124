@@ -1,0 +1,97 @@
+
+TWZ_TXT.png
+size: 428,428
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bg1
+  rotate: false
+  xy: 0, 237
+  size: 308, 90
+  orig: 316, 98
+  offset: 4, 4
+  index: -1
+bg2
+  rotate: false
+  xy: 0, 328
+  size: 316, 98
+  orig: 316, 98
+  offset: 0, 0
+  index: -1
+dao2
+  rotate: false
+  xy: 297, 76
+  size: 73, 75
+  orig: 73, 75
+  offset: 0, 0
+  index: -1
+dao2_1
+  rotate: false
+  xy: 217, 44
+  size: 79, 81
+  orig: 79, 81
+  offset: 0, 0
+  index: -1
+dao3
+  rotate: false
+  xy: 297, 0
+  size: 73, 75
+  orig: 73, 75
+  offset: 0, 0
+  index: -1
+huo2
+  rotate: false
+  xy: 120, 30
+  size: 96, 95
+  orig: 96, 95
+  offset: 0, 0
+  index: -1
+huoxing1_00002
+  rotate: false
+  xy: 309, 205
+  size: 101, 108
+  orig: 120, 120
+  offset: 12, 6
+  index: -1
+huoxing1_00003
+  rotate: false
+  xy: 171, 126
+  size: 114, 110
+  orig: 120, 120
+  offset: 3, 5
+  index: -1
+huoxing1_00004
+  rotate: false
+  xy: 0, 44
+  size: 119, 113
+  orig: 120, 120
+  offset: 1, 3
+  index: -1
+huoxing1_00005
+  rotate: false
+  xy: 317, 314
+  size: 108, 112
+  orig: 120, 120
+  offset: 12, 1
+  index: -1
+txt1
+  rotate: false
+  xy: 286, 152
+  size: 139, 52
+  orig: 141, 54
+  offset: 1, 1
+  index: -1
+txt2
+  rotate: false
+  xy: 0, 158
+  size: 170, 78
+  orig: 172, 80
+  offset: 1, 1
+  index: -1
+xingxing
+  rotate: false
+  xy: 371, 77
+  size: 55, 74
+  orig: 57, 75
+  offset: 1, 1
+  index: -1

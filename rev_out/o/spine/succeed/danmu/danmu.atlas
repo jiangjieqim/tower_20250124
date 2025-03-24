@@ -1,0 +1,20 @@
+
+danmu.png
+size: 580,72
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+BG
+  rotate: false
+  xy: 0, 0
+  size: 452, 37
+  orig: 452, 37
+  offset: 0, 0
+  index: -1
+TXT
+  rotate: false
+  xy: 0, 38
+  size: 578, 32
+  orig: 578, 32
+  offset: 0, 0
+  index: -1

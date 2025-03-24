@@ -1,0 +1,153 @@
+
+configure_button.png
+size: 300,300
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+A1_00000
+  rotate: false
+  xy: 18, 12
+  size: 15, 15
+  orig: 150, 50
+  offset: 123, 9
+  index: -1
+A1_00001
+  rotate: true
+  xy: 47, 27
+  size: 18, 15
+  orig: 150, 50
+  offset: 120, 9
+  index: -1
+A1_00002
+  rotate: true
+  xy: 69, 9
+  size: 57, 15
+  orig: 150, 50
+  offset: 81, 9
+  index: -1
+A1_00003
+  rotate: true
+  xy: 0, 17
+  size: 87, 17
+  orig: 150, 50
+  offset: 51, 8
+  index: -1
+A1_00004
+  rotate: true
+  xy: 173, 84
+  size: 117, 17
+  orig: 150, 50
+  offset: 21, 8
+  index: -1
+A1_00005
+  rotate: false
+  xy: 85, 0
+  size: 120, 33
+  orig: 150, 50
+  offset: 17, 7
+  index: -1
+A1_00006
+  rotate: true
+  xy: 0, 105
+  size: 122, 34
+  orig: 150, 50
+  offset: 15, 7
+  index: -1
+A1_00007
+  rotate: false
+  xy: 104, 34
+  size: 121, 33
+  orig: 150, 50
+  offset: 16, 8
+  index: -1
+A1_00008
+  rotate: true
+  xy: 104, 68
+  size: 121, 34
+  orig: 150, 50
+  offset: 17, 7
+  index: -1
+A1_00009
+  rotate: true
+  xy: 35, 105
+  size: 122, 34
+  orig: 150, 50
+  offset: 16, 7
+  index: -1
+A1_00010
+  rotate: true
+  xy: 139, 80
+  size: 121, 33
+  orig: 150, 50
+  offset: 17, 8
+  index: -1
+A1_00011
+  rotate: true
+  xy: 244, 181
+  size: 119, 33
+  orig: 150, 50
+  offset: 19, 8
+  index: -1
+A1_00012
+  rotate: true
+  xy: 70, 67
+  size: 122, 33
+  orig: 150, 50
+  offset: 16, 8
+  index: -1
+A1_00013
+  rotate: true
+  xy: 226, 2
+  size: 121, 33
+  orig: 150, 50
+  offset: 17, 8
+  index: -1
+A1_00014
+  rotate: true
+  xy: 260, 60
+  size: 120, 32
+  orig: 150, 50
+  offset: 17, 9
+  index: -1
+A1_00015
+  rotate: true
+  xy: 18, 28
+  size: 76, 28
+  orig: 150, 50
+  offset: 58, 12
+  index: -1
+A1_00016
+  rotate: false
+  xy: 107, 202
+  size: 72, 25
+  orig: 150, 50
+  offset: 60, 14
+  index: -1
+A1_00017
+  rotate: true
+  xy: 47, 46
+  size: 58, 21
+  orig: 150, 50
+  offset: 76, 13
+  index: -1
+icon_pzkz_2
+  rotate: true
+  xy: 192, 124
+  size: 176, 51
+  orig: 176, 51
+  offset: 0, 0
+  index: -1
+soaguang1
+  rotate: false
+  xy: 0, 228
+  size: 191, 72
+  orig: 191, 72
+  offset: 0, 0
+  index: -1
+xing1
+  rotate: false
+  xy: 70, 190
+  size: 36, 37
+  orig: 50, 50
+  offset: 7, 6
+  index: -1

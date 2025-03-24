@@ -1,0 +1,146 @@
+
+2.png
+size: 140,140
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bi1
+  rotate: false
+  xy: 66, 22
+  size: 3, 4
+  orig: 3, 4
+  offset: 0, 0
+  index: -1
+bi2
+  rotate: false
+  xy: 70, 22
+  size: 3, 4
+  orig: 3, 4
+  offset: 0, 0
+  index: -1
+er1
+  rotate: true
+  xy: 74, 4
+  size: 19, 35
+  orig: 19, 35
+  offset: 0, 0
+  index: -1
+er2
+  rotate: false
+  xy: 36, 84
+  size: 17, 36
+  orig: 17, 36
+  offset: 0, 0
+  index: -1
+jidanyan_1
+  rotate: true
+  xy: 0, 5
+  size: 43, 20
+  orig: 43, 20
+  offset: 0, 0
+  index: -1
+jidanyan_2
+  rotate: false
+  xy: 76, 24
+  size: 43, 19
+  orig: 43, 19
+  offset: 0, 0
+  index: -1
+jidanyan_3
+  rotate: true
+  xy: 120, 2
+  size: 42, 19
+  orig: 42, 19
+  offset: 0, 0
+  index: -1
+lei1
+  rotate: false
+  xy: 36, 54
+  size: 39, 29
+  orig: 39, 29
+  offset: 0, 0
+  index: -1
+lei2
+  rotate: true
+  xy: 76, 44
+  size: 39, 29
+  orig: 39, 29
+  offset: 0, 0
+  index: -1
+lei3
+  rotate: true
+  xy: 36, 14
+  size: 39, 29
+  orig: 39, 29
+  offset: 0, 0
+  index: -1
+lian
+  rotate: true
+  xy: 73, 84
+  size: 55, 44
+  orig: 55, 44
+  offset: 0, 0
+  index: -1
+mao_benti
+  rotate: true
+  xy: 0, 49
+  size: 71, 35
+  orig: 71, 35
+  offset: 0, 0
+  index: -1
+mao_yan
+  rotate: true
+  xy: 106, 45
+  size: 38, 21
+  orig: 38, 21
+  offset: 0, 0
+  index: -1
+mao_zui
+  rotate: true
+  xy: 66, 27
+  size: 14, 8
+  orig: 14, 8
+  offset: 0, 0
+  index: -1
+mao_zui2
+  rotate: true
+  xy: 66, 42
+  size: 11, 9
+  orig: 11, 9
+  offset: 0, 0
+  index: -1
+s1
+  rotate: true
+  xy: 21, 13
+  size: 15, 13
+  orig: 15, 13
+  offset: 0, 0
+  index: -1
+s2
+  rotate: false
+  xy: 35, 2
+  size: 11, 11
+  orig: 11, 11
+  offset: 0, 0
+  index: -1
+shenti
+  rotate: true
+  xy: 54, 85
+  size: 35, 17
+  orig: 35, 17
+  offset: 0, 0
+  index: -1
+txt
+  rotate: false
+  xy: 0, 121
+  size: 72, 18
+  orig: 72, 18
+  offset: 0, 0
+  index: -1
+zui1
+  rotate: true
+  xy: 21, 29
+  size: 19, 13
+  orig: 19, 13
+  offset: 0, 0
+  index: -1

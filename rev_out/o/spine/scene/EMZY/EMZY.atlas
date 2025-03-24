@@ -1,0 +1,55 @@
+
+EMZY.png
+size: 484,176
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+BG
+  rotate: false
+  xy: 245, 80
+  size: 41, 29
+  orig: 41, 29
+  offset: 0, 0
+  index: -1
+a2
+  rotate: false
+  xy: 298, 5
+  size: 183, 168
+  orig: 183, 168
+  offset: 0, 0
+  index: -1
+a3
+  rotate: false
+  xy: 0, 0
+  size: 156, 109
+  orig: 156, 109
+  offset: 0, 0
+  index: -1
+gungyan
+  rotate: false
+  xy: 0, 110
+  size: 297, 63
+  orig: 312, 79
+  offset: 12, 8
+  index: -1
+yanbai
+  rotate: false
+  xy: 157, 47
+  size: 87, 62
+  orig: 87, 62
+  offset: 0, 0
+  index: -1
+yanguang
+  rotate: false
+  xy: 157, 1
+  size: 45, 45
+  orig: 51, 51
+  offset: 3, 3
+  index: -1
+yanzhu
+  rotate: false
+  xy: 203, 10
+  size: 27, 36
+  orig: 27, 36
+  offset: 0, 0
+  index: -1

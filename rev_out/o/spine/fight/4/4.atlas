@@ -1,0 +1,83 @@
+
+4.png
+size: 128,64
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+beard
+  rotate: false
+  xy: 54, 2
+  size: 13, 17
+  orig: 15, 19
+  offset: 1, 1
+  index: -1
+clothes
+  rotate: false
+  xy: 83, 11
+  size: 21, 21
+  orig: 22, 22
+  offset: 1, 1
+  index: -1
+eyebrow1
+  rotate: false
+  xy: 68, 6
+  size: 13, 13
+  orig: 15, 13
+  offset: 1, 0
+  index: -1
+eyebrow2
+  rotate: false
+  xy: 45, 20
+  size: 12, 12
+  orig: 14, 13
+  offset: 1, 0
+  index: -1
+fish
+  rotate: false
+  xy: 45, 33
+  size: 46, 31
+  orig: 46, 31
+  offset: 0, 0
+  index: -1
+foot1
+  rotate: false
+  xy: 58, 20
+  size: 12, 12
+  orig: 13, 13
+  offset: 0, 0
+  index: -1
+foot2
+  rotate: false
+  xy: 71, 21
+  size: 11, 11
+  orig: 12, 12
+  offset: 0, 1
+  index: -1
+hand1
+  rotate: false
+  xy: 39, 2
+  size: 14, 17
+  orig: 16, 18
+  offset: 1, 0
+  index: -1
+hand2
+  rotate: true
+  xy: 22, 0
+  size: 19, 16
+  orig: 20, 16
+  offset: 1, 0
+  index: -1
+head
+  rotate: false
+  xy: 0, 0
+  size: 21, 19
+  orig: 22, 19
+  offset: 1, 0
+  index: -1
+hoe
+  rotate: false
+  xy: 0, 20
+  size: 44, 44
+  orig: 44, 44
+  offset: 0, 0
+  index: -1

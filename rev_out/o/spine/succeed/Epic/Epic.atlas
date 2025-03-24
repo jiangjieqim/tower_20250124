@@ -1,0 +1,55 @@
+
+Epic.png
+size: 856,292
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+BG2
+  rotate: false
+  xy: 0, 73
+  size: 644, 219
+  orig: 644, 219
+  offset: 0, 0
+  index: -1
+HOU2
+  rotate: true
+  xy: 645, 99
+  size: 193, 194
+  orig: 193, 194
+  offset: 0, 0
+  index: -1
+NIAO1
+  rotate: true
+  xy: 645, 4
+  size: 94, 78
+  orig: 96, 80
+  offset: 1, 1
+  index: -1
+SSTXT1
+  rotate: false
+  xy: 724, 61
+  size: 129, 37
+  orig: 129, 37
+  offset: 0, 0
+  index: -1
+SSTXT2
+  rotate: false
+  xy: 0, 1
+  size: 291, 71
+  orig: 291, 71
+  offset: 0, 0
+  index: -1
+SSTXT3
+  rotate: false
+  xy: 292, 21
+  size: 346, 51
+  orig: 346, 51
+  offset: 0, 0
+  index: -1
+xing
+  rotate: false
+  xy: 724, 0
+  size: 60, 60
+  orig: 60, 60
+  offset: 0, 0
+  index: -1

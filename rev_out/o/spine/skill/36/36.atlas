@@ -1,0 +1,76 @@
+
+36.png
+size: 256,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+FU_guang
+  rotate: true
+  xy: 186, 168
+  size: 50, 69
+  orig: 70, 70
+  offset: 20, 0
+  index: -1
+Fu_00000
+  rotate: true
+  xy: 97, 48
+  size: 119, 136
+  orig: 150, 150
+  offset: 15, 7
+  index: -1
+Fu_feng_00000
+  rotate: false
+  xy: 67, 221
+  size: 35, 34
+  orig: 120, 60
+  offset: 78, 10
+  index: -1
+Fu_feng_00001
+  rotate: false
+  xy: 0, 180
+  size: 98, 40
+  orig: 120, 60
+  offset: 14, 13
+  index: -1
+Fu_feng_00002
+  rotate: false
+  xy: 0, 135
+  size: 96, 44
+  orig: 120, 60
+  offset: 11, 9
+  index: -1
+Fu_feng_00003
+  rotate: false
+  xy: 99, 177
+  size: 86, 41
+  orig: 120, 60
+  offset: 11, 11
+  index: -1
+Fu_feng_00004
+  rotate: false
+  xy: 103, 219
+  size: 72, 36
+  orig: 120, 60
+  offset: 10, 16
+  index: -1
+Fu_feng_00005
+  rotate: false
+  xy: 176, 219
+  size: 59, 36
+  orig: 120, 60
+  offset: 10, 15
+  index: -1
+Fu_feng_00006
+  rotate: false
+  xy: 20, 223
+  size: 46, 32
+  orig: 120, 60
+  offset: 11, 17
+  index: -1
+Fu_feng_00007
+  rotate: true
+  xy: 0, 243
+  size: 12, 19
+  orig: 120, 60
+  offset: 15, 18
+  index: -1

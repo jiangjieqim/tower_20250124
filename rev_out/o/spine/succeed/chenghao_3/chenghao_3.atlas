@@ -1,0 +1,41 @@
+
+chenghao_3.png
+size: 256,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+DLJX
+  rotate: false
+  xy: 0, 168
+  size: 120, 32
+  orig: 120, 32
+  offset: 0, 0
+  index: -1
+d1
+  rotate: false
+  xy: 73, 201
+  size: 118, 30
+  orig: 120, 32
+  offset: 1, 1
+  index: -1
+d2
+  rotate: false
+  xy: 0, 114
+  size: 231, 53
+  orig: 231, 53
+  offset: 0, 0
+  index: -1
+d3
+  rotate: false
+  xy: 0, 206
+  size: 72, 25
+  orig: 74, 27
+  offset: 1, 1
+  index: -1
+d4
+  rotate: false
+  xy: 0, 51
+  size: 187, 62
+  orig: 189, 64
+  offset: 1, 1
+  index: -1

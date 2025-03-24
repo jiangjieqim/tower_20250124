@@ -1,0 +1,237 @@
+
+choujiang.png
+size: 620,620
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+0
+  rotate: false
+  xy: 425, 171
+  size: 79, 96
+  orig: 79, 96
+  offset: 0, 0
+  index: -1
+1
+  rotate: false
+  xy: 375, 372
+  size: 77, 103
+  orig: 77, 103
+  offset: 0, 0
+  index: -1
+2
+  rotate: false
+  xy: 453, 372
+  size: 77, 103
+  orig: 77, 103
+  offset: 0, 0
+  index: -1
+3
+  rotate: false
+  xy: 531, 282
+  size: 77, 103
+  orig: 77, 103
+  offset: 0, 0
+  index: -1
+4
+  rotate: false
+  xy: 375, 268
+  size: 77, 103
+  orig: 77, 103
+  offset: 0, 0
+  index: -1
+5
+  rotate: false
+  xy: 453, 268
+  size: 77, 103
+  orig: 77, 103
+  offset: 0, 0
+  index: -1
+6
+  rotate: false
+  xy: 531, 178
+  size: 77, 103
+  orig: 77, 103
+  offset: 0, 0
+  index: -1
+7
+  rotate: false
+  xy: 269, 253
+  size: 77, 103
+  orig: 77, 103
+  offset: 0, 0
+  index: -1
+8
+  rotate: false
+  xy: 347, 164
+  size: 77, 103
+  orig: 77, 103
+  offset: 0, 0
+  index: -1
+9
+  rotate: false
+  xy: 269, 149
+  size: 77, 103
+  orig: 77, 103
+  offset: 0, 0
+  index: -1
+bg
+  rotate: false
+  xy: 375, 476
+  size: 168, 143
+  orig: 168, 143
+  offset: 0, 0
+  index: -1
+down
+  rotate: false
+  xy: 0, 175
+  size: 268, 181
+  orig: 268, 184
+  offset: 0, 0
+  index: -1
+qi_00000
+  rotate: false
+  xy: 595, 467
+  size: 16, 67
+  orig: 80, 150
+  offset: 45, 79
+  index: -1
+qi_00001
+  rotate: false
+  xy: 595, 535
+  size: 24, 84
+  orig: 80, 150
+  offset: 38, 59
+  index: -1
+qi_00002
+  rotate: false
+  xy: 197, 73
+  size: 36, 101
+  orig: 80, 150
+  offset: 29, 39
+  index: -1
+qi_00003
+  rotate: false
+  xy: 155, 69
+  size: 41, 105
+  orig: 80, 150
+  offset: 25, 31
+  index: -1
+qi_00004
+  rotate: false
+  xy: 111, 64
+  size: 43, 110
+  orig: 80, 150
+  offset: 23, 23
+  index: -1
+qi_00005
+  rotate: false
+  xy: 425, 54
+  size: 47, 116
+  orig: 80, 150
+  offset: 18, 16
+  index: -1
+qi_00006
+  rotate: false
+  xy: 544, 386
+  size: 49, 116
+  orig: 80, 150
+  offset: 17, 15
+  index: -1
+qi_00007
+  rotate: false
+  xy: 544, 503
+  size: 50, 116
+  orig: 80, 150
+  offset: 16, 15
+  index: -1
+qi_00008
+  rotate: false
+  xy: 505, 65
+  size: 50, 112
+  orig: 80, 150
+  offset: 16, 14
+  index: -1
+qi_00009
+  rotate: false
+  xy: 556, 65
+  size: 50, 112
+  orig: 80, 150
+  offset: 16, 13
+  index: -1
+qi_00010
+  rotate: false
+  xy: 347, 72
+  size: 54, 91
+  orig: 80, 150
+  offset: 14, 12
+  index: -1
+qi_00011
+  rotate: false
+  xy: 0, 83
+  size: 54, 91
+  orig: 80, 150
+  offset: 14, 11
+  index: -1
+qi_00012
+  rotate: false
+  xy: 56, 18
+  size: 54, 77
+  orig: 80, 150
+  offset: 14, 11
+  index: -1
+qi_00013
+  rotate: false
+  xy: 55, 96
+  size: 55, 78
+  orig: 80, 150
+  offset: 13, 10
+  index: -1
+qi_00014
+  rotate: false
+  xy: 0, 0
+  size: 55, 71
+  orig: 80, 150
+  offset: 14, 8
+  index: -1
+qi_00015
+  rotate: false
+  xy: 197, 2
+  size: 49, 70
+  orig: 80, 150
+  offset: 20, 8
+  index: -1
+qi_00016
+  rotate: false
+  xy: 234, 79
+  size: 48, 69
+  orig: 80, 150
+  offset: 20, 8
+  index: -1
+qi_00017
+  rotate: false
+  xy: 247, 10
+  size: 47, 68
+  orig: 80, 150
+  offset: 21, 8
+  index: -1
+qi_00018
+  rotate: false
+  xy: 473, 11
+  size: 47, 53
+  orig: 80, 150
+  offset: 21, 7
+  index: -1
+qi_00019
+  rotate: false
+  xy: 594, 457
+  size: 16, 9
+  orig: 80, 150
+  offset: 51, 15
+  index: -1
+up
+  rotate: false
+  xy: 0, 357
+  size: 374, 262
+  orig: 374, 262
+  offset: 0, 0
+  index: -1

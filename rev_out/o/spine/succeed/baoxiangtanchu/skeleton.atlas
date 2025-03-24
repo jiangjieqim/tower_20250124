@@ -1,0 +1,125 @@
+
+skeleton.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bottom_js
+  rotate: false
+  xy: 0, 725
+  size: 750, 146
+  orig: 750, 146
+  offset: 0, 0
+  index: -1
+guangtiao1
+  rotate: true
+  xy: 242, 700
+  size: 24, 100
+  orig: 30, 111
+  offset: 3, 10
+  index: -1
+guangtiao2
+  rotate: true
+  xy: 343, 700
+  size: 24, 100
+  orig: 30, 111
+  offset: 3, 10
+  index: -1
+guangtiao3
+  rotate: true
+  xy: 242, 675
+  size: 24, 100
+  orig: 30, 111
+  offset: 3, 10
+  index: -1
+guangtiao4
+  rotate: true
+  xy: 343, 675
+  size: 24, 100
+  orig: 30, 111
+  offset: 3, 10
+  index: -1
+guangtiao5
+  rotate: true
+  xy: 242, 650
+  size: 24, 100
+  orig: 30, 111
+  offset: 3, 10
+  index: -1
+icon_cs
+  rotate: false
+  xy: 751, 751
+  size: 120, 120
+  orig: 120, 120
+  offset: 0, 0
+  index: -1
+icon_cs_1
+  rotate: false
+  xy: 751, 630
+  size: 120, 120
+  orig: 120, 120
+  offset: 0, 0
+  index: -1
+icon_pt
+  rotate: false
+  xy: 0, 604
+  size: 120, 120
+  orig: 120, 120
+  offset: 0, 0
+  index: -1
+icon_pt_1
+  rotate: false
+  xy: 121, 604
+  size: 120, 120
+  orig: 120, 120
+  offset: 0, 0
+  index: -1
+icon_sh
+  rotate: false
+  xy: 242, 509
+  size: 120, 120
+  orig: 120, 120
+  offset: 0, 0
+  index: -1
+icon_sh_1
+  rotate: false
+  xy: 0, 483
+  size: 120, 120
+  orig: 120, 120
+  offset: 0, 0
+  index: -1
+icon_ss
+  rotate: false
+  xy: 121, 483
+  size: 120, 120
+  orig: 120, 120
+  offset: 0, 0
+  index: -1
+icon_ss_1
+  rotate: false
+  xy: 363, 509
+  size: 120, 120
+  orig: 120, 120
+  offset: 0, 0
+  index: -1
+icon_xy
+  rotate: false
+  xy: 484, 509
+  size: 120, 120
+  orig: 120, 120
+  offset: 0, 0
+  index: -1
+icon_xy_1
+  rotate: false
+  xy: 605, 509
+  size: 120, 120
+  orig: 120, 120
+  offset: 0, 0
+  index: -1
+tihuan
+  rotate: false
+  xy: 726, 529
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1

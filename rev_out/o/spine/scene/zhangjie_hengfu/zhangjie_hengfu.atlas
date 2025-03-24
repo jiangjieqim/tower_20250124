@@ -1,0 +1,55 @@
+
+zhangjie_hengfu.png
+size: 420,276
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+tx_cgjjwk
+  rotate: false
+  xy: 174, 123
+  size: 209, 41
+  orig: 209, 41
+  offset: 0, 0
+  index: -1
+x1
+  rotate: false
+  xy: 0, 165
+  size: 297, 37
+  orig: 299, 39
+  offset: 1, 1
+  index: -1
+x1_2
+  rotate: false
+  xy: 0, 240
+  size: 297, 36
+  orig: 297, 36
+  offset: 0, 0
+  index: -1
+x1_3
+  rotate: false
+  xy: 0, 203
+  size: 297, 36
+  orig: 297, 36
+  offset: 0, 0
+  index: -1
+x2
+  rotate: false
+  xy: 298, 167
+  size: 121, 109
+  orig: 123, 111
+  offset: 1, 1
+  index: -1
+x4
+  rotate: true
+  xy: 0, 127
+  size: 37, 173
+  orig: 39, 175
+  offset: 1, 1
+  index: -1
+x5
+  rotate: false
+  xy: 0, 0
+  size: 400, 122
+  orig: 400, 122
+  offset: 0, 0
+  index: -1

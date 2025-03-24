@@ -1,0 +1,97 @@
+
+3.png
+size: 512,64
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+clothes
+  rotate: false
+  xy: 152, 3
+  size: 35, 27
+  orig: 38, 29
+  offset: 2, 2
+  index: -1
+eye1
+  rotate: true
+  xy: 188, 1
+  size: 29, 28
+  orig: 29, 28
+  offset: 0, 0
+  index: -1
+eye2
+  rotate: false
+  xy: 211, 36
+  size: 27, 28
+  orig: 27, 28
+  offset: 0, 0
+  index: -1
+eyeball1
+  rotate: false
+  xy: 240, 2
+  size: 9, 9
+  orig: 13, 13
+  offset: 2, 2
+  index: -1
+eyeball2
+  rotate: false
+  xy: 117, 0
+  size: 8, 8
+  orig: 13, 12
+  offset: 2, 2
+  index: -1
+foot1
+  rotate: false
+  xy: 240, 12
+  size: 22, 26
+  orig: 24, 29
+  offset: 1, 2
+  index: -1
+foot2
+  rotate: false
+  xy: 239, 39
+  size: 23, 25
+  orig: 26, 29
+  offset: 1, 2
+  index: -1
+fork
+  rotate: false
+  xy: 69, 7
+  size: 47, 57
+  orig: 48, 57
+  offset: 1, 0
+  index: -1
+hair
+  rotate: true
+  xy: 117, 9
+  size: 55, 34
+  orig: 58, 37
+  offset: 2, 1
+  index: -1
+hand1
+  rotate: false
+  xy: 183, 31
+  size: 27, 33
+  orig: 29, 35
+  offset: 1, 2
+  index: -1
+hand2
+  rotate: true
+  xy: 152, 31
+  size: 33, 30
+  orig: 35, 32
+  offset: 1, 1
+  index: -1
+head
+  rotate: false
+  xy: 0, 4
+  size: 68, 60
+  orig: 72, 62
+  offset: 2, 2
+  index: -1
+jianjia
+  rotate: true
+  xy: 217, 5
+  size: 30, 22
+  orig: 31, 23
+  offset: 1, 1
+  index: -1

@@ -1,0 +1,216 @@
+
+Card_Idle.png
+size: 1000,1000
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+xinzhuan_00000
+  rotate: true
+  xy: 0, 859
+  size: 139, 198
+  orig: 143, 203
+  offset: 2, 3
+  index: -1
+xinzhuan_00001
+  rotate: true
+  xy: 199, 859
+  size: 139, 198
+  orig: 143, 203
+  offset: 2, 3
+  index: -1
+xinzhuan_00002
+  rotate: true
+  xy: 594, 434
+  size: 141, 198
+  orig: 143, 203
+  offset: 2, 3
+  index: -1
+xinzhuan_00003
+  rotate: true
+  xy: 793, 434
+  size: 141, 197
+  orig: 143, 203
+  offset: 2, 4
+  index: -1
+xinzhuan_00004
+  rotate: true
+  xy: 0, 294
+  size: 141, 197
+  orig: 143, 203
+  offset: 2, 4
+  index: -1
+xinzhuan_00005
+  rotate: true
+  xy: 198, 294
+  size: 141, 197
+  orig: 143, 203
+  offset: 2, 4
+  index: -1
+xinzhuan_00006
+  rotate: true
+  xy: 396, 294
+  size: 141, 197
+  orig: 143, 203
+  offset: 2, 4
+  index: -1
+xinzhuan_00007
+  rotate: true
+  xy: 594, 292
+  size: 141, 197
+  orig: 143, 203
+  offset: 2, 4
+  index: -1
+xinzhuan_00008
+  rotate: true
+  xy: 792, 292
+  size: 141, 197
+  orig: 143, 203
+  offset: 2, 4
+  index: -1
+xinzhuan_00009
+  rotate: true
+  xy: 0, 152
+  size: 141, 197
+  orig: 143, 203
+  offset: 2, 4
+  index: -1
+xinzhuan_00010
+  rotate: true
+  xy: 198, 152
+  size: 141, 196
+  orig: 143, 203
+  offset: 2, 5
+  index: -1
+xinzhuan_00011
+  rotate: true
+  xy: 395, 152
+  size: 141, 198
+  orig: 143, 203
+  offset: 2, 3
+  index: -1
+xinzhuan_00012
+  rotate: true
+  xy: 796, 858
+  size: 140, 199
+  orig: 143, 203
+  offset: 3, 2
+  index: -1
+xinzhuan_00013
+  rotate: true
+  xy: 0, 718
+  size: 140, 199
+  orig: 143, 203
+  offset: 3, 2
+  index: -1
+xinzhuan_00014
+  rotate: true
+  xy: 200, 718
+  size: 140, 199
+  orig: 143, 203
+  offset: 3, 2
+  index: -1
+xinzhuan_00015
+  rotate: true
+  xy: 400, 718
+  size: 140, 199
+  orig: 143, 203
+  offset: 3, 2
+  index: -1
+xinzhuan_00016
+  rotate: true
+  xy: 600, 717
+  size: 140, 199
+  orig: 143, 203
+  offset: 3, 2
+  index: -1
+xinzhuan_00017
+  rotate: true
+  xy: 594, 150
+  size: 141, 199
+  orig: 143, 203
+  offset: 2, 2
+  index: -1
+xinzhuan_00018
+  rotate: true
+  xy: 794, 150
+  size: 141, 199
+  orig: 143, 203
+  offset: 2, 2
+  index: -1
+xinzhuan_00019
+  rotate: true
+  xy: 800, 717
+  size: 140, 198
+  orig: 143, 203
+  offset: 2, 2
+  index: -1
+xinzhuan_00020
+  rotate: true
+  xy: 0, 577
+  size: 140, 198
+  orig: 143, 203
+  offset: 2, 2
+  index: -1
+xinzhuan_00021
+  rotate: true
+  xy: 199, 577
+  size: 140, 198
+  orig: 143, 203
+  offset: 2, 2
+  index: -1
+xinzhuan_00022
+  rotate: true
+  xy: 398, 577
+  size: 140, 198
+  orig: 143, 203
+  offset: 2, 2
+  index: -1
+xinzhuan_00023
+  rotate: true
+  xy: 597, 576
+  size: 140, 198
+  orig: 143, 203
+  offset: 2, 2
+  index: -1
+xinzhuan_00024
+  rotate: true
+  xy: 796, 576
+  size: 140, 197
+  orig: 143, 203
+  offset: 2, 2
+  index: -1
+xinzhuan_00025
+  rotate: true
+  xy: 0, 436
+  size: 140, 196
+  orig: 143, 203
+  offset: 2, 3
+  index: -1
+xinzhuan_00026
+  rotate: true
+  xy: 197, 436
+  size: 140, 197
+  orig: 143, 203
+  offset: 2, 3
+  index: -1
+xinzhuan_00027
+  rotate: true
+  xy: 395, 436
+  size: 140, 198
+  orig: 143, 203
+  offset: 2, 3
+  index: -1
+xinzhuan_00028
+  rotate: true
+  xy: 398, 859
+  size: 139, 198
+  orig: 143, 203
+  offset: 2, 3
+  index: -1
+xinzhuan_00029
+  rotate: true
+  xy: 597, 859
+  size: 139, 198
+  orig: 143, 203
+  offset: 2, 3
+  index: -1

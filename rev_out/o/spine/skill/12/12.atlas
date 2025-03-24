@@ -1,0 +1,146 @@
+
+12.png
+size: 236,236
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+shandian_00000
+  rotate: true
+  xy: 8, 228
+  size: 6, 8
+  orig: 53, 88
+  offset: 38, 76
+  index: -1
+shandian_00001
+  rotate: true
+  xy: 98, 205
+  size: 29, 48
+  orig: 53, 88
+  offset: 21, 37
+  index: -1
+shandian_00002
+  rotate: true
+  xy: 0, 138
+  size: 41, 67
+  orig: 53, 88
+  offset: 9, 18
+  index: -1
+shandian_00003
+  rotate: true
+  xy: 79, 6
+  size: 43, 81
+  orig: 53, 88
+  offset: 8, 5
+  index: -1
+shandian_00004
+  rotate: true
+  xy: 157, 93
+  size: 38, 77
+  orig: 53, 88
+  offset: 11, 5
+  index: -1
+shandian_00005
+  rotate: true
+  xy: 0, 97
+  size: 37, 79
+  orig: 53, 88
+  offset: 2, 5
+  index: -1
+shandian_00006
+  rotate: true
+  xy: 68, 135
+  size: 35, 76
+  orig: 53, 88
+  offset: 4, 6
+  index: -1
+shandian_00007
+  rotate: true
+  xy: 68, 171
+  size: 33, 76
+  orig: 53, 88
+  offset: 6, 6
+  index: -1
+shandian_00008
+  rotate: true
+  xy: 147, 204
+  size: 30, 78
+  orig: 53, 88
+  offset: 6, 3
+  index: -1
+shandian_00009
+  rotate: true
+  xy: 0, 55
+  size: 41, 79
+  orig: 53, 88
+  offset: 8, 3
+  index: -1
+shandian_00010
+  rotate: true
+  xy: 0, 11
+  size: 43, 78
+  orig: 53, 88
+  offset: 4, 5
+  index: -1
+shandian_00011
+  rotate: true
+  xy: 157, 50
+  size: 42, 77
+  orig: 53, 88
+  offset: 5, 6
+  index: -1
+shandian_00012
+  rotate: true
+  xy: 80, 52
+  size: 41, 76
+  orig: 53, 88
+  offset: 5, 6
+  index: -1
+shandian_00013
+  rotate: true
+  xy: 80, 94
+  size: 37, 76
+  orig: 53, 88
+  offset: 6, 6
+  index: -1
+shandian_00014
+  rotate: true
+  xy: 145, 132
+  size: 36, 75
+  orig: 53, 88
+  offset: 6, 6
+  index: -1
+shandian_00015
+  rotate: true
+  xy: 145, 169
+  size: 34, 74
+  orig: 53, 88
+  offset: 7, 6
+  index: -1
+shandian_00016
+  rotate: true
+  xy: 0, 180
+  size: 31, 67
+  orig: 53, 88
+  offset: 7, 7
+  index: -1
+shandian_00017
+  rotate: true
+  xy: 52, 212
+  size: 22, 45
+  orig: 53, 88
+  offset: 8, 9
+  index: -1
+shandian_00018
+  rotate: true
+  xy: 17, 214
+  size: 20, 34
+  orig: 53, 88
+  offset: 9, 9
+  index: -1
+shandian_00019
+  rotate: true
+  xy: 0, 229
+  size: 5, 7
+  orig: 53, 88
+  offset: 19, 12
+  index: -1
