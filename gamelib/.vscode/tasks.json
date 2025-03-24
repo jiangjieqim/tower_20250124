@@ -1,0 +1,24 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "gamelib",
+            "type": "shell",
+            "command":"call build ",
+            "problemMatcher": []
+        },
+        {
+            "label": "commit ${file}",
+            "type": "shell",
+            "command":"echo off & cd../../../ && call project_config cmd commit_file ${file}",
+            "problemMatcher": []
+        },
+        {
+            "label": "commit src",
+            "type": "shell",
+            "command":"TortoiseProc.exe /command:commit /path:${workspaceFolder}/src /closeonend:0 /logmsg src",          
+            // "command":"explorer .",
+            "problemMatcher": []
+        },
+    ]
+}

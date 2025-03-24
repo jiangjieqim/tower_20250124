@@ -1,0 +1,77 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			//	user00002
+			"name": "dev",
+			"type": "chrome",
+			"request": "launch",
+
+			"url": "http://127.0.0.1:8001/Project1/Client/towertrunk/gameclient/bin/index.html?user=jjq00777&debugshow=1&config=initConfig&debug=1&timeScale=1&sdk_platform=0&platform=10&debugfighttype=1",
+			// &appid=tower_qa
+			// &clientfight=1
+			//	sdk_platform=10
+			// &clientfight=1
+			// "url": "http://127.0.0.1:8001/Project1/Client/towertrunk/gameclient/bin/index.html?user=jjq001&ver=dev&config=initConfig",
+			// &verify=1
+
+
+			
+			// &tcp=ws:192.168.1.100:8502
+
+			// tower_515 user002001 
+			// "url":"http://127.0.0.1:8001/Project1/Client/towertrunk/gameclient/bin/index.html?user=user00003&ver=dev&appid=tower_qa"
+
+
+
+			// http://101.132.177.145:8001/Project1/Client/towertrunk/gameclient/bin/index.html?user=hxx5&ver=dev&disableSound=1&disableCreateMonster1=1&Stat1=1&proto_log=1&disableCMD=10103@10107@3400&randomname=0&Stat=1&debug=0&tcp=ws:192.168.1.100:8502&appid111=tower_qa&debugshow=1&config=initConfig
+
+			// &disableSound=1&debug=1
+			// &debugshow=1
+			
+			//&skillid=13341
+
+			// &tcp=ws:192.168.1.100:8502
+			//12732 九尾狐(27)
+			//13341 后羿(33)
+			// &skillid=12732
+
+			// tower_516
+			// &tcp=ws:192.168.1.100:8502
+
+			// ?user=woshixiake&appid=wxbca72f7c8bf7c7a8&config=initconfig2
+			// user=woshixiake&ver=dev&debugshow=1&debug=1&enableguide1=1&discard=1&timeScale=1&appid=wxbca72f7c8bf7c7a8
+
+			//opp
+
+			// http://101.132.177.145:8001/Project1/Client/towertrunk/gameclient/bin/index.html?user=woshixiake&ver=dev&randomname=1
+
+
+			//	&walkspeed=300
+			// enableguide1=1&timeScale=1.0&disableAi2=1&disableenemy=1
+			// proto_log2=1&givemoney=1
+
+			// &walkspeed=10&disableAi=1&disableenemy=1
+			// &disableCMD=10103@10107@10102@3400@10139@10105@10104@10124@3009&
+			// &tcp=ws:192.168.1.100:8502
+
+			// &appid=tower_qa
+				
+			//本地
+			// "url":"http://127.0.0.1:8001/Project1/Client/towertrunk/gameclient/bin/index.html?&user=1&sy_url=http://127.0.0.1:8005&tcp=ws://127.0.0.1:8004&debug=1&disableSound=1&enableguide1=1&timeScale=1&clientfight=1&debugfighttype=2",
+
+			"runtimeExecutable": "${env:chromepath}",
+			"runtimeArgs": [
+				"--allow-file-access-from-files",
+				"--disable-web-security"
+			],
+			"sourceMaps": true,
+			"webRoot": "d:/",
+			"sourceMapPathOverrides": {
+				"src/*": "${workspaceRoot}/src/*"
+			}
+		}
+	]
+}
+
+// http://127.0.0.1:8001/Project1/Client/towertrunk/gameclient/bin/index.html?user=user001&ver=dev&debugshow=1&debug=1

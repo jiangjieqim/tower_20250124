@@ -1,0 +1,7 @@
+{
+    "workbench.colorTheme": "Default Light+",
+    // "Default Light+",
+    "editor.fontSize": 13.5,
+    // "editor.fontFamily": "宋体, '宋体', 宋体"
+    "editor.fontFamily": "Consolas, 'Courier New', monospace"
+}
