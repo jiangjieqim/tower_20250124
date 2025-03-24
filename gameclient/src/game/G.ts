@@ -989,7 +989,7 @@ export class E {
         }
         if(debug){
             //开始全局错误弹窗
-            Laya.alertGlobalError(true);
+            // Laya.alertGlobalError(true);
         }
         //多点触控开关
         Laya.MouseManager.multiTouchEnabled = true;

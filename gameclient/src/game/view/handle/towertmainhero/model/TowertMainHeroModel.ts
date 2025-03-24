@@ -34,7 +34,7 @@ export class TowertMainHeroModel extends Laya.EventDispatcher{
         let arr = [];
         for(let i:number=0;i<this.heroList.length;i++){
             let cfg = HeroListProxy.Ins.getCfgById(this.heroList[i].id);
-            if(cfg.f_if_transform == 0){
+            if(cfg && cfg.f_if_transform == 0){
                 arr.push(this.heroList[i]);
             }
         }

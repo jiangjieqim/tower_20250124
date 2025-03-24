@@ -1,4 +1,3 @@
-import value from "*.glsl";
 import { BaseModel } from "../../../../../frame/util/ctl/BaseModel";
 // import { HttpUtil } from "../../../../../frame/util/HttpUtil";
 import { ViewBase } from "../../../../../frame/view/ViewBase";
@@ -10,7 +9,7 @@ import { DrawCallConfig } from "../../../../DrawCallConfig";
 import { E, G } from "../../../../G";
 import { LayerMgr } from "../../../../layer/LayerMgr";
 import { LoginClient } from "../../../../network/clients/LoginClient";
-import { CommonClaimRewardInit_revc, CommonClaimRewards_req, CommonClaimRewards_revc, ConfigHash_revc, CreateRoleInfo_revc, EnterFightAgain_req, Err_revc, FightSceneInfo_revc, FundRefresh_req, GetServerTimeMS_revc, Gm_req, Init_revc, ItemNotEnoughCode_revc, RedDotUpdate_revc, Reward_revc, ServerVersion_revc, stCellValue, stCommonTimes, stPlayerData, WatchCommonRankDetail_revc } from "../../../../network/protocols/BaseProto";
+import { CommonClaimRewardInit_revc, CommonClaimRewards_req, CommonClaimRewards_revc, ConfigHash_revc, CreateRoleInfo_revc, EnterFightAgain_req, Err_revc, FightSceneInfo_revc, FundRefresh_req, GetServerTimeMS_revc, Gm_req, Init_revc, ItemNotEnoughCode_revc, RedDotUpdate_revc, Reward_revc, ServerVersion_revc, stCellValue, stCommonTimes, WatchCommonRankDetail_revc } from "../../../../network/protocols/BaseProto";
 import { SERVER_MSGID } from "../../../../network/protocols/ProtoDef";
 import { SocketMgr } from "../../../../network/SocketMgr";
 import { StaticDataMgr } from "../../../../static/StaticDataMgr";
