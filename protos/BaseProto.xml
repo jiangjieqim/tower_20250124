@@ -1,0 +1,1930 @@
+<proto id="1000" name="Gm" desc="" type="req">
+    <protobuf type="string" name="datas" desc="GM字符串" ></protobuf>
+</proto>
+<!--
+    说明:当客户端未在最大时间间隔内请求 心跳,服务器socket.close,销毁socket句柄 释放网络资源
+    心跳间隔配置json，便于测试服修改 
+    心跳时间会在协议3004的stServerConfig结构体中传递给客户端
+-->
+<proto id="1001" name="Heartbeat" desc="心跳请求" type="req">
+</proto>
+<proto id="1002" name="Heartbeat" desc="心跳返回" type="revc">
+</proto>
+
+<!--
+KickRevc = 1003,//踢出通知
+-->
+<proto id="1003" name="Kick" desc="踢出通知" type="revc">
+    <protobuf type="uint8" name="reason" desc="踢出原因  
+    AccountDuplicate = 0,//同名账号登录
+    Underage = 1,//未成年
+    " ></protobuf> 
+</proto>
+
+<proto id="1004" name="Err" desc="通用功能错误码" type="revc">
+    <protobuf type="uint16" name="reason" 
+    desc="
+        //错误码,描述,配置到\Project1\Excel\t_Err.xlsx中
+    " ></protobuf> 
+</proto>
+<proto id="1005" name="PlayerLevelChange" desc="玩家等级变化" type="revc">
+    <protobuf type="uint16" name="level" desc="玩家当前等级" ></protobuf>
+</proto>
+<proto id="1006" name="PlayerCurExpChange" desc="玩家经验变化" type="revc">
+    <protobuf type="uint32" name="curLevelExp" desc="当前等级下的经验值" ></protobuf>
+</proto>
+<proto id="1007" name="TrophyChange" desc="奖杯变化后的值" type="revc">
+    <protobuf type="uint32" name="trophy" desc="角色最新的奖杯数量" ></protobuf>
+</proto>
+<!--
+WebClientRegistReq = 3001,//玩家注册请求
+WebClientRegistRsp = 3002,//玩家注册返回
+-->
+<proto id="3001" name="WebClientRegist" desc="玩家注册请求" type="req">
+    <protobuf type="uint8" name="pid" desc="平台类型" ></protobuf> 
+    <protobuf type="string" name="account" desc="账号id" ></protobuf>
+    <protobuf type="string" name="password" desc="账号密码" ></protobuf> 
+</proto>
+<proto id="3002" name="WebClientRegist" desc="玩家注册返回" type="revc">
+    <protobuf type="uint8" name="errorID" desc="错误码 Success = 0//注册成功Failed = 1,//注册失败AlreadyExist = 2,//该账号已经存在" ></protobuf> 
+    <protobuf type="uint8" name="pid" desc="
+    平台类型 
+    
+    Internal = 0,内部登录 
+    WxMini = 1,微信小游戏" >
+    
+    </protobuf>
+</proto>
+
+<!--
+WebClientLoginReq = 3003,//玩家登录请求
+WebClientLoginRsp = 3004,//玩家登录返回
+-->
+<proto id="3003" name="WebClientLogin" desc="玩家登录请求" type="req">
+    <protobuf type="uint8" name="pid" desc="平台类型" ></protobuf> 
+    <protobuf type="string" name="account" desc="账号id" ></protobuf>
+    <protobuf type="string" name="password" desc="账号密码" ></protobuf> 
+    <!-- <protobuf type="string" name="nickName" desc="昵称" ></protobuf>  -->
+    <!-- <protobuf type="uint32" name="headUrl" desc="头像" ></protobuf>  -->
+    <protobuf type="string" name="sceneid" desc="设备ID" ></protobuf> 
+    <protobuf type="string" name="openid" desc="微信openid,非微信传空字符串" ></protobuf>
+</proto>
+<proto id="3004" name="WebClientLogin" desc="玩家登录返回" type="revc">
+    <protobuf type="uint8" name="errorID" desc="错误码
+            Success = 0,//登录成功
+            Failed = 1,//登录失败
+            AccountStopUseing = 2,//账号停用中
+            NoAccount = 3,//账号不存在
+            PasswordError = 4,//密码错误
+            Underage = 5, //未成年
+    " ></protobuf> 
+    <protobuf type="stServerConfig"  name="serverConfig" desc="服务配置信息" ></protobuf>
+    <protobuf type="stPlayerData"  name="playerData" desc="玩家数据" ></protobuf>
+    <protobuf type="stPlayerBaseInfo"  name="BaseInfo" desc="玩家基础信息" ></protobuf>
+    <protobuf type="uint8" name="newRole" desc="0老角色 1新角色" ></protobuf>
+    <protobuf type="uint8" name="season" desc="赛季" ></protobuf> 
+    <protobuf type="uint8" name="todayFirstLogin" desc="是否是当天首次登录 0否 1是" ></protobuf>
+    <protobuf type="uint8" name="todaySpirit" desc="今日已获得的神魄次数,变化走10262(全量)" ></protobuf>
+</proto>
+<proto id="3005" name="Empty" desc="空协议返回" type="revc">
+    <protobuf type="uint16" name="code" desc="自定义空协议返回的code
+        1 取消匹配成功
+        2 战斗匹配功能卡佩戴不足
+        3 战斗匹配一键佩戴功能卡成功后再次匹配战斗
+        4 功能卡分解成功
+        5 好友战等待超时
+        6 创建房间时候功能卡不足
+        7 进入房间功能卡不足
+        8 pve体力不足(弃用)
+        9 体力购买成功
+        10 pvp/pve匹配超时
+        11 关闭匹配界面
+        12 匹配取消
+        13 邀请码绑定成功
+        14 切磋取消
+        " ></protobuf> 
+</proto>
+
+<!-- stServerConfig 服务器配置 -->
+<proto name="stServerConfig">
+    <protobuf type="uint32" name="HeartMillisecond" desc="心跳间隔毫秒" ></protobuf> 
+    <protobuf type="uint32" name="ServerTime" desc="服务器时间(秒)" ></protobuf> 
+    <protobuf type="uint32" name="openTime" desc="开服时间戳,没有传0" ></protobuf> 
+</proto>
+
+<!-- stPlayerData 玩家数据 -->
+<proto name="stPlayerData">
+    <protobuf type="string" name="Account" desc="账号" ></protobuf> 
+    <protobuf type="string" name="NickName" desc="角色昵称" ></protobuf> 
+    <protobuf type="uint32" name="AccountId" desc="账号ID" ></protobuf>
+    <protobuf type="string" name="HeadUrl" desc="头像" ></protobuf>
+    <protobuf type="uint32" name="serverId" desc="区服id" ></protobuf>
+    <protobuf type="string" name="serverName" desc="区服名称" ></protobuf>
+    <protobuf type="uint16" name="level" desc="玩家当前等级" ></protobuf>
+    <protobuf type="uint32" name="curLevelExp" desc="当前等级下的经验值" ></protobuf>
+    <protobuf type="uint32" name="trophy" desc="初始的奖杯数" ></protobuf>
+    <protobuf type="uint8" name="HeadFrame" desc="头像框" ></protobuf>
+</proto>
+
+<!-- stPlayerBaseInfo 玩家基础信息 -->
+<proto name="stPlayerBaseInfo">
+    <protobuf type="array" itemtype="stCellValue" name="moneyInfo" desc="基础信息" ></protobuf> 
+</proto>
+
+<!-- 基础数据结构 -->
+<proto name="stCellValue">
+    <protobuf type="uint16" name="id" desc="货币类型1:元宝 2:铜钱 " ></protobuf> 
+    <protobuf type="uint32" name="count" desc="数量" ></protobuf> 
+</proto>
+
+<proto name="stCellValue2">
+    <protobuf type="uint16" name="id" desc="货币类型1:元宝 2:铜钱 " ></protobuf> 
+    <protobuf type="int" name="count" desc="数量（支持负数）" ></protobuf> 
+</proto>
+
+<proto id="3009" name="ValChanel" desc="只推送变化的值" type="revc">
+    <protobuf type="array" itemtype="stCellValue" name="itemList" desc="数据列表" ></protobuf> 
+</proto>
+
+<proto id="3010" name="Init" desc="初始化后通知" type="revc">
+</proto>
+<!-- 活动 -->
+<proto name="stActivityStatus">
+    <protobuf type="uint16" name="activityId" desc="活动id" ></protobuf>
+    <protobuf type="uint8" name="status" desc="1开启 0关闭" ></protobuf>
+    <protobuf type="uint32" name="starttime" desc="活动开始时间" ></protobuf>
+    <protobuf type="uint32" name="endtime" desc="活动结束时间 无结束为0" ></protobuf>
+</proto>
+<proto name="stActivityCell">
+   <protobuf type="uint16" name="id" desc="主功能对于的配置表id" ></protobuf>
+    <protobuf type="uint8" name="param1" desc="
+    默认:
+    参数 0不可领取 1可领取 2已领取
+    /////////////////////////////////////////////
+    战令(a,b奖励 a非充值奖励 b充值奖励)
+    0不可领取(未满足条件) 1可领取(未充值 a可领) 2已领取(未充值 a已领) 11可领取(已充值 a,b可领) 12已领取(已充值 a,b已领) 13领取中(已充值 a已领b可领) 14领取中(已充值 a可领b已领)
+
+    8蟠桃盛宴(0不可领取 1可领取 2已领取 3可补领)
+
+    弹出礼包(礼包领取的次数)
+    " ></protobuf>
+</proto>
+<proto name="stActivity">
+    <protobuf type="uint16" name="activityId" desc="活动id" ></protobuf>
+    <protobuf type="array" itemtype="stActivityCell" name="datalist" desc="列表" ></protobuf>
+</proto>
+<proto id="3084" name="ActivityListInit" desc="活动列表 初始化一次 只发1已领取 2可领取" type="revc">
+    <protobuf type="array" itemtype="stActivityStatus" name="status" desc="列表状态" ></protobuf>
+    <protobuf type="array" itemtype="stActivity" name="datalist" desc="列表数据" ></protobuf>
+</proto>
+<proto id="3085" name="ActivityChange" desc="活动数据变化的时候推送变量 或者活动数据主动变化的时候" type="revc">
+    <protobuf type="uint8" name="type" desc="0 代表只更新某一条,1 的代表整个datalist" ></protobuf>
+    <protobuf type="array" itemtype="stActivity" name="datalist" desc="列表" ></protobuf>
+</proto>
+<proto id="3086" name="ActivityStatus" desc="活动状态数据列表,活动开启关闭变化的时候需要推送" type="revc">
+    <protobuf type="array" itemtype="stActivityStatus" name="datalist" desc="列表" ></protobuf>
+</proto>
+<proto id="3087" name="ActivityAction" desc="领取" type="req">
+    <protobuf type="uint16" name="activityId" desc="活动id" ></protobuf>
+    <protobuf type="uint16" name="id" desc="功能对于的配置表id(0标识一键领取)" ></protobuf>
+    <protobuf type="string" name="extra" desc="
+    额外信息参数(字符串为了后期扩展),默认未空。
+    战令 不传或0是非任务 1标识每日任务 2每周任务 3赛季任务
+    基金 传type
+    电鱼活动 传抽取次数1(单次) 10(十连)
+    大鹅活动 传抽取次数1(单次) 10(十连)
+    " ></protobuf>
+</proto>
+<proto id="3088" name="MonthCardInit" desc="月卡、终身卡初始化信息" type="revc">
+    <protobuf type="uint32" name="monthCardEndUnix" desc="月卡的结束时间戳 0标识未购买月卡" ></protobuf>
+    <protobuf type="array" itemtype="stCommonTimes" name="datalist" desc="每日奖励领取 flag是月卡奖励表fid cnt标识礼包状态" ></protobuf>
+</proto>
+<proto id="3089" name="MonthCardUnix" desc="月卡结束时间变化" type="revc">
+    <protobuf type="uint32" name="unix" desc="月卡的结束时间戳 0标识未购买月卡" ></protobuf>
+</proto>
+<proto id="3090" name="MonthCardRewardTimes" desc="月卡、终身卡每日奖励领取次数变化(领的时候发变量,系统刷新是全量)" type="revc">
+    <protobuf type="uint8" name="isList" desc="0单个变量 1列表变化" ></protobuf>
+    <protobuf type="array" itemtype="stCommonTimes" name="datalist" desc="每日奖励领取 flag是月卡奖励表fid cnt标识礼包状态" ></protobuf>
+</proto>
+
+<proto id="3094" name="RechargeBill" desc="订单请求" type="req">
+    <protobuf type="uint32" name="id" desc="充值表id" ></protobuf>
+</proto>
+<proto id="3095" name="RechargeBill" desc="订单请求" type="revc">
+    <protobuf type="uint32" name="id" desc="充值表id" ></protobuf>
+    <protobuf type="string" name="val" desc="签名" ></protobuf>
+</proto>
+<proto id="3096" name="RechargeDoubledInit" desc="已领取充值双倍的信息初始化返回" type="revc">
+    <protobuf type="array" itemtype="uint16" name="datalist" desc="已领取充值双倍的信息(充值表id)" ></protobuf>
+</proto>
+<proto id="3097" name="RechargeDoubled" desc="已领取充值双倍的信息变化" type="revc">
+    <protobuf type="array" itemtype="uint16" name="datalist" desc="已领取充值双倍的信息(充值表id)" ></protobuf>
+</proto>
+
+<proto id="3107" name="ItemNotEnoughCode" desc="道具不足" type="revc">
+    <protobuf type="uint32" name="id" desc="t_item配置的f_itemid" ></protobuf>
+</proto>
+
+<proto id="3400" name="GetServerTimeMS" desc="获取服务器时间戳" type="req">
+</proto>
+<proto id="3401" name="GetServerTimeMS" desc="获取服务器时间戳" type="revc">
+    <protobuf type="uint32" name="serverTime" desc="服务器时间(毫秒)" ></protobuf> 
+</proto>
+<proto id="3252" name="wxLogin" desc="微信登录" type="req">
+    <protobuf type="string" name="appid" desc="微信小游戏appid" ></protobuf>
+    <protobuf type="string" name="openid" desc="微信用户openid" ></protobuf>
+    <protobuf type="string" name="distinctId" desc="数数distinctId" ></protobuf>
+    <protobuf type="string" name="token" desc="选服http请求返回的token" ></protobuf>
+    <protobuf type="uint8" name="type" desc="0 不是断线重连 1 是断线重连" ></protobuf>
+    <protobuf type="uint16" name="scene" desc="微信场景码,没有传0" ></protobuf> 
+    <protobuf type="uint32" name="inviterId" desc="邀请者的玩家id，没有传0" ></protobuf>
+    <protobuf type="uint32" name="tunnelId" desc="渠道id，没有传0" ></protobuf>
+    <protobuf type="uint8" name="age" desc="年龄" ></protobuf> 
+</proto>
+
+<proto id="3788" name="CreateRoleInfo" desc="创建信息在3010之前发" type="revc">
+    <protobuf type="uint8" name="isNew" desc="是否是新创角 0否 1是" ></protobuf>
+    <protobuf type="uint32" name="createUnix" desc="创建角色的时间戳" ></protobuf>
+</proto>
+
+<proto name="stServerItem" desc="区服详情">
+    <protobuf type="string" name="serverName" desc="区服名称" ></protobuf>
+    <protobuf type="string" name="naming" desc="区服冠名" ></protobuf>
+    <protobuf type="uint32" name="serverID" desc="区服ID" ></protobuf>
+    <protobuf type="uint8" name="serverState" desc="区服状态 1爆满 2畅通 3维护" ></protobuf>
+    <protobuf type="uint8" name="isNew" desc="是否是新服" ></protobuf>
+    <protobuf type="uint8" name="roleLevel" desc="区服下角色等级 0标识没有角色" ></protobuf>
+    <protobuf type="string" name="roleName" desc="玩家名" ></protobuf>
+</proto>
+
+<proto id="3106" name="UseItem" desc="使用道具" type="req">
+    <protobuf type="uint8" name="type" desc="使用场景0通用场景 1宝箱加速" ></protobuf>
+    <protobuf type="array" itemtype="stCellValue" name="itemlist" desc="物品列表" ></protobuf> 
+    <protobuf type="string" name="extra" desc="额外信息 type=1时候传递宝箱pos" ></protobuf>
+</proto>
+
+<proto name="stCellValueConvert">
+    <protobuf type="stCellValue" name="original" desc="原始道具信息"></protobuf>
+    <protobuf type="uint8" name="isConverted" desc="是否被转化 0未转化 1转化为道具 2转化为英雄" ></protobuf>
+    <protobuf type="uint16" name="convertedId" desc="转化后对应id,未转化为0" ></protobuf>
+    <protobuf type="uint32" name="convertedNum" desc="转化后的数量,未转化为0" ></protobuf>
+</proto>
+<proto id="3025" name="Reward" desc="领取奖励 失败返回通用错误码" type="revc">
+    <protobuf type="uint8" name="type" desc="类型0 默认通用类型,1宝箱获得的奖励 2新版pve新手引导奖励 3pvp回合制引导奖励 4套大鹅奖励" ></protobuf>
+    <protobuf type="array" itemtype="stCellValue" name="rewardList" desc="奖励数据列表" ></protobuf>
+    <protobuf type="array" itemtype="stCellValueConvert" name="convertedList" desc="道具转化信息" ></protobuf>
+    <protobuf type="array" itemtype="stBoxReward" name="boxes" desc="宝箱奖励" ></protobuf>
+</proto>
+
+<proto id="3262" name="ServerVersion" desc="服务器版本号" type="revc">
+    <protobuf type="string" name="val" desc="版本号" ></protobuf>
+</proto>
+
+<proto name="stMail" desc="邮件结构体">
+    <protobuf type="uint32" name="uid" desc="邮件id" ></protobuf>
+    <protobuf type="string" name="title" desc="邮件标题" ></protobuf>
+    <protobuf type="string" name="content" desc="邮件内容" ></protobuf>
+    <protobuf type="uint16" name="templateId" desc="邮件模板id 非0的就用模板" ></protobuf>
+    <protobuf type="array" itemtype="string" name="params" desc="模板参数" ></protobuf>
+    <protobuf type="array" itemtype="stCellValue" type="uint8" name="itemlist" desc="可领取的物品列表" ></protobuf>
+    <protobuf type="uint8" name="state" desc="邮件状态 0未读 1已读 2未领取 3已领取 4已删除" ></protobuf>
+    <protobuf type="uint32" name="time" desc="发布时间戳" ></protobuf>
+    <protobuf type="uint32" name="expTime" desc="到期时间戳 0标识不到期" ></protobuf>
+</proto>
+<proto id="3263" name="MailRed" desc="邮件红点（3010前和游戏中收到新邮件时都推）" type="revc">
+    <protobuf type="uint8" name="red" desc="红点 0无 1有红点" ></protobuf>
+</proto>
+<proto id="3264" name="MailList" desc="邮件列表（返回3265）" type="req">
+    <protobuf type="uint32" name="uid" desc="邮件id（删除已读、一键领取时传0）" ></protobuf>
+    <protobuf type="uint8" name="type" desc="0返回邮件列表 1已读或领取 2删除" ></protobuf>
+</proto>
+<proto id="3265" name="MailList" desc="邮件列表" type="revc">
+    <protobuf type="array" itemtype="stMail" name="datalist" desc="邮件列表" ></protobuf>
+</proto>
+
+<proto id="3258" name="ConfigHash" desc="配置文件hash" type="revc">
+    <protobuf type="string" name="val" desc="值" ></protobuf>
+</proto>
+<proto id="3394" name="FundRefresh" desc="跨天刷新" type="req"></proto>
+
+<proto name="stRedDot" desc="红点结构体">
+    <protobuf type="uint32" name="type" desc="红点类型,或者红点的值" ></protobuf>
+    <protobuf type="uint32" name="id" desc="红点id" ></protobuf>
+</proto>
+
+<proto id="3267" name="RedDotUpdate" desc="红点列表 上线的时候有且只有一次推送" type="revc">
+    <protobuf type="array" itemtype="stRedDot" name="datalist" desc="列表" ></protobuf>
+</proto>
+
+<proto id="3268" name="RedDotUpdate" desc="红点更新、添加" type="req">
+    <protobuf type="array" itemtype="stRedDot" name="datalist" desc="列表" ></protobuf>
+</proto>
+
+<proto id="3269" name="RedDotDel" desc="红点删除" type="req">
+    <protobuf type="array" itemtype="uint16" name="datalist" desc="列表" ></protobuf>
+</proto>
+
+
+
+<proto name="stSkin" desc="形象">
+    <protobuf type="uint16" name="f_HeadID" desc="头部ID" ></protobuf>
+    <protobuf type="uint16" name="f_WeaponID" desc="武器ID" ></protobuf>
+    <protobuf type="uint16" name="f_ShieldID" desc="盾ID" ></protobuf>
+    <protobuf type="uint16" name="f_WingID" desc="翅膀ID" ></protobuf>
+    <protobuf type="uint16" name="f_MountID" desc="马ID" ></protobuf>
+    <protobuf type="uint16" name="f_BodyID" desc="身体ID" ></protobuf>
+    <protobuf type="uint16" name="f_BulletPic" desc="远程攻击弹道，0表示非远程攻击" ></protobuf>
+
+    <protobuf type="uint16" name="f_WarSkinID" desc="魔兽人物形象ID" ></protobuf>
+    <protobuf type="uint16" name="f_WarWingID" desc="魔兽翅膀形象ID" ></protobuf>
+    <protobuf type="uint16" name="f_WarMountID" desc="魔兽坐骑形象ID" ></protobuf>
+</proto>
+
+<proto name="stEquipAttr" desc="装备属性">
+    <protobuf type="uint16" name="id" desc="属性类型id" ></protobuf>
+    <protobuf type="uint32" name="value" desc="属性值" ></protobuf>
+</proto>
+<!-- 组合 -->
+<proto name="stElement" desc="英雄信息">
+    <protobuf type="uint16" name="uid" desc="英雄的流水号" ></protobuf>
+    <protobuf type="uint16" name="fid" desc="t_Hero.xlsx的f_heroid" ></protobuf>
+    <protobuf type="uint16" name="skinId" desc="英雄皮肤id" ></protobuf>
+    <protobuf type="uint8" name="num" desc="英雄个数" ></protobuf>
+    <protobuf type="uint8" name="x" desc="地图上的x坐标" ></protobuf>
+    <protobuf type="uint8" name="y" desc="地图上的y坐标" ></protobuf>
+    <protobuf type="uint32" name="playerId" desc="0表示己方 >0表示敌方" ></protobuf>
+    <protobuf type="uint8" name="clone" desc="0不是分身 1是分身" ></protobuf>
+</proto>
+<proto id="3270" name="ComposeMap" desc="组合" type="revc">
+    <protobuf type="array" itemtype="stElement" name="datalist" desc="地图上已摆放的动物、格子列表（全部量）" ></protobuf>
+</proto>
+<proto id="3271" name="ComposeItem" desc="移动英雄（返回10005）" type="req">
+    <protobuf type="uint16" name="uid" desc="动物、格子的流水号" ></protobuf>
+    <protobuf type="uint8" name="x" desc="摆放在地图上的x坐标" ></protobuf>
+    <protobuf type="uint8" name="y" desc="摆放在地图上的y坐标" ></protobuf>
+</proto>
+<proto id="3272" name="ComposeItem" desc="组合结果" type="revc">
+    <protobuf type="uint8" name="type" desc="1放置，2升级，3解锁地图格子" ></protobuf>
+    <protobuf type="array" itemtype="stElement" name="updatelist" desc="更新后的动物、格子信息信息（变化量）" ></protobuf>
+    <protobuf type="array" itemtype="uint16" name="dellist" desc="升级动物后，消失的动物uid列表（变化量）" ></protobuf>
+</proto>
+<proto name="stNotice" desc="公告结构体">
+    <protobuf type="uint32" name="uid" desc="公告流水号" ></protobuf>
+    <protobuf type="uint8" name="type" desc="公告类型（1弹出公告 3跑马灯）" ></protobuf>
+    <protobuf type="uint8" name="frequent" desc="弹出公告频率 1强弹（进入游戏时弹出）2不强弹（进入游戏时不弹出，用户点击公告按钮时弹出）" ></protobuf>
+    <protobuf type="string" name="title" desc="公告标题" ></protobuf>
+    <protobuf type="string" name="content" desc="公告内容" ></protobuf>
+    <protobuf type="uint8" name="templateId" desc="模板id" ></protobuf>
+    <protobuf type="array" itemtype="string" name="params" desc="模板参数" ></protobuf>
+    <protobuf type="uint32" name="time" desc="发布时间戳" ></protobuf>
+</proto>
+<proto id="3292" name="NoticeList" desc="公告列表（3010前推，游戏中会主动推跑马灯公告）" type="revc">
+    <protobuf type="array" itemtype="stNotice" name="datalist" desc="公告列表" ></protobuf>
+</proto>
+
+<!-- 分割线 -->
+<proto id="10000" name="FuncInit" desc="功能初始化数据(3010之前)" type="revc">
+    <protobuf type="array" itemtype="uint16" name="datalist" desc="已开启的功能列表" ></protobuf>
+</proto>
+<proto id="10001" name="FuncChange" desc="功能数据变化" type="revc">
+    <protobuf type="uint8" name="type" desc="0功能关闭 1新增功能" ></protobuf>
+    <protobuf type="array" itemtype="uint16" name="datalist" desc="变动的功能" ></protobuf>
+</proto>
+<proto name="stTimer" desc="定时任务时间数据">
+    <protobuf type="uint8" name="category" desc="分类,0体力" ></protobuf>
+    <protobuf type="uint32" name="unix" desc="时间戳,0标识定时任务结束" ></protobuf>
+</proto>
+<proto id="10002" name="TimerInit" desc="定时任务时间数据初始化数据(3010之前)" type="revc">
+    <protobuf type="array" itemtype="stTimer" name="datalist" desc="定时任务相关时间数据" ></protobuf>
+</proto>
+<proto id="10003" name="TimerChange" desc="定时任务时间变化或新增" type="revc">
+    <protobuf type="array" itemtype="stTimer" name="datalist" desc="定时任务相关时间数据" ></protobuf>
+</proto>
+
+<proto id="10004" name="ComposeFresh" desc="刷新组合列表（返回10005）" type="req">
+    <protobuf type="uint8" name="type" desc="刷新类型 1每回合系统刷新 2银币刷新 3广告刷新" ></protobuf>
+</proto>
+<proto id="10005" name="ComposeUpdate" desc="动物、格子变化量" type="revc">
+    <protobuf type="uint16" name="cardId" desc="功能卡id" ></protobuf>
+    <protobuf type="uint32" name="serialNum" desc="功能卡序列号" ></protobuf>
+    <protobuf type="uint8" name="type" desc="0刷新 1合成 2移动 3售卖 4功能卡 5赌博 6变身 7分身 8分身过期（移除英雄）9技能召唤 10消灭自己（技能）11冻结格子 12换成同品质的其他英雄" ></protobuf>
+    <protobuf type="array" itemtype="stElement" name="datalist" desc="刷到的动物、格子列表" ></protobuf>
+    <protobuf type="array" itemtype="uint16" name="dellist" desc="升级动物后，消失的动物uid列表（变化量）" ></protobuf>
+</proto>
+<proto name="stMove" desc="动物、格子移动的信息">
+    <protobuf type="uint8" name="x" desc="x坐标" ></protobuf>
+    <protobuf type="uint8" name="y" desc="y坐标" ></protobuf>
+    <protobuf type="uint16" name="uid" desc="动物、格子的uid" ></protobuf>
+</proto>
+<proto id="10006" name="ComposeMove" desc="批量移动组合（返回10005）" type="req">
+    <protobuf type="array" itemtype="stMove" name="datalist" desc="移动的动物、格子移动的信息" ></protobuf>
+</proto>
+<proto name="stAnimal" desc="动物结构体">
+    <protobuf type="uint8" name="type" desc="动物分类,对应t_Animal_List的f_type" ></protobuf>
+    <protobuf type="uint16" name="level" desc="当前动物的等级" ></protobuf>
+    <protobuf type="uint8" name="star" desc="当前动物的星级" ></protobuf>
+    <protobuf type="uint8" name="pos" desc="当前动物所在格子的位置,0标识不在格子中" ></protobuf>
+</proto>
+<proto id="10007" name="AnimalInit" desc="动物初始化返回" type="revc">
+    <protobuf type="array" itemtype="stAnimal" name="animals" desc="解锁的动物信息" ></protobuf>
+    <protobuf type="array" itemtype="uint8" name="slots" desc="已解锁的动物格子id" ></protobuf>
+</proto>
+<proto id="10008" name="AnimalSlot" desc="动物格子增量,只增不减" type="revc">
+    <protobuf type="array" itemtype="uint8" name="slots" desc="格子增量" ></protobuf>
+</proto>
+<proto id="10009" name="Animal" desc="动物变化/新增" type="revc">
+    <protobuf type="uint8" name="type" desc="0标识变化 1标识新增" ></protobuf>
+    <protobuf type="array" itemtype="stAnimal" name="animals" desc="动物变化/新增信息" ></protobuf>
+</proto>
+<proto id="10010" name="AnimalMove" desc="动物上下阵,返回10009" type="req">
+    <protobuf type="uint8" name="animalType" desc="动物分类,对应t_Animal_List的f_type" ></protobuf>
+    <protobuf type="uint8" name="pos" desc="0标识下阵 >0上阵到具体位置" ></protobuf>
+</proto>
+<proto id="10011" name="AnimalRaise" desc="动物升级/升星" type="req">
+    <protobuf type="uint8" name="animalType" desc="动物分类,对应t_Animal_List的f_type" ></protobuf>
+    <protobuf type="uint8" name="action" desc="0标识升级 1标识升星" ></protobuf>
+</proto>
+<proto name="stHero" desc="英雄结构体">
+    <protobuf type="uint8" name="id" desc="英雄id,对应t_Hero.xlsx中f_heroid" ></protobuf>
+    <protobuf type="uint16" name="level" desc="当前英雄的等级" ></protobuf>
+    <protobuf type="uint16" name="skinId" desc="当前英雄穿戴的皮肤id" ></protobuf>
+    <protobuf type="array" itemtype="uint16" name="skins" desc="当前英雄拥有的皮肤" ></protobuf>
+    <protobuf type="uint32" name="collect" desc="收藏的序列号 小于等于0标识未收藏,越大表示越近收藏" ></protobuf>
+</proto>
+<proto id="10012" name="HeroInit" desc="英雄初始化返回" type="revc">
+    <protobuf type="array" itemtype="stHero" name="heros" desc="解锁的英雄信息" ></protobuf>
+</proto>
+<proto id="10013" name="HeroRaise" desc="英雄升级/升星" type="req">
+    <protobuf type="uint8" name="heroId" desc="英雄id" ></protobuf>
+    <protobuf type="uint8" name="action" desc="0标识升级 1标识升星" ></protobuf>
+    <protobuf type="stCellValue" name="universal" desc="通用英雄升级道具" ></protobuf> 
+</proto>
+<proto id="10014" name="Hero" desc="英雄变化/新增" type="revc">
+    <protobuf type="uint8" name="type" desc="0标识变化 1标识新增 2切换皮肤返回 3收藏变化" ></protobuf>
+    <protobuf type="array" itemtype="stHero" name="heros" desc="英雄变化/新增信息" ></protobuf>
+</proto>
+<proto id="10015" name="ClientLogin" desc="业务服登录到战斗服务器" type="req">
+    <protobuf type="uint16" name="tcpId" desc="业务服的tcpId" ></protobuf>
+</proto>
+<proto id="10016" name="HeroBuy" desc="购买英雄" type="req">
+    <protobuf type="uint8" name="heroId" desc="英雄id" ></protobuf>
+</proto>
+<proto id="10017" name="HeroSwitchSkin" desc="英雄切换皮肤" type="req">
+    <protobuf type="uint8" name="heroId" desc="英雄id" ></protobuf>
+    <protobuf type="uint16" name="skinId" desc="皮肤id" ></protobuf>
+</proto>
+<proto id="10018" name="HeroBuySkin" desc="英雄切换皮肤" type="req">
+    <protobuf type="uint16" name="skinItemId" desc="皮肤道具id" ></protobuf>
+</proto>
+<proto id="10019" name="HeroCollect" desc="英雄收藏,返回10014" type="req">
+    <protobuf type="uint8" name="heroId" desc="英雄id" ></protobuf>
+    <protobuf type="uint8" name="action" desc="0取消收藏 1收藏" ></protobuf>
+</proto>
+<proto id="10029" name="BoxHandle" desc="宝箱处理" type="revc">
+    <protobuf type="stBoxReward" name="boxReward" desc="宝箱奖励" ></protobuf>
+</proto>
+<proto name="stBox" desc="宝箱结构体">
+    <protobuf type="uint16" name="boxId" desc="宝箱id,对应t_Box_Reward_Rate的f_box_id" ></protobuf>
+    <protobuf type="uint8" name="pos" desc="宝箱所在的栏位" ></protobuf>
+    <protobuf type="uint32" name="unlockUnix" desc="解锁可打开的时间(0即未解锁需用户点击解锁,当前时间>=解锁时间即可领取当前宝箱奖励)" ></protobuf>
+    <protobuf type="uint8" name="state" desc="宝箱状态 0尚未解锁 1解锁中 2可开启 3可以解锁" ></protobuf>
+    <protobuf type="array" itemtype="stCellValue" name="costs" desc="解锁宝箱的消耗,可开启的消耗为空" ></protobuf> 
+</proto>
+<proto id="10030" name="BoxInit" desc="宝箱信息初始化" type="revc">
+    <protobuf type="array" itemtype="stBox" name="boxes" desc="宝箱列表" ></protobuf>
+</proto>
+<proto id="10031" name="BoxDel" desc="宝箱删除,领取宝箱奖励后则删除宝箱" type="revc">
+    <protobuf type="array" itemtype="uint8" name="datalist" desc="宝箱所在的位置" ></protobuf>
+</proto>
+<proto id="10032" name="BoxHandle" desc="宝箱处理" type="req">
+    <protobuf type="uint8" name="action" desc="0标识解锁宝箱(返回10033) 1标识领取宝箱奖励(返回10031+3009+10029(type=1)) 2使用道具解锁(返回10031+3009+10029(type=1))" ></protobuf>
+    <protobuf type="uint8" name="pos" desc="宝箱所在的栏位" ></protobuf>
+</proto>
+<proto id="10033" name="BoxChange" desc="宝箱信息新增/变化" type="revc">
+    <protobuf type="uint8" name="type" desc="0标识宝箱信息变化(解锁宝箱时候) 1新获得宝箱" ></protobuf>
+    <protobuf type="array" itemtype="stBox" name="boxes" desc="宝箱列表" ></protobuf>
+</proto>
+<proto name="stFCard" desc="功能卡结构体">
+    <protobuf type="uint16" name="id" desc="功能卡id,对应t_Function_Card" ></protobuf>
+    <protobuf type="uint16" name="num" desc="功能卡的数量" ></protobuf>
+</proto>
+<proto name="stFCardInner" desc="局内功能卡信息">
+    <protobuf type="uint8" name="serialNum" desc="当前功能卡的序列号(唯一)" ></protobuf>
+    <protobuf type="uint16" name="pos" desc="功能卡的位置" ></protobuf>
+    <protobuf type="uint16" name="fCardId" desc="功能卡id,对应t_Function_Card" ></protobuf>
+    <protobuf type="uint8" name="used" desc="功能卡是否已使用 0未使用  1已使用 2使用但无效 3丢弃" ></protobuf>
+</proto>
+<proto name="stFCardGuarante" desc="功能卡保底信息">
+    <protobuf type="uint8" name="packageid" desc="卡包ID" ></protobuf>
+    <protobuf type="uint8" name="qua" desc="卡包ID对应的品质" ></protobuf>
+    <protobuf type="uint8" name="guarante" desc="还有多少次触发保底" ></protobuf>
+</proto>
+<proto name="stFCardPlan" desc="功能卡方案">
+    <protobuf type="uint8" name="id" desc="方案id,如1 2 3" ></protobuf>
+    <protobuf type="array" itemtype="stFCard" name="cards" desc="功能卡信息" ></protobuf>
+</proto>
+<proto id="10034" name="FCardInit" desc="功能卡信息初始化" type="revc">
+    <protobuf type="array" itemtype="stFCard" name="cards" desc="拥有的功能卡列表" ></protobuf>
+    <protobuf type="uint8" name="planId" desc="方案id,如1 2 3" ></protobuf>
+    <protobuf type="array" itemtype="stFCardPlan" name="cardPlans" desc="功能卡方案" ></protobuf>
+    <protobuf type="array" itemtype="stFCardGuarante" name="guaranteList" desc="保底列表" ></protobuf>
+</proto>
+<proto id="10035" name="FCardMove" desc="功能卡穿、脱,返回10043,toFight=1会额外返回10053" type="req">
+    <protobuf type="uint8" name="planId" desc="方案id,如1 2 3" ></protobuf>
+    <protobuf type="uint8" name="action" desc="0脱 1穿" ></protobuf>
+    <protobuf type="uint8" name="toFight" desc="0否 1是(一键装备后去匹配战斗) 2(创建房间) 3(进入房间)" ></protobuf>
+    <protobuf type="uint16" name="fCardId" desc="功能卡ID,若为0则标识一键脱、穿" ></protobuf>
+</proto>
+<proto id="10036" name="FCardExtract" desc="抽取功能卡,返回10051,10037" type="req">
+    <protobuf type="uint8" name="packageid" desc="卡包id" ></protobuf>
+</proto>
+<proto id="10037" name="FCardChange" desc="功能卡数量变化(变化后的全量)" type="revc">
+    <protobuf type="array" itemtype="stFCard" name="cards" desc="拥有的功能卡列表" ></protobuf>
+</proto>
+<proto id="10038" name="FCardPlanChange" desc="切换功能卡方案" type="req">
+    <protobuf type="uint8" name="planId" desc="方案id,如1 2 3" ></protobuf>
+</proto>
+<proto id="10039" name="FCardPlanChange" desc="切换功能卡方案" type="revc">
+    <protobuf type="uint8" name="planId" desc="方案id,如1 2 3" ></protobuf>
+</proto>
+<proto id="10040" name="FCardUse" desc="局内使用功能卡" type="req">
+    <protobuf type="uint8" name="serialNum" desc="局内功能卡的序列号" ></protobuf>
+</proto>
+<proto id="10041" name="FCardInnerInit" desc="局内功能卡初始化列表" type="revc">
+    <protobuf type="array" itemtype="stFCardInner" name="cards" desc="局内功能卡信息" ></protobuf>
+</proto>
+<proto id="10042" name="FCardInnerChange" desc="局内功能卡变化" type="revc">
+    <protobuf type="uint32" name="playerId" desc="谁用的功能卡" ></protobuf>
+    <protobuf type="array" itemtype="stFCardInner" name="cards" desc="局内功能卡信息" ></protobuf>
+</proto>
+<proto id="10043" name="FCardChangePlan" desc="功能卡方案数据变化(变化后的全量,直接=即可)" type="revc">
+    <protobuf type="array" itemtype="stFCardPlan" name="cards" desc="功能卡方案列表" ></protobuf>
+</proto>
+<proto name="stTreasure" desc="局内功能卡信息">
+    <protobuf type="uint8" name="id" desc="对应t_Treasure的灵宝id" ></protobuf>
+    <protobuf type="uint8" name="level" desc="等级" ></protobuf>
+</proto>
+<proto id="10044" name="TreasureInit" desc="文物/宝物信息初始化" type="revc">
+    <protobuf type="uint8" name="guarante" desc="还有多少次触发橙色保底" ></protobuf>
+    <protobuf type="array" itemtype="stTreasure" name="datalist" desc="文物/宝物列表" ></protobuf>
+</proto>
+<proto id="10045" name="Treasure" desc="抽取文物/宝物,返回10170+10046" type="req">
+    <protobuf type="uint8" name="flag" desc="0默认单抽 1十连抽" ></protobuf>
+</proto>
+<proto id="10046" name="Treasure" desc="抽取文物/宝物变化或新增" type="revc">
+    <protobuf type="uint8" name="flag" desc="0变化 1新增" ></protobuf>
+    <protobuf type="array" itemtype="stTreasure" name="datalist" desc="文物/宝物列表" ></protobuf>
+</proto>
+<proto id="10047" name="TreasureRaise" desc="文物/宝物升级" type="req">
+    <protobuf type="uint8" name="id" desc="对应t_Treasure的灵宝id" ></protobuf>
+</proto>
+<proto id="10048" name="AddExp" desc="增加经验,开发测试环境下使用" type="req">
+    <protobuf type="uint16" name="cnt" desc="加的经验值,0标识默认,默认加100" ></protobuf>
+</proto>
+<proto id="10049" name="FCardBreakDown" desc="功能卡分解,返回10037,3005/4,3009,3025" type="req">
+    <protobuf type="array" itemtype="stFCard" name="cards" desc="功能卡信息" ></protobuf>
+</proto>
+<proto id="10050" name="FCardGuaranteChange" desc="功能卡保底信息变化" type="revc">
+    <protobuf type="array" itemtype="stFCardGuarante" name="datalist" desc="保底信息变化" ></protobuf>
+</proto>
+<proto id="10051" name="FCardExtract" desc="收到的功能卡信息" type="revc">
+    <protobuf type="uint8" name="packageid" desc="卡包id" ></protobuf>
+    <protobuf type="array" itemtype="stFCard" name="cards" desc="抽到的功能卡信息" ></protobuf>
+</proto>
+<proto id="10052" name="FCardBuyPackage" desc="收到的功能卡信息" type="req">
+    <protobuf type="uint8" name="packageid" desc="卡包ID" ></protobuf>
+    <protobuf type="uint32" name="num" desc="购买的数量" ></protobuf>
+    <protobuf type="uint8" name="flag" desc="0购买 1碎片兑换" ></protobuf>
+</proto>
+<proto id="10053" name="FCardEnough" desc="功能卡是否足够" type="revc">
+    <protobuf type="uint8" name="enough" desc="o不足 1足够 2创建房间足够 3进入房间足够" ></protobuf>
+</proto>
+<proto id="10054" name="FCardInnerCD" desc="局内功能卡变化" type="revc">
+    <protobuf type="uint32" name="unix" desc="下次功能卡可用的时间戳,0标识都可以使用,初始化是0" ></protobuf>
+</proto>
+
+<proto name="stMonsterBirth">
+    <protobuf type="uint32" name="uid" desc="怪的序列号" ></protobuf> 
+    <protobuf type="uint16" name="fid" desc="怪f_id" ></protobuf> 
+    <protobuf type="uint32" name="time" desc="出生偏移时间（毫秒）" ></protobuf>
+    <protobuf type="uint32" name="blood" desc="怪物总血量"></protobuf>
+    <protobuf type="uint32" name="blood2" desc="强化怪物总血量（先扣blood2 再扣blood1）"></protobuf>
+    <protobuf type="uint32" name="playerId" desc="玩家id" ></protobuf>
+    <protobuf type="uint32" name="disappearTime" desc="boss消失时间（秒）" ></protobuf> 
+    <protobuf type="uint16" name="index" desc="怪物当前位置" ></protobuf>
+    <protobuf type="uint32" name="curBlood" desc="怪物当前血量"></protobuf>
+    <protobuf type="uint32" name="curBlood2" desc="强化怪物总血量"></protobuf>
+    <protobuf type="uint32" name="skinId" desc="怪物皮肤（功能卡召唤时有，其他情况传0）"></protobuf>
+</proto>
+<proto name="stMonsterWalk">
+    <protobuf type="uint32" name="uid" desc="怪的序列号" ></protobuf> 
+    <protobuf type="uint32" name="time" desc="移动一格需要的时间" ></protobuf>
+    <protobuf type="uint16" name="index" desc="小格子下标（从0开始，表示出生点1,1）当前的位置" ></protobuf>
+</proto>
+<proto id="10100" name="MonsterBirth" desc="创建房间（进入竞技场发，返回10101）" type="req">
+    <protobuf type="uint8" name="mode" desc="1-pvp模式 2-pve模式 3-pvp回合制 4-pve困难模式 5-pve年兽" ></protobuf>
+</proto>
+<proto id="10101" name="MonsterBirth" desc="怪物出生" type="revc">
+    <protobuf type="uint8" name="wave" desc="波次"></protobuf>
+    <protobuf type="uint32" name="serverTime" desc="服务器当前时间（秒，偏移时间以此为基准）"></protobuf>
+    <protobuf type="array" itemtype="stMonsterBirth" name="datalist" desc="怪物出生信息列表" ></protobuf>
+</proto>
+<proto id="10102" name="MonsterWalk" desc="怪物行走同步（服务器主动推送）" type="revc">
+    <protobuf type="array" itemtype="stMonsterWalk" name="datalist" desc="怪物行走信息列表" ></protobuf>
+</proto>
+
+<proto name="stFightSkillEffect" desc="技能效果">
+    <protobuf type="uint8" name="type" desc="技能类型type=1 params[0]技能id params[1]技能参数1 10008(攻击间隔)的属性值..."></protobuf>
+    <protobuf type="uint16" name="attackerUid" desc="攻击者格子的uid" ></protobuf> 
+    <protobuf type="uint8" name="index" desc="格子里的第几个人，0表示第一个"></protobuf>
+    <protobuf type="array" itemtype="uint16" name="targetUids" desc="受击者列表" ></protobuf>
+    <protobuf type="array" itemtype="uint32" name="params" desc="参数列表" ></protobuf>
+</proto>
+
+<proto name="stSubBlood" desc="扣血">
+    <protobuf type="uint8" name="type" desc="效果类型0-11
+    
+    0 物理伤害
+    1 魔法伤害
+    2 真实伤害
+    3 暴击伤害
+    4 恢复的blood
+    5 恢复的blood2
+    "></protobuf>
+    <protobuf type="uint16" name="targetUid" desc="受击者" ></protobuf> 
+    <protobuf type="uint32" name="value" desc="血量伤害的值" ></protobuf>
+</proto>
+<proto id="10103" name="MonsterRemove" desc="怪物移除" type="revc">
+    <protobuf type="uint16" name="targetUid" desc="怪物uid" ></protobuf> 
+</proto>
+<proto id="10104" name="MonsterAttack" desc="怪物受击特效" type="revc" >
+    <protobuf type="array" itemtype="stFightSkillEffect"  name="datalist" desc="怪物受击信息列表" ></protobuf> 
+</proto>
+<proto id="10105" name="MonsterBlood" desc="怪物减血" type="revc" >
+    <protobuf type="array" itemtype="stSubBlood" name="datalist" desc="怪物减血信息列表" ></protobuf> 
+</proto>
+<proto id="10106" name="MonsterWave" desc="怪物波次" type="revc" >
+    <protobuf type="uint8" name="wave" desc="波次"></protobuf> 
+    <protobuf type="uint32" name="nextWaveTime" desc="下一波次的时间戳（秒）"></protobuf> 
+</proto>
+<proto id="10107" name="WaveCountDown" desc="波次倒数" type="revc" >
+    <protobuf type="uint8" name="num" desc="倒计时（秒数）"></protobuf>
+</proto>
+<proto id="10108" name="HeroUpgrade" desc="英雄合成升级（返回10005）" type="req" >
+    <protobuf type="array" itemtype="uint16" name="datalist" desc="参与合成的uid数组"></protobuf>
+</proto>
+<proto id="10109" name="CancelMatch" desc="取消匹配(返回3005 code=1)" type="req" >
+</proto>
+<proto name="stPlayerInRoom" desc="pvp房间内玩家的基础信息">
+    <protobuf type="uint32" name="playerId" desc="玩家角色ID" ></protobuf>
+    <protobuf type="uint16" name="playerLevel" desc="角色等级"></protobuf>
+    <protobuf type="string" name="nickName" desc="角色昵称" ></protobuf>
+    <protobuf type="uint32" name="trophy" desc="奖杯数量" ></protobuf>
+    <protobuf type="string" name="headUrl" desc="头像" ></protobuf>
+    <protobuf type="uint16" name="maxMonster" desc="怪物最大上限" ></protobuf>
+    <protobuf type="uint8" name="maxHero" desc="英雄数量最大上限" ></protobuf>
+    <protobuf type="uint16" name="titleId" desc="称号id" ></protobuf>
+</proto>
+<proto id="10110" name="PvPRoomInfo" desc="pvp房间信息" type="revc" >
+    <protobuf type="uint32" name="roomId" desc="房间号"></protobuf>
+    <protobuf type="uint8" name="mode" desc="1-pvp模式 2-pve模式"></protobuf>
+    <protobuf type="array" itemtype="stPlayerInRoom" name="datalist" desc="房间里的玩家信息"></protobuf>
+</proto>
+<proto id="10111" name="PvPMatchResult" desc="匹配结果返回,只用于关闭匹配界面" type="revc" >
+    <protobuf type="uint8" name="flag" desc="0匹配失败或超时 1匹配成功"></protobuf>
+</proto>
+<proto id="10112" name="CreateRoom" desc="请求创建房间(与战斗服务器通信)" type="req" >
+    <protobuf type="uint8" name="isFriend" desc="是否是好友战斗 1是 0否"></protobuf>
+    <protobuf type="uint8" name="mode" desc="1-pvp模式 2-pve模式"></protobuf>
+    <protobuf type="uint8" name="isNewGuide" desc="0非新手引导 1新手引导"></protobuf>
+    <protobuf type="array" itemtype="stPlayerInRoom"  name="datalist" desc="房间里面有哪些角色" ></protobuf> 
+</proto>
+
+<proto id="10113" name="FightWin" desc="胜利方战斗结束" type="req" >
+    <protobuf type="uint32" name="roomId" desc="房间号"></protobuf>
+    <protobuf type="uint32" name="playerId" desc="win的玩家" ></protobuf>
+</proto>
+<proto name="stFightResult" desc="战斗结果">
+    <protobuf type="uint32" name="playerId" desc="玩家角色ID" ></protobuf>
+    <protobuf type="uint16" name="robotId" desc="机器人ID（不是机器人时传0）" ></protobuf>
+    <protobuf type="uint8" name="win" desc="0输 1赢"></protobuf>
+    <protobuf type="uint32" name="trophy" desc="奖杯积分变化 赢是加 输是减" ></protobuf>
+    <protobuf type="array" itemtype="uint16" name="boxIds" desc="宝箱id,对应t_Box_Reward_Rate的f_box_id,为空则没有宝箱" ></protobuf>
+    <protobuf type="uint8" name="boxPos" desc="宝箱所在的位置,0就是没有位置"></protobuf>
+    <protobuf type="array" itemtype="stCellValue" name="itemList" desc="道具奖励列表,空则标识没有" ></protobuf>
+    <protobuf type="uint32" name="killNum" desc="击杀怪物数量" ></protobuf>
+    <protobuf type="uint8" name="isBest" desc="pve是否最佳回合数 0否 1是" ></protobuf>
+    <protobuf type="uint8" name="monsterNum" desc="场上怪物数量" ></protobuf>
+</proto>
+<proto id="10114" name="FightResult" desc="战斗结束结果" type="revc" >
+    <protobuf type="uint8" name="mode" desc="1-pvp模式 2-pve模式"></protobuf>
+    <protobuf type="uint8" name="wave" desc="波次"></protobuf>
+    <protobuf type="uint8" name="type" desc="结果类型 1怪物数量 2未击杀妖王 3妖王剩余血量 4优先击杀最终妖王"></protobuf>
+    <protobuf type="array" itemtype="stFightResult"  name="datalist" desc="战斗结果" ></protobuf> 
+    <protobuf type="uint8" name="newGuide" desc="默认0，1表示pve新手引导" ></protobuf>
+</proto>
+<proto id="10115" name="SommonBoss" desc="召唤限时boss（返回10101、10123）" type="req" >
+</proto>
+<proto name="stStrengthenItem" desc="强化结构体">
+    <protobuf type="uint8" name="pos" desc="0-4表示强化从左到右的顺序" ></protobuf>
+    <protobuf type="uint8" name="level" desc="强化等级"></protobuf>
+</proto>
+<proto id="10116" name="StrengthenList" desc="强化等级信息（全部量）" type="revc" >
+    <protobuf type="array" itemtype="stStrengthenItem" name="datalist" desc="强化等级数据列表" ></protobuf> 
+</proto>
+<proto id="10117" name="StrengthenUpdate" desc="强化某个品质的英雄（返回10118）" type="req" >
+    <protobuf type="uint8" name="pos" desc="0-3表示强化从左到右的顺序" ></protobuf>
+</proto>
+<proto id="10118" name="StrengthenUpdate" desc="强化某个品质的英雄（变化量）" type="revc" >
+    <protobuf type="stStrengthenItem" name="data" desc="强化结果" ></protobuf>
+</proto>
+<proto id="10119" name="SommonBossShow" desc="显示召唤限时boss的按钮" type="revc" >
+    <protobuf type="uint16" name="monterId" desc="怪物的id，t_Monster表f_monsterid" ></protobuf>
+</proto>
+<proto id="10120" name="SommonHeroCost" desc="召唤英雄花费" type="revc" >
+    <protobuf type="array" itemtype="stCellValue" name="moneyInfo" desc="基础信息" ></protobuf> 
+</proto>
+<proto id="10121" name="SellHero" desc="卖掉英雄(返回10005, 3009)" type="req" >
+    <protobuf type="uint16" name="uid" desc="英雄uid" ></protobuf>
+</proto>
+<proto id="10122" name="SommonBoss" desc="召唤显示boss成功" type="revc">
+</proto>
+<proto name="stTask" desc="pvp房间内玩家的基础信息">
+    <protobuf type="uint16" name="taskId" desc="任务id（t_Battle_Task表f_id）" ></protobuf>
+    <protobuf type="uint32" name="num" desc="任务完成数量"></protobuf>
+    <protobuf type="uint8" name="state" desc="0未完成 1已完成（奖励再任务完成时自动发放）" ></protobuf>
+</proto>
+<proto id="10123" name="TaskList" desc="局内任务列表（全部量）" type="revc">
+    <protobuf type="array" itemtype="stTask" name="datalist" desc="任务列表" ></protobuf> 
+</proto>
+<proto id="10124" name="TaskUpdate" desc="局内任务更新（变化量）" type="revc">
+    <protobuf type="array" itemtype="stTask" name="datalist" desc="任务列表" ></protobuf> 
+</proto>
+<proto name="stFightReport" desc="局外战报结构体">
+    <protobuf type="string" name="rivalNickName" desc="对手昵称" ></protobuf> 
+    <protobuf type="string" name="rivalHeadUrl" desc="对手头像" ></protobuf> 
+    <protobuf type="uint16" name="rivalLevel" desc="对手等级" ></protobuf> 
+    <protobuf type="uint32" name="fightStartUnix" desc="战斗开始时间（秒）" ></protobuf> 
+    <protobuf type="uint16" name="duration" desc="战斗时长（秒）" ></protobuf> 
+    <protobuf type="uint8" name="win" desc="战斗结果（0输 1赢）" ></protobuf> 
+    <protobuf type="uint8" name="trophy" desc="奖杯变化数" ></protobuf>
+    <protobuf type="uint32" name="trophy0" desc="战斗开始时的奖杯数量" ></protobuf>
+    <protobuf type="uint8" name="enemyTrophy" desc="敌人奖杯变化数" ></protobuf>
+    <protobuf type="uint32" name="enemyTrophy0" desc="敌人战斗开始时的奖杯数量" ></protobuf>
+    <protobuf type="uint32" name="enemyId" desc="敌人id" ></protobuf>
+    <protobuf type="uint8" name="result" desc="胜负原因" ></protobuf> 
+    <protobuf type="uint8" name="isFriend" desc="是否是好友战斗 1是 0否" ></protobuf>
+    <protobuf type="uint8" name="wave" desc="结束时的波次" ></protobuf>
+    <protobuf type="string" name="superHeroFids" desc="神话英雄(英雄fid，己方多个用-分割|敌方多个用-分割)" ></protobuf>
+    <protobuf type="uint8" name="mode" desc="1-pvp模式 2-pve模式" ></protobuf>
+</proto>
+<proto id="10125" name="FightReport" desc="战报（返回10126）" type="req">
+</proto>
+<proto id="10126" name="FightReport" desc="战报（全部量）" type="revc">
+    <protobuf type="array" itemtype="stFightReport" name="datalist" desc="战报列表" ></protobuf>
+</proto>
+<proto id="10127" name="WatchHero" desc="查看英雄属性" type="req">
+    <protobuf type="uint16" name="uid" desc="英雄uid" ></protobuf>
+</proto>
+<proto id="10128" name="WatchHero" desc="查看英雄属性" type="revc">
+    <protobuf type="uint16" name="uid" desc="英雄uid" ></protobuf>
+    <protobuf type="uint16" name="lv" desc="英雄lv" ></protobuf>
+    <protobuf type="array" itemtype="stCellValue" name="datalist" desc="属性列表" ></protobuf>
+</proto>
+<proto id="10129" name="Gamble" desc="赌博请求" type="req">
+    <protobuf type="uint8" name="flag" desc="1蓝色 2紫色 3橙色赌博" ></protobuf>
+</proto>
+<proto id="10130" name="FightAddItems" desc="局内战斗增加道具,开发环境下使用" type="req">
+    <protobuf type="array" itemtype="stCellValue2" name="itemList" desc="数据列表" ></protobuf> 
+</proto>
+<proto id="10131" name="Gamble" desc="赌博返回" type="revc">
+    <protobuf type="uint8" name="flag" desc="1蓝色 2紫色 3橙色赌博" ></protobuf>
+    <protobuf type="uint8" name="success" desc="0失败 1成功" ></protobuf>
+    <protobuf type="uint16" name="heroId" desc="合成神话英雄的id(Hero表f_heroid)"></protobuf>
+</proto>
+<proto id="10132" name="SuperHero" desc="合成神话英雄（返回10005）" type="req">
+    <protobuf type="uint16" name="heroId" desc="合成神话英雄的id(Hero表f_heroid)"></protobuf>
+</proto>
+<proto name="stTaskOut" desc="场外任务列表">
+    <protobuf type="uint16" name="id" desc="每日任务对应t_Daily_Task的f_id,累计任务对应t_Achieve_Task的f_id(相同f_task_type只给当前的id)" ></protobuf>
+    <protobuf type="uint32" name="val" desc="任务完成的数量" ></protobuf>
+    <protobuf type="uint8" name="status" desc="领取状态 0不可领取 1可领取 2已领取"></protobuf>
+</proto>
+<proto name="stTaskOutActivation" desc="场外任务活跃度奖励">
+    <protobuf type="uint8" name="id" desc="活跃度奖励id" ></protobuf>
+    <protobuf type="uint8" name="status" desc="领取状态 0不可领取 1可领取 2已领取"></protobuf>
+</proto>
+<proto id="10133" name="TaskOutInit" desc="每日与累计任务初始化信息" type="revc">
+    <protobuf type="uint16" name="activation" desc="每日的活跃度"></protobuf>
+    <protobuf type="array" itemtype="stTaskOutActivation" name="activationRewards" desc="活跃度奖励领取情况" ></protobuf>
+    <protobuf type="array" itemtype="stTaskOut" name="dailyTasks" desc="每日任务详情" ></protobuf>
+    <protobuf type="array" itemtype="stTaskOut" name="achieveTasks" desc="成就任务详情,相同类型只给最新数据" ></protobuf>
+</proto>
+<proto id="10134" name="TaskOutReward" desc="领取任务奖励" type="req">
+    <protobuf type="uint8" name="flag" desc="0每日任务 1累计任务 2活跃度奖励" ></protobuf>
+    <protobuf type="uint16" name="id" desc="(每日与累计对应表不一样,0代表一键领取)每日任务对应t_Daily_Task_Reward的f_id,累计任务对应t_Achieve_Task的f_id"></protobuf>
+</proto>
+<proto id="10135" name="TaskOutActivation" desc="任务每日活跃度变化" type="revc">
+    <protobuf type="uint16" name="activation" desc="每日的活跃度,直接="></protobuf>
+</proto>
+<proto id="10136" name="TaskOutChange" desc="每日与累计任务数据变化" type="revc">
+    <protobuf type="uint8" name="flag" desc="0每日任务 1累计任务" ></protobuf>
+    <protobuf type="array" itemtype="stTaskOut" name="tasks" desc="任务数据变化"></protobuf>
+</proto>
+<proto id="10137" name="TaskOutActivationReward" desc="每日活跃度奖励变化" type="revc">
+    <protobuf type="array" itemtype="stTaskOutActivation" name="rewards" desc="任务奖励领取详情"></protobuf>
+</proto>
+<proto id="10138" name="RedemptionCode" desc="兑换码（错误返回1004错误码，正确返回3009，3025）" type="req">
+    <protobuf type="string" name="code" desc="兑换码" ></protobuf>
+</proto>
+<proto name="stSkillBar" desc="英雄技能条">
+    <protobuf type="uint16" name="uid" desc="格子uid" ></protobuf>
+    <protobuf type="uint8" name="percent" desc="技能条百分比" ></protobuf>
+</proto>
+<proto id="10139" name="SkillBar" desc="英雄技能条" type="revc">
+    <protobuf type="array" itemtype="stSkillBar" name="datalist" desc="英雄技能条列表" ></protobuf>
+</proto>
+<proto id="10140" name="GMSommonHero" desc="gm局内召唤英雄" type="req">
+    <protobuf type="uint16" name="heroId" desc="召唤英雄的id" ></protobuf>
+    <protobuf type="uint16" name="num" desc="召唤的数量"></protobuf>
+</proto>
+
+<!---
+    1.如果当在战斗场景中就需要在3010之前推送10110(PvPRoomInfo)客户端根据这个信息来判断是否需要进入局内战斗
+-->
+<proto id="10141" name="EnterFightAgain" desc="重新进入战斗 返回10142之后开始局内数据更新" type="req">
+</proto>
+
+<proto id="10142" name="FightSceneInfo" desc="场景信息" type="revc">
+    <protobuf type="uint8" name="status" desc="0 没有房间 1 有房间" ></protobuf>
+    <protobuf type="uint8" name="mode" desc="1-pvp模式 2-pve模式" ></protobuf>
+    <protobuf type="array" itemtype="stElement" name="heros" desc="英雄列表" ></protobuf>
+    <protobuf type="array" itemtype="stMonsterBirth" name="monsters" desc="怪物列表" ></protobuf>
+</proto>
+
+<proto name="stBattleBuff" desc="局内全局buff">
+    <protobuf type="uint16" name="attrId" desc="buff属性id" ></protobuf>
+    <protobuf type="uint8" name="operator" desc="1是增加，2是减小" ></protobuf>
+    <protobuf type="uint16" name="attrValue" desc="buff属性值" ></protobuf>
+</proto>
+<proto name="stBattleData" desc="玩家的局内统计数据">
+    <protobuf type="uint8" name="fid" desc="t_Battle_Statistics.xlsx的f_id" ></protobuf>
+    <protobuf type="uint16" name="count" desc="任务详情" ></protobuf>
+</proto>
+<proto name="stBattleStatistic" desc="局内统计">
+    <protobuf type="uint32" name="playerId" desc="玩家id" ></protobuf>
+    <protobuf type="array" itemtype="stBattleData" name="datalist" desc="玩家的局内统计数据" ></protobuf>
+    <protobuf type="array" itemtype="stBattleBuff" name="bufflist" desc="玩家的全局buff列表" ></protobuf>
+</proto>
+<proto id="10143" name="BattleStatistic" desc="局内统计" type="revc">
+    <protobuf type="array" itemtype="stBattleStatistic" name="datalist" desc="局内统计列表" ></protobuf>
+</proto>
+<proto id="10144" name="BattleStatisticUpdate" desc="局内统计更新" type="revc">
+    <protobuf type="array" itemtype="stBattleStatistic" name="datalist" desc="局内统计更新列表" ></protobuf>
+</proto>
+
+<proto id="10145" name="BattleStatisticPull" desc="拉取局内统计数据" type="req">
+</proto>
+
+<proto name="stCareer" desc="生涯统计相关数据">
+    <protobuf type="uint8" name="flag" desc="1(pvp最高奖杯数, pve最高回合数) 2累计场次 3累计胜利" ></protobuf>
+    <protobuf type="uint32" name="times" desc="对应的数量" ></protobuf>
+</proto>
+<proto name="stFirstPassRewardCoop" desc="pve首通奖励列表">
+    <protobuf type="uint8" name="id" desc="对应t_First_Pass_Reward_Coop的f_id" ></protobuf>
+    <protobuf type="uint8" name="status" desc="领取状态 0不可领取 1可领取 2已领取"></protobuf>
+</proto>
+<proto id="10146" name="HomepageInit" desc="个人信息页面初始化" type="revc">
+    <protobuf type="array" itemtype="stCareer" name="datalist" desc="排位赛 pvp生涯统计列表,变化走10147,mode=1" ></protobuf>
+    <protobuf type="array" itemtype="stCareer" name="pve" desc="突围战普通模式 pve统计列表,变化走10147,mode=2" ></protobuf>
+    <protobuf type="array" itemtype="stCareer" name="pveHard" desc="突围战困难模式统计列表,变化走10147,mode=4" ></protobuf>
+
+    <protobuf type="array" itemtype="stCellValue" name="nickNameCost" desc="当前修改昵称消耗" ></protobuf>
+    <protobuf type="array" itemtype="uint8" name="heads" desc="当前拥有哪些头像,对应t_Head_Image的f_headid" ></protobuf>
+    <protobuf type="array" itemtype="uint8" name="HeadFrames" desc="当前拥有哪些头像框,对应t_Head_Image的f_headid" ></protobuf>
+    <protobuf type="array" itemtype="stFirstPassRewardCoop" name="firstPassReward" desc="pve首通奖励列表,变量走10275" ></protobuf>
+    <protobuf type="uint32" name="zan" desc="点赞数" ></protobuf>
+    <protobuf type="uint8" name="pveModeExist" desc="开启的pve模式(0普通模式默认开启 1困难模式 2地域模式),变化走10346" ></protobuf>
+</proto>
+<proto id="10147" name="CareerStatsChange" desc="生涯统计变化" type="revc">
+    <protobuf type="uint8" name="mode" desc="1-pvp 2-pve 4-pvehard" ></protobuf>
+    <protobuf type="array" itemtype="stCareer" name="datalist" desc="生涯统计变化" ></protobuf>
+</proto>
+<proto id="10148" name="HeadChange" desc="头像、头像框变化" type="req">
+    <protobuf type="uint8" name="flag" desc="1头像 2头像框" ></protobuf>
+    <protobuf type="string" name="val" desc="0则使用默认,可选择的头像及头像框id" ></protobuf>
+</proto>
+<proto id="10149" name="HeadChange" desc="头像、头像框变化" type="revc">
+    <protobuf type="uint8" name="flag" desc="1头像 2头像框" ></protobuf>
+    <protobuf type="string" name="val" desc="0则使用默认,可选择的头像及头像框id" ></protobuf>
+</proto>
+<proto id="10150" name="NickNameChange" desc="修改昵称" type="req">
+    <protobuf type="string" name="nickName" desc="昵称" ></protobuf>
+</proto>
+<proto id="10151" name="NickNameChange" desc="修改昵称,修改成功则修改3004里面内容" type="revc">
+    <protobuf type="string" name="nickName" desc="昵称" ></protobuf>
+    <protobuf type="array" itemtype="stCellValue" name="nextCost" desc="下一次修改昵称消耗" ></protobuf>
+</proto>
+<proto id="10152" name="HeadNew" desc="新获得头像、头像框" type="revc">
+    <protobuf type="uint8" name="flag" desc="1头像 2头像框" ></protobuf>
+    <protobuf type="array" itemtype="uint8" name="datalist" desc="新获得头像、头像框(增量)" ></protobuf>
+</proto>
+<proto name="stCommonTimes" desc="通用数量相关">
+    <protobuf type="uint8" name="flag" desc="领取类型,根据不同模块去定义" ></protobuf>
+    <protobuf type="uint32" name="times" desc="对应的数量,0未领取" ></protobuf>
+</proto>
+<proto id="10153" name="SkillActive" desc="触发主动技能" type="req">
+    <protobuf type="uint16" name="uid" desc="触发主动技能的格子的uid" ></protobuf>
+</proto>
+<proto id="10154" name="CommonClaimRewardInit" desc="通用领取奖励初始化" type="revc">
+    <protobuf type="array" itemtype="stCommonTimes" name="datalist" desc="通用领取信息" ></protobuf>
+</proto>
+<proto id="10155" name="CommonClaimRewards" desc="通用领取奖励" type="req">
+    <protobuf type="uint8" name="platId" desc="平台id"></protobuf>
+    <protobuf type="uint8" name="flag" desc="
+        1 完成新手领导领取奖励
+        2 领取每日分享奖励
+        3 taptap每日分享
+        4 是否走新版新手引导 times 0不走 1走(弃用)
+        5 新版pve新手引导奖励领取 times 0未领取 1、2、3已领取的关卡数(弃用)
+        6 是否走pvp回合制新手引导 times 0不走 1走
+        " ></protobuf>
+    <protobuf type="string" name="extra" desc="额外的信息" ></protobuf>
+</proto>
+<proto id="10156" name="CommonClaimRewards" desc="通用领取奖励返回" type="revc">
+    <protobuf type="array" itemtype="stCommonTimes" name="datalist" desc="通用领取信息" ></protobuf>
+</proto>
+<proto id="10157" name="FriendsFightRewardInit" desc="好友战斗奖励" type="revc">
+    <protobuf type="array" itemtype="stCommonTimes" name="datalist" desc="stCommonTimes的flag代表位置(1,2,3), times=0不可领取 1可领取 2已领取" ></protobuf>
+</proto>
+<proto id="10158" name="FriendsRoom" desc="发起方好友房间" type="req">
+    <protobuf type="uint8" name="flag" desc="0取消房间 1创建房间" ></protobuf>
+    <protobuf type="uint8" name="mode" desc="1-pvp模式 2-pve模式 3-pve困难模式 4-pve年兽 5pve地域模式" ></protobuf>
+</proto>
+<proto id="10159" name="FriendsRoom" desc="通用领取奖励返回" type="revc">
+    <protobuf type="string" name="roomSn" desc="4位数房间标识" ></protobuf>
+</proto>
+<proto id="10160" name="FriendsRoomJoin" desc="加入好友房间" type="req">
+    <protobuf type="uint8" name="flag" desc="1加入房间 2上线时候加入房间" ></protobuf>
+    <protobuf type="string" name="roomSn" desc="4位数房间标识" ></protobuf>
+</proto>
+<proto id="10161" name="FriendsRoomJoin" desc="加入好友房间返回" type="revc">
+    <protobuf type="uint8" name="flag" desc="0取消加入(取消roomSn传空) 1加入房间" ></protobuf>
+</proto>
+<proto id="10162" name="FriendsFightReward" desc="领取好友战斗奖励" type="req">
+    <protobuf type="uint8" name="pos" desc="奖励的位置1,2,3" ></protobuf>
+</proto>
+<proto id="10163" name="FriendsFightReward" desc="好友战斗奖励状态变化" type="revc">
+    <protobuf type="array" itemtype="stCommonTimes" name="datalist" desc="stCommonTimes的flag代表位置(1,2,3), times=0不可领取 1可领取 2已领取" ></protobuf>
+</proto>
+<proto name="stHeroMove" desc="英雄移动的信息">
+    <protobuf type="uint16" name="uid" desc="英雄uid" ></protobuf>
+    <protobuf type="uint8" name="x" desc="移动的x坐标" ></protobuf>
+    <protobuf type="uint8" name="y" desc="移动的y坐标" ></protobuf>
+</proto>
+<proto id="10164" name="HeroMove" desc="英雄移动（3个英雄卖掉1个 或 合成神话英雄消耗了3个英雄中的1个时发）" type="revc">
+    <protobuf type="array" itemtype="stHeroMove" name="datalist" desc="英雄移动数组" ></protobuf>
+</proto>
+
+<proto name="stCommonRank" desc="公共排行榜信息">
+    <protobuf type="uint32" name="accountId" desc="玩家角色id" ></protobuf>
+    <protobuf type="uint16" name="playerLevel" desc="玩家等级" ></protobuf>
+    <protobuf type="string" name="nickName" desc="玩家昵称" ></protobuf>
+    <!-- <protobuf type="string" name="serverName" desc="区服名称" ></protobuf> -->
+    <protobuf type="string" name="headUrl" desc="头像" ></protobuf>
+    <protobuf type="uint8" name="HeadFrame" desc="头像框" ></protobuf>
+    <protobuf type="uint32" name="ranking" desc="名次" ></protobuf>
+    <protobuf type="uint16" name="titleId" desc="称号id" ></protobuf>
+    <protobuf type="uint32" name="trophy" desc="(flag=0奖杯数量，1通关次数 2回合次数)" ></protobuf>
+    <protobuf type="string" name="serverName" desc="区服名称" ></protobuf>
+    <protobuf type="uint16" name="mode" desc="pve波次排行榜(0普通模式 1困难模式 2地域模式)" ></protobuf>
+</proto>
+<proto id="10165" name="CommonRank" desc="获取排行榜列表" type="req">
+    <protobuf type="uint8" name="category" desc="0跨服 1单服" ></protobuf>
+    <protobuf type="uint8" name="flag" desc="0原先pvp排行榜 1通关排行榜 2回合排行榜" ></protobuf>
+</proto>
+<proto id="10166" name="CommonRank" desc="排行榜列表返回" type="revc">
+    <protobuf type="uint8" name="category" desc="0跨服 1单服" ></protobuf>
+    <protobuf type="uint8" name="flag" desc="0原先pvp排行榜 1通关排行榜 2回合排行榜" ></protobuf>
+    <protobuf type="array" itemtype="stCommonRank" name="datalist" desc="开服冲榜前100名的信息"></protobuf>
+    <protobuf type="array" itemtype="stCommonRank" name="self" desc="当前玩家自己在开服冲榜的排名 长度=0则没有,最大长度为1"></protobuf>
+</proto>
+<proto id="10167" name="WatchCommonRankDetail" desc="查看排行榜里面数据详情" type="req">
+    <protobuf type="uint32" name="accountId" desc="排行榜中玩家id" ></protobuf>
+</proto>
+<proto id="10168" name="WatchCommonRankDetail" desc="查看排行榜里面数据详情" type="revc">
+    <protobuf type="stPlayerData" name="playerData" desc="玩家数据" ></protobuf>
+    <protobuf type="uint16" name="titleId" desc="称号id" ></protobuf>
+    <protobuf type="uint8" name="season" desc="赛季" ></protobuf> 
+    <protobuf type="array" itemtype="stCareer" name="career" desc="排位赛生涯统计列表" ></protobuf>
+    <protobuf type="array" itemtype="stCareer" name="careerPve" desc="突围战普通模式pve生涯统计列表" ></protobuf>
+    <protobuf type="array" itemtype="stCareer" name="careerPveHard" desc="突围战困难模式pve生涯统计列表" ></protobuf>
+    <protobuf type="array" itemtype="stCommonTimes" name="collect" desc="收藏列表 1英雄 2文物 3卡牌" ></protobuf>
+    
+    <protobuf type="uint32" name="zan" desc="点赞数" ></protobuf>
+    <protobuf type="uint8" name="zanExist" desc="当前好友有没有点赞 1已点 0未点" ></protobuf>
+    <protobuf type="uint8" name="isFriend" desc="与当前玩家是否是好友 1是 0否" ></protobuf>
+
+    <protobuf type="array" itemtype="stHero" name="heros" desc="部分英雄信息,只有英雄id和等级" ></protobuf>
+    <protobuf type="array" itemtype="uint32" name="heroSkins" desc="拥有的皮肤id" ></protobuf>
+    <protobuf type="array" itemtype="stTreasure" name="treasures" desc="部分宝物" ></protobuf>
+    <protobuf type="array" itemtype="stFCard" name="cards" desc="部分功能卡" ></protobuf>
+</proto>
+<proto name="stBoxReward" desc="公共排行榜信息">
+    <protobuf type="uint16" name="boxId" desc="宝箱id,对应t_Box_Reward_Rate的f_box_id" ></protobuf>
+    <protobuf type="array" itemtype="stCellValueConvert" name="datalist" desc="宝箱获得的奖励列表" ></protobuf>
+</proto>
+
+<proto id="10169" name="PremiumRewards" desc="高级奖励" type="revc">
+    <protobuf type="array" itemtype="uint8" name="heroIds" desc="获取到的英雄id" ></protobuf>
+    <protobuf type="array" itemtype="stBoxReward" name="boxes" desc="宝箱奖励" ></protobuf>
+    <protobuf type="array" itemtype="stCellValue" name="rewardList" desc="奖励数据列表" ></protobuf>
+    <protobuf type="array" itemtype="stCellValueConvert" name="convertedList" desc="道具转化信息" ></protobuf>
+</proto>
+<proto name="stTreasureShow" desc="宝物抽取展示">
+    <protobuf type="uint8" name="id" desc="对应t_Treasure的灵宝id" ></protobuf>
+    <protobuf type="uint8" name="num" desc="灵宝的数量" ></protobuf>
+    <protobuf type="uint16" name="convertedId" desc="转化后对应id,未转化为0" ></protobuf>
+    <protobuf type="uint32" name="convertedNum" desc="转化后的数量,未转化为0" ></protobuf>
+</proto>
+<proto id="10170" name="TreasureShow" desc="抽取文物/宝物展示" type="revc">
+    <protobuf type="uint8" name="flag" desc="0默认单抽 1十连抽" ></protobuf>
+    <protobuf type="array" itemtype="stTreasureShow" name="datalist" desc="道具转化信息" ></protobuf>
+    <protobuf type="uint8" name="guarante" desc="还有多少次触发橙色保底变化" ></protobuf>
+</proto>
+<proto name="stCommonReward" desc="通用奖励相关">
+    <protobuf type="uint16" name="id" desc="奖励id" ></protobuf>
+    <protobuf type="uint32" name="state" desc="0不可领取 1可领取 2已领取" ></protobuf>
+</proto>
+<proto id="10171" name="TrophyRewardInit" desc="首页奖励初始化(高于当前奖杯数的奖励不发,默认不可领取)" type="revc">
+    <protobuf type="array" itemtype="stCommonReward" name="datalist" desc="id是代表t_Trophy_Reward的f_id" ></protobuf>
+</proto>
+<proto id="10172" name="TrophyReward" desc="领取首页奖励" type="req">
+    <protobuf type="uint16" name="id" desc="奖励id" ></protobuf>
+</proto>
+<proto id="10173" name="TrophyReward" desc="领取首页奖励返回(变量)" type="revc">
+    <protobuf type="array" itemtype="stCommonReward" name="datalist" desc="id是代表t_Trophy_Reward的f_id" ></protobuf>
+</proto>
+<proto name="stGambleProb" desc="赌博概率">
+    <protobuf type="uint8" name="flag" desc="1蓝色 2紫色 3橙色赌博" ></protobuf>
+    <protobuf type="uint16" name="prob" desc="对应概率(万分位)" ></protobuf>
+</proto>
+<proto id="10174" name="GambleProb" desc="赌博祈愿概率返回或变化" type="revc">
+    <protobuf type="uint8" name="init" desc="是否初始化 0否则标识概率变化 1是创建房间或重连的时候发" ></protobuf>
+    <protobuf type="array" itemtype="stGambleProb" name="datalist" desc="对应的概率" ></protobuf>
+</proto>
+<proto name="stShop" desc="商城相关">
+    <protobuf type="uint8" name="id" desc="对应商城表或商城热卖的id" ></protobuf>
+    <protobuf type="uint8" name="cnt" desc="对应商品id购买的次数,热卖默认最高只能兑换1次" ></protobuf>
+</proto>
+<proto name="stShopHotFresh" desc="已刷热卖商城次数">
+    <protobuf type="uint8" name="type" desc="0广告刷新 1使用道具刷新" ></protobuf>
+    <protobuf type="uint8" name="cnt" desc="已刷次数" ></protobuf>
+</proto>
+<proto id="10175" name="ShopInit" desc="商城初始化信息,充值双倍的还走3096" type="revc">
+    <protobuf type="array" itemtype="uint8" name="hideIds" desc="t_Shop.xlsx中不展示隐藏的f_id" ></protobuf>
+    <protobuf type="array" itemtype="stShop" name="datalist" desc="商品的购买或兑换次数(不限购的不推送)" ></protobuf>
+    <protobuf type="array" itemtype="stShop" name="hotList" desc="热卖领取信息(id是t_Shop_Hotsell.xlsx的f_id)" ></protobuf>
+    <protobuf type="array" itemtype="stShopHotFresh" name="hotFreshList" desc="热卖商品刷新次数" ></protobuf>
+    <protobuf type="uint32" name="todayEndUnix" desc="当天结束的时间戳" ></protobuf>
+</proto>
+<proto id="10176" name="ShopExchange" desc="商城兑换或领取" type="req">
+    <protobuf type="uint8" name="id" desc="商城表的id" ></protobuf>
+    <protobuf type="uint8" name="times" desc="商品购买的次数" ></protobuf>
+</proto>
+<proto id="10177" name="ShopExchange" desc="商城兑换或领取变化" type="revc">
+    <protobuf type="array" itemtype="stShop" name="datalist" desc="商品的购买或兑换次数(不限购的不推送)" ></protobuf>
+</proto>
+<proto id="10178" name="ShopHideToDisplay" desc="商品从隐藏到显示,满足条件先发10177,10178" type="revc">
+    <protobuf type="array" itemtype="uint8" name="datalist" desc="可展示列表增量" ></protobuf>
+</proto>
+<proto id="10179" name="ShopHotFresh" desc="商城热卖刷新,返回10180,10182(flag=1)" type="req">
+    <protobuf type="uint8" name="flag" desc="0广告刷新 1道具刷新" ></protobuf>
+</proto>
+<proto id="10180" name="ShopHotFresh" desc="商城热卖刷新次数变化" type="revc">
+    <protobuf type="array" itemtype="stShopHotFresh" name="datalist" desc="可展示列表增量" ></protobuf>
+</proto>
+<proto id="10181" name="ShopHotExchange" desc="热卖商城兑换,返回10182(flag=0)" type="req">
+    <protobuf type="uint8" name="id" desc="商城表的id" ></protobuf>
+</proto>
+<proto id="10182" name="ShopHotExchange" desc="商城热卖信息变化" type="revc">
+    <protobuf type="uint8" name="flag" desc="0单个热卖商品变化 1热卖列表变化(刷新列表或系统刷新)" ></protobuf>
+    <protobuf type="array" itemtype="stShop" name="datalist" desc="热卖商城已领变化" ></protobuf>
+    <protobuf type="uint32" name="todayEndUnix" desc="当天结束的时间戳(flag=0的时候当前值为0不用处理)" ></protobuf>
+</proto>
+<proto id="10183" name="HeroActiveBtnCD" desc="英雄主动技能按钮是否在cd中" type="revc">
+    <protobuf type="uint16" name="uid" desc="英雄格子的uid" ></protobuf>
+    <protobuf type="uint8" name="cd" desc="0未在cd中 1cd中不可用" ></protobuf>
+</proto>
+<proto id="10184" name="FightStart" desc="开始战斗（玩家进入房间并完成倒数）" type="req"></proto>
+<proto name="stFuncCardEffect" desc="功能卡特效">
+    <protobuf type="uint32" name="playerId" desc="玩家id" ></protobuf>
+    <protobuf type="uint16" name="cardId" desc="卡牌id（t_Function_Card表f_card__templateid）" ></protobuf>
+    <protobuf type="uint32" name="serialNum" desc="局内功能卡的序列号" ></protobuf>
+    <protobuf type="uint8" name="type" desc="目标类型 1怪物 2英雄格子 3棋盘 4卡牌 5召唤/祈愿按钮" ></protobuf>
+    <protobuf type="array" itemtype="uint16" name="uids" desc="目标类型是怪物、英雄格子、卡牌时有，卡牌传序列号" ></protobuf>
+    <protobuf type="uint8" name="state" desc="状态 1特效生效 0特效过期" ></protobuf>
+</proto>
+<proto id="10185" name="FuncCardEffectUpdate" desc="功能卡特效" type="revc">
+    <protobuf type="array" itemtype="stFuncCardEffect" name="datalist" desc="功能卡特效数据" ></protobuf>
+</proto>
+<proto id="10186" name="GmInnerCard" desc="直接使用功能卡gm" type="req">
+    <protobuf type="uint32" name="cardId" desc="功能卡id（t_Function_Card表f_card__templateid）" ></protobuf>
+</proto>
+<proto id="10187" name="FuncardDanMu" desc="功能卡弹幕" type="revc">
+    <protobuf type="uint32" name="playerId" desc="卡牌使用者的玩家id" ></protobuf>
+    <protobuf type="uint32" name="cardId" desc="功能卡id（t_Function_Card表f_card__templateid）" ></protobuf>
+    <protobuf type="array" itemtype="uint32" name="datalist" desc="弹幕数据" ></protobuf>
+</proto>
+
+<proto id="10188" name="KillBoss" desc="击杀妖王触发" type="revc">
+    <protobuf type="uint32" name="playerid" desc="玩家id" ></protobuf>
+    <protobuf type="uint32" name="bossId" desc="妖王boss t_Monster id" ></protobuf>
+    <protobuf type="uint8" name="firstKill" desc="是否优先击杀 1pvp优先击杀 2pve快速击杀" ></protobuf>
+</proto>
+<proto id="10189" name="FuncCardSpecialEffect" desc="功能卡特效2" type="revc">
+    <protobuf type="uint8" name="type" desc="0卡牌使用无效" ></protobuf>
+    <protobuf type="uint32" name="playerId" desc="卡牌所属的玩家id"></protobuf>
+    <protobuf type="uint32" name="cardId" desc="卡牌id" ></protobuf>
+</proto>
+<proto id="10190" name="BattlePassInit" desc="战令活动初始化信息" type="revc">
+    <protobuf type="uint16" name="BattlePassLevel" desc="战令等级"></protobuf>
+    <protobuf type="uint16" name="BattlePassLevelExp" desc="当前战令等级下的经验"></protobuf>
+    <protobuf type="array" itemtype="stTaskOut" name="tasks" desc="任务列表" ></protobuf>
+</proto>
+<proto id="10191" name="BattlePassTaskChange" desc="战令任务变化(领取走活动协议3087)" type="revc">
+    <protobuf type="array" itemtype="stTaskOut" name="tasks" desc="任务数据变化"></protobuf>
+</proto>
+<proto id="10192" name="BattlePassBuyExp" desc="购买战令经验" type="req">
+    <protobuf type="uint32" name="num" desc="购买数量" ></protobuf>
+</proto>
+<proto id="10193" name="BattlePassLevel" desc="战令等级变化" type="revc">
+    <protobuf type="uint16" name="level" desc="战令等级"></protobuf>
+    <protobuf type="uint16" name="exp" desc="战令当前等级下经验变化后的值"></protobuf>
+</proto>
+<proto id="10194" name="TodayFirstLogin" desc="是否当日首次登录变化(活动数据之后发)" type="revc">
+    <protobuf type="uint8" name="isFirst" desc="是否首次登录 0否 1是"></protobuf>
+</proto>
+<proto name="stLimitPackTime">
+    <protobuf type="uint8" name="id" desc="限时礼包的id对应t_Limited_Time_Pack的f_id" ></protobuf>
+    <protobuf type="uint32" name="starttime" desc="活动开始时间" ></protobuf>
+    <protobuf type="uint32" name="endtime" desc="活动结束时间 无结束为0" ></protobuf>
+</proto>
+<proto id="10195" name="LimitPackTimeInit" desc="限时礼包的开始与结束时间" type="revc">
+    <protobuf type="array" itemtype="stLimitPackTime" name="datalist" desc="限时礼包的开始与结束时间" ></protobuf>
+</proto>
+<proto id="10196" name="LimitPackTime" desc="限时礼包的开始与结束时间变量(在活动数据之前发)" type="revc">
+    <protobuf type="array" itemtype="stLimitPackTime" name="datalist" desc="限时礼包的开始与结束时间变量" ></protobuf>
+</proto>
+<proto name="stTitle">
+    <protobuf type="uint16" name="id" desc="称号id" ></protobuf>
+    <protobuf type="uint32" name="exp" desc="称号的到期时间戳(0标识不过期)" ></protobuf>
+    <protobuf type="uint8" name="isNew" desc="是否是新获得的称号" ></protobuf>
+</proto>
+<proto id="10197" name="TitleInit" desc="称号初始化(3010之前发)" type="revc">
+    <protobuf type="uint16" name="titleId" desc="当前配置中的称号" ></protobuf>
+    <protobuf type="array" itemtype="stTitle" name="datalist" desc="称号列表" ></protobuf>
+</proto>
+<proto id="10198" name="TitleSwitch" desc="切换称号" type="req">
+    <protobuf type="uint16" name="titleId" desc="称号id" ></protobuf>
+</proto>
+<proto id="10199" name="TitleSwitch" desc="切换称号" type="revc">
+    <protobuf type="uint16" name="titleId" desc="当前配置中的称号" ></protobuf>
+</proto>
+<proto id="10200" name="TitleAction" desc="称号新增/删除" type="revc">
+    <protobuf type="uint8" name="action" desc="0称号到期删除 1新增称号 2已有称号过期时间延长" ></protobuf>
+    <protobuf type="array" itemtype="stTitle" name="datalist" desc="称号列表" ></protobuf>
+</proto>
+<proto id="10201" name="TitleNewClick" desc="点击新获得的称号" type="req">
+    <protobuf type="uint16" name="titleId" desc="称号id" ></protobuf>
+</proto>
+<proto id="10202" name="FightError" desc="局内战斗异常（关闭战斗界面）" type="revc">
+</proto>
+<proto id="10203" name="InviteInit" desc="邀请及奖励详情初始化(全量)" type="revc">
+    <protobuf type="uint8" name="platId" desc="平台id"></protobuf>
+    <protobuf type="uint8" name="binded" desc="绑定邀请 0未绑定 1已绑定"></protobuf>
+    <protobuf type="uint16" name="validCnt" desc="邀请有效人数" ></protobuf>
+    <protobuf type="uint16" name="invitedCnt" desc="邀请总人数" ></protobuf>
+    <protobuf type="array" itemtype="stCommonTimes" name="datalist" desc="stCommonTimes的flag代表位置(奖励id), times=0不可领取 1可领取 2已领取" ></protobuf>
+    <protobuf type="stCommonTimes" name="dailyShare" desc="每日分享 times=0未领取分享奖励 2已领取" ></protobuf>
+</proto>
+<proto id="10204" name="InviteReward" desc="领取邀请奖励" type="req">
+    <protobuf type="uint16" name="id" desc="对应奖励f_id" ></protobuf>
+</proto>
+<proto id="10205" name="InviteReward" desc="领取邀请奖励状态变化" type="revc">
+    <protobuf type="array" itemtype="stCommonTimes" name="datalist" desc="stCommonTimes的flag代表位置(奖励id), times=0不可领取 1可领取 2已领取" ></protobuf>
+</proto>
+<proto id="10206" name="InvitedCnt" desc="邀请有效人数变化" type="revc">
+    <protobuf type="uint8" name="platId" desc="平台id"></protobuf>
+    <protobuf type="uint8" name="flag" desc="0总邀请人数 1邀请有效人数" ></protobuf>
+    <protobuf type="uint16" name="cnt" desc="人数" ></protobuf>
+</proto>
+<proto id="10207" name="DailyShare" desc="每日分享数据变化" type="revc">
+    <protobuf type="uint8" name="platId" desc="平台id"></protobuf>
+    <protobuf type="stCommonTimes" name="data" desc="每日分享 times=0未领取分享奖励 2已领取" ></protobuf>
+</proto>
+<proto id="10208" name="CommunityInit" desc="社区奖励详情初始化(全量)" type="revc">
+    <protobuf type="array" itemtype="stCommonTimes" name="datalist" desc="times=0未领取分享奖励 2已领取" ></protobuf>
+</proto>
+<proto id="10209" name="CommunityReward" desc="领取社区奖励" type="req">
+    <protobuf type="uint8" name="flag" desc="0变成可领状态 1领取奖励" ></protobuf>
+    <protobuf type="array" itemtype="uint8" name="ids" desc="社区奖励id" ></protobuf>
+</proto>
+<proto id="10210" name="CommunityReward" desc="领取社区奖励变化(领取+每日刷新)" type="revc">
+    <protobuf type="array" itemtype="stCommonTimes" name="datalist" desc="times=0未领取分享奖励 2已领取" ></protobuf>
+</proto>
+<proto id="10211" name="FightChat" desc="局内聊天" type="req">
+    <protobuf type="uint16" name="fid" desc="表t_Battle_Communication的f_id"></protobuf>
+</proto>
+<proto id="10212" name="FightChat" desc="局内聊天" type="revc">
+    <protobuf type="uint32" name="playerId" desc="玩家id"></protobuf>
+    <protobuf type="uint16" name="fid" desc="表t_Battle_Communication的f_id"></protobuf>
+</proto>
+<proto name="stGuide">
+    <protobuf type="uint8" name="groupId" desc="新手引导的分组id" ></protobuf>
+    <protobuf type="uint8" name="orderId" desc="新手引导的排序id,0即当前分组全部完成" ></protobuf>
+</proto>
+<proto id="10213" name="GuideInit" desc="新手引导初始化" type="revc">
+    <protobuf type="array" itemtype="stGuide" name="datalist" desc="新手引导" ></protobuf>
+</proto>
+<proto id="10214" name="Guide" desc="新手引导变化" type="req">
+    <protobuf type="stGuide" name="data" desc="新手引导变化请求数据"></protobuf>
+</proto>
+<proto id="10215" name="Guide" desc="新手引导变化" type="revc">
+    <protobuf type="array" itemtype="stGuide" name="datalist" desc="新手变化" ></protobuf>
+</proto>
+<proto name="stChat">
+    <protobuf type="uint32" name="uid" desc="序列号" ></protobuf>
+    <protobuf type="uint32" name="playerId" desc="玩家角色ID" ></protobuf>
+    <protobuf type="uint16" name="level" desc="玩家当前等级" ></protobuf>
+    <protobuf type="string" name="nickName" desc="玩家昵称" ></protobuf>
+    <protobuf type="string" name="headUrl" desc="玩家头像" ></protobuf>
+    <protobuf type="uint8" name="headFrame" desc="头像框" ></protobuf>
+    <protobuf type="uint8" name="titleId" desc="称号id" ></protobuf>
+    <protobuf type="uint8" name="diamond" desc="头像上是否有钻石" ></protobuf>
+    <protobuf type="uint32" name="trophy" desc="角色最新的奖杯数量" ></protobuf>
+    <protobuf type="uint8" name="trophyStage" desc="当前最高奖杯所处的阶段" ></protobuf>
+    <!--chat和emojiId只有一个有值-->
+    <protobuf type="string" name="chat" desc="聊天内容" ></protobuf>
+    <protobuf type="uint8" name="emojiId" desc="表情id（默认0，表示没表情）" ></protobuf>
+    <protobuf type="uint8" name="type" desc="类型 0默认专服内聊天 1好友私聊" ></protobuf>
+    <protobuf type="uint32" name="unix" desc="时间戳" ></protobuf>
+</proto>
+
+<proto name="stChatChannel">
+    <protobuf type="uint8" name="channelId" desc="频道id" ></protobuf>
+    <protobuf type="array" itemtype="stChat" name="datalist" desc="频道聊天数据" ></protobuf>
+</proto>
+<proto id="10216" name="ChatListInit" desc="聊天列表（全量）" type="revc">
+    <protobuf type="array" itemtype="stChatChannel" name="datalist" desc="聊天列表" ></protobuf>
+</proto>
+<proto id="10217" name="Chat" desc="发起聊天" type="req">
+    <!--chat和emojiId只传其中一个-->
+    <protobuf type="string" name="chat" desc="聊天内容" ></protobuf>
+    <protobuf type="uint32" name="channelId" desc="type=0频道id type=1好友id" ></protobuf>
+    <protobuf type="uint8" name="emojiId" desc="表情id（默认0，表示没表情）" ></protobuf>
+    <protobuf type="uint8" name="type" desc="类型 0默认专服内聊天 1好友私聊" ></protobuf>
+</proto>
+<proto id="10218" name="Chat" desc="聊天列表变化量（有新消息时主动推）" type="revc">
+    <protobuf type="array" itemtype="stChatChannel" name="datalist" desc="消息列表" ></protobuf>
+</proto>
+<proto name="stFuncPopup">
+    <protobuf type="uint16" name="funcId" desc="功能id" ></protobuf>
+    <protobuf type="uint8" name="exist" desc="0当前未强弹, 1已强弹" ></protobuf>
+</proto>
+<proto id="10219" name="FuncPopupInit" desc="功能强弹初始化" type="revc">
+    <protobuf type="array" itemtype="stFuncPopup" name="datalist" desc="聊天列表" ></protobuf>
+</proto>
+<proto id="10220" name="FuncPopup" desc="功能强弹更新" type="req">
+    <protobuf type="array" itemtype="uint16" name="datalist" desc="功能id" ></protobuf>
+</proto>
+<proto id="10221" name="FuncPopup" desc="功能强弹变化" type="revc">
+    <protobuf type="array" itemtype="stFuncPopup" name="datalist" desc="功能id" ></protobuf>
+</proto>
+<proto id="10222" name="GmSetWave" desc="设置波次gm" type="req">
+    <protobuf type="uint8" name="wave" desc="波次" ></protobuf>
+</proto>
+<proto id="10223" name="FriendRoomExistInit" desc="好友房间号是否存在" type="revc">
+    <protobuf type="string" name="roomSn" desc="4位数房间标识" ></protobuf>
+</proto>
+<proto name="stGodRoad">
+    <protobuf type="uint8" name="id" desc="成仙之路id" ></protobuf>
+    <protobuf type="uint8" name="status" desc="领取状态 0不可领取 1可领取 2已领取"></protobuf>
+</proto>
+<proto id="10224" name="GodRoadInit" desc="成仙之路初始化" type="revc">
+    <protobuf type="array" itemtype="stGodRoad" name="datalist" desc="成仙之路初始化" ></protobuf>
+</proto>
+<proto id="10225" name="GodRoad" desc="领取成仙之路奖励" type="req">
+    <protobuf type="uint8" name="id" desc="成仙之路id" ></protobuf>
+</proto>
+<proto id="10226" name="GodRoad" desc="成仙之路奖励变化" type="revc">
+    <protobuf type="array" itemtype="stGodRoad" name="datalist" desc="成仙之路奖励变化" ></protobuf>
+</proto>
+
+<proto id="10227" name="RougeList" desc="肉鸽列表（有肉鸽选项时推，断线重连时推）" type="revc">
+    <protobuf type="array" itemtype="uint32" name="datalist" desc="表t_Function_Coop的f_id" ></protobuf>
+    <protobuf type="uint32" name="unix" desc="选择过期时间戳" ></protobuf>
+</proto>
+<proto id="10228" name="RougeChoose" desc="肉鸽选择（返回10229）" type="req">
+    <protobuf type="uint32" name="fid" desc="表t_Function_Coop的f_id" ></protobuf>
+</proto>
+<proto id="10229" name="RougeChoose" desc="肉鸽选择" type="revc">
+    <protobuf type="uint32" name="playerId" desc="做选择的玩家id" ></protobuf>
+    <protobuf type="uint32" name="fid" desc="表t_Function_Coop的f_id" ></protobuf>
+</proto>
+<proto name="stPSCnt">
+    <protobuf type="uint8" name="type" desc="0观看广告 1花道具购买" ></protobuf>
+    <protobuf type="uint8" name="cnt" desc="对应次数"></protobuf>
+</proto>
+<proto id="10230" name="PSInit" desc="体力相关初始化" type="revc">
+    <protobuf type="array" itemtype="stPSCnt" name="datalist" desc="购买次数列表" ></protobuf>
+    <protobuf type="uint32" name="nextRecorverUnix" desc="体力下一次恢复时间戳,0标识没有" ></protobuf>
+    <protobuf type="uint32" name="secToFullPS" desc="恢复满体力需要多少秒" ></protobuf>
+</proto>
+<proto id="10231" name="PSBuy" desc="购买体力" type="req">
+    <protobuf type="uint8" name="flag" desc="0看广告 1道具消耗" ></protobuf>
+</proto>
+<proto id="10232" name="PSBuy" desc="购买体力相关变化(变量)" type="revc">
+    <protobuf type="array" itemtype="stPSCnt" name="datalist" desc="购买次数列表" ></protobuf>
+</proto>
+<proto id="10233" name="PSTime" desc="购买体力相关变化" type="revc">
+    <protobuf type="uint32" name="nextRecorverUnix" desc="体力下一次恢复时间戳,0标识没有" ></protobuf>
+    <protobuf type="uint32" name="secToFullPS" desc="恢复满体力需要多少秒" ></protobuf>
+</proto>
+<proto id="10234" name="RoomMode" desc="判断房间是pvp还是pve" type="req" >
+    <protobuf type="string" name="roomSn" desc="4位数房间标识" ></protobuf>
+</proto>
+<proto id="10235" name="RoomMode" desc="判断房间是pvp还是pve" type="revc" >
+    <protobuf type="string" name="roomSn" desc="4位数房间标识" ></protobuf>
+    <protobuf type="uint8" name="mode" desc="1-pvp模式 2-pve模式"></protobuf>
+</proto>
+<proto id="10236" name="PveMultiReward" desc="pve领取多倍奖励" type="req" >
+    <protobuf type="uint32" name="roomId" desc="房间号"></protobuf>
+    <protobuf type="uint8" name="multi" desc="2双倍奖励 3三倍奖励"></protobuf>
+</proto>
+<proto id="10237" name="InviteBind" desc="绑定邀请码" type="req" >
+    <protobuf type="uint8" name="platId" desc="平台id"></protobuf>
+    <protobuf type="string" name="code" desc="邀请码"></protobuf>
+</proto>
+<proto id="10238" name="InviteBind" desc="绑定邀请码成功" type="revc" >
+    <protobuf type="uint8" name="platId" desc="平台id"></protobuf>
+    <protobuf type="uint8" name="binded" desc="绑定邀请 0未绑定 1已绑定"></protobuf>
+</proto>
+<proto id="10239" name="OnlineSec" desc="同步在线时长" type="req">
+</proto>
+<proto id="10240" name="OnlineSec" desc="在线时长变化,全量直接等" type="revc">
+    <protobuf type="uint32" name="sec" desc="在线一共多少秒" ></protobuf>
+</proto>
+<proto id="10241" name="PlayerExInfoInit" desc="玩家额外信息初始化" type="revc">
+    <protobuf type="uint32" name="days" desc="已登录天数" ></protobuf>
+</proto>
+<proto id="10242" name="LoginDays" desc="获取已登录天数,全量直接等" type="revc">
+    <protobuf type="uint32" name="days" desc="已登录天数" ></protobuf>
+</proto>
+
+<!-- 圣兽活动排行榜的开始与结束时间 -->
+<proto name="stHolyBeastRankTime">
+    <protobuf type="uint16" name="activityId" desc="圣兽活动id" ></protobuf>
+    <protobuf type="uint32" name="begin" desc="圣兽排行榜时间的开始时间戳" ></protobuf>
+    <protobuf type="uint32" name="end" desc="圣兽排行榜时间的结束时间戳" ></protobuf>
+</proto>
+<!-- 圣兽活动亲密度 -->
+<proto name="stHolyBeastData">
+    <protobuf type="uint16" name="activityId" desc="圣兽活动id" ></protobuf>
+    <protobuf type="uint32" name="num" desc="亲密度" ></protobuf>
+</proto>
+<!-- 圣兽活动亲密度奖励领取列表 -->
+<proto name="stHolyBeastDataReward">
+    <protobuf type="uint16" name="activityId" desc="圣兽活动id" ></protobuf>
+    <protobuf type="array" itemtype="stHolyBeastDataRewardList" name="datalist" desc="奖励状态列表" ></protobuf>
+</proto>
+<!-- 圣兽活动单个亲密度奖励领取情况 -->
+<proto name="stHolyBeastDataRewardList">
+    <protobuf type="uint8" name="id" desc="亲密度奖励id" ></protobuf>
+    <protobuf type="uint8" name="state" desc="0不可领取 1可领取 2已领取" ></protobuf>
+</proto>
+<!-- 圣兽活动抽取日志列表 -->
+<proto name="stHolyBeastLog">
+    <protobuf type="uint16" name="activityId" desc="圣兽活动id" ></protobuf>
+    <protobuf type="array" itemtype="stHolyBeastLogDetail" name="datalist" desc="日志列表" ></protobuf>
+</proto>
+<!-- 圣兽活动单个抽取日志详情 -->
+<proto name="stHolyBeastLogDetail">
+    <protobuf type="uint32" name="serialNum" desc="日志的序列号" ></protobuf>
+    <protobuf type="uint32" name="time" desc="日志时间" ></protobuf>
+    <protobuf type="uint32" name="playerId" desc="玩家角色id" ></protobuf>
+    <protobuf type="string" name="nickName" desc="角色名称" ></protobuf>
+    <protobuf type="uint16" name="drawId" desc="对应t_HolyBeast_Draw_Rate的fid" ></protobuf>
+    <!-- 额外数据待扩展 -->
+</proto>
+<!-- 圣兽活动排行榜列表-->
+<proto name="stHolyBeastRank">
+    <protobuf type="uint16" name="activityId" desc="圣兽活动id" ></protobuf>
+    <protobuf type="array" itemtype="stCommonRank" name="datalist" desc="开服冲榜前100名的信息"></protobuf>
+    <protobuf type="array" itemtype="stCommonRank" name="self" desc="当前玩家自己在开服冲榜的排名 长度=0则没有,最大长度为1"></protobuf>
+</proto>
+<!-- 圣兽活动任务列表-->
+<proto name="stHolyBeastTask">
+    <protobuf type="uint16" name="activityId" desc="圣兽活动id" ></protobuf>
+    <protobuf type="array" itemtype="stHolyBeastTaskDetail" name="datalist" desc="任务详情"></protobuf>
+</proto>
+<!-- 圣兽活动单个任务完成详情-->
+<proto name="stHolyBeastTaskDetail">
+    <protobuf type="uint16" name="id" desc="任务id" ></protobuf>
+    <protobuf type="uint16" name="cnt" desc="任务完成数量" ></protobuf>
+    <protobuf type="uint8" name="state" desc="0不可领取 1可领取 2已领取" ></protobuf>
+</proto>
+<!-- 圣兽活动兑换数据列表-->
+<proto name="stHolyBeastExchange">
+    <protobuf type="uint16" name="activityId" desc="圣兽活动id" ></protobuf>
+    <protobuf type="array" itemtype="stHolyBeastExchangeDetail" name="datalist" desc="兑换数据列表"></protobuf>
+</proto>
+<!-- 圣兽活动单个数据兑换详情-->
+<proto name="stHolyBeastExchangeDetail">
+    <protobuf type="uint16" name="id" desc="兑换奖励id" ></protobuf>
+    <protobuf type="uint16" name="cnt" desc="已兑换数量" ></protobuf>
+</proto>
+<proto id="10243" name="HolyBeastInitOrFresh" desc="圣兽活动初始化或系统刷新" type="revc">
+    <protobuf type="array" itemtype="stHolyBeastRankTime" name="rankTimeList" desc="圣兽活动各个排行榜开始与结束时间" ></protobuf>
+    <protobuf type="array" itemtype="stHolyBeastData" name="datalist" desc="圣兽活动亲密度数据,变化走10245(全量)" ></protobuf>
+    <protobuf type="array" itemtype="stHolyBeastDataReward" name="dataRewardList" desc="圣兽活动亲密度奖励领取情况,变化走10247(变量)" ></protobuf>
+    <protobuf type="array" itemtype="stHolyBeastTask" name="taskList" desc="圣兽活动任务情况,变化走10253(变量)" ></protobuf>
+    <protobuf type="array" itemtype="stHolyBeastExchange" name="exchangeList" desc="圣兽活动兑换数据,变化走10255(变量)" ></protobuf>
+</proto>
+<proto id="10244" name="HolyBeastExtract" desc="圣兽活动抽取/解救" type="req">
+    <protobuf type="uint16" name="activityId" desc="圣兽活动id" ></protobuf>
+    <protobuf type="uint8" name="cnt" desc="抽取/解救次数" ></protobuf>
+</proto>
+<proto id="10245" name="HolyBeastExtract" desc="圣兽活动抽取/解救次数或亲密度" type="revc">
+    <protobuf type="uint8" name="cnt" desc="抽取/解救次数" ></protobuf>
+    <protobuf type="uint32" name="serialNum" desc="序列号" ></protobuf>
+    <protobuf type="array" itemtype="stHolyBeastData" name="datalist" desc="数据变化后的全量直接=" ></protobuf>
+</proto>
+<proto id="10246" name="HolyBeastExtractReward" desc="领取圣兽活动亲密度奖励" type="req">
+    <protobuf type="uint16" name="activityId" desc="圣兽活动id" ></protobuf>
+    <protobuf type="uint16" name="id" desc="奖励id" ></protobuf>
+</proto>
+<proto id="10247" name="HolyBeastExtractReward" desc="圣兽活动亲密度奖励变化" type="revc">
+    <protobuf type="array" itemtype="stHolyBeastDataReward" name="datalist" desc="奖励数量变化量" ></protobuf>
+</proto>
+<proto id="10248" name="HolyBeastLog" desc="圣兽活动抽取/解救日志" type="req">
+    <protobuf type="uint8" name="flag" desc="0自己的抽取日志/1全部的抽取日志" ></protobuf>
+    <protobuf type="uint16" name="activityId" desc="圣兽活动id" ></protobuf>
+    <protobuf type="uint32" name="serialNum" desc="flag=0直接传0, flag=1传0则拉取全量 >0则获取当前序列号之后的变量" ></protobuf>
+</proto>
+<proto id="10249" name="HolyBeastLog" desc="圣兽活动抽取/解救日志" type="revc">
+    <protobuf type="uint8" name="flag" desc="0自己的抽取日志/1全部的抽取日志" ></protobuf>
+    <protobuf type="array" itemtype="stHolyBeastLog" name="datalist" desc="日志列表" ></protobuf>
+</proto>
+<proto id="10250" name="HolyBeastRank" desc="打开圣兽活动抽取/解救排行榜" type="req">
+    <protobuf type="uint16" name="activityId" desc="圣兽活动id" ></protobuf>
+</proto>
+<proto id="10251" name="HolyBeastRank" desc="圣兽活动抽取/解救排行榜返回" type="revc">
+    <protobuf type="array" itemtype="stHolyBeastRank" name="datalist" desc="排行榜列表" ></protobuf>
+</proto>
+<proto id="10252" name="HolyBeastTask" desc="领取圣兽活动任务奖励" type="req">
+    <protobuf type="uint16" name="activityId" desc="圣兽活动id" ></protobuf>
+    <protobuf type="uint16" name="id" desc="任务id" ></protobuf>
+</proto>
+<proto id="10253" name="HolyBeastTask" desc="领取圣兽活动任务奖励返回" type="revc">
+    <protobuf type="array" itemtype="stHolyBeastTask" name="datalist" desc="任务变量"></protobuf>
+</proto>
+<proto id="10254" name="HolyBeastExchange" desc="圣兽活动兑换请求" type="req">
+    <protobuf type="uint16" name="activityId" desc="圣兽活动id" ></protobuf>
+    <protobuf type="uint16" name="id" desc="兑换物品配置id" ></protobuf>
+    <protobuf type="uint16" name="cnt" desc="兑换物品数量" ></protobuf>
+</proto>
+<proto id="10255" name="HolyBeastExchange" desc="圣兽活动变量" type="revc">
+    <protobuf type="array" itemtype="stHolyBeastExchange" name="datalist" desc="圣兽活动变量"></protobuf>
+</proto>
+<proto id="10256" name="GetHolyBeastExtractReward" desc="获取抽取奖励,返回3025" type="req">
+    <protobuf type="uint16" name="activityId" desc="圣兽活动id" ></protobuf>
+    <protobuf type="uint32" name="serialNum" desc="序列号" ></protobuf>
+</proto>
+
+<!-- 七日活动大奖领取状态 -->
+<proto name="stSevenDayBigReward">
+    <protobuf type="uint8" name="id" desc="t_Sevenday_Task_Config表的f_id" ></protobuf>
+    <protobuf type="uint8" name="state" desc="0不可领取 1可领取 2已领取" ></protobuf>
+</proto>
+<!-- 七日活动任务完成详情 -->
+<proto name="stSevenDayTaskDetail">
+    <protobuf type="uint16" name="id" desc="任务id（t_Sevenday_Task表f_id）" ></protobuf>
+    <protobuf type="uint16" name="cnt" desc="任务完成数量" ></protobuf>
+    <protobuf type="uint8" name="state" desc="0不可领取 1可领取 2已领取" ></protobuf>
+</proto>
+<proto id="10257" name="SevenDayInitOrFresh" desc="七日活动初始化或系统刷新" type="revc">
+    <protobuf type="uint8" name="day" desc="解锁的天数（t_Sevenday_Task_Config表的f_id）" ></protobuf>
+    <protobuf type="array" itemtype="stSevenDayBigReward" name="bigRewardList" desc="大奖数据列表（全部量）"></protobuf>
+    <protobuf type="array" itemtype="stSevenDayTaskDetail" name="taskList" desc="任务数据列表（全部量）"></protobuf>
+</proto>
+<proto id="10258" name="SevenDayTaskUpdate" desc="七日活动任务更新" type="revc">
+    <protobuf type="array" itemtype="stSevenDayTaskDetail" name="datalist" desc="任务数据列表（变化量）"></protobuf>
+</proto>
+<proto id="10259" name="SevenDayTaskReward" desc="领取七日活动任务奖励（返回10258）" type="req">
+    <protobuf type="uint16" name="id" desc="任务id(t_Sevenday_Task表f_id)" ></protobuf>
+</proto>
+<proto id="10260" name="SevenDayBigRewardUpdate" desc="七日活动大奖状态更新" type="revc">
+    <protobuf type="array" itemtype="stSevenDayBigReward" name="datalist" desc="大奖数据列表（变化量）"></protobuf>
+</proto>
+<proto id="10261" name="SevenDayBigReward" desc="领取七日活动任务奖励（返回10260）" type="req">
+    <protobuf type="uint16" name="id" desc="任务id(t_Sevenday_Task_Config表f_id)" ></protobuf>
+</proto>
+<proto id="10262" name="TodaySpirit" desc="今日已获得的神魄次数(全量)" type="revc">
+    <protobuf type="uint8" name="spirit" desc="今日已获得的神魄次数" ></protobuf>
+</proto>
+<proto id="10263" name="HeroBuyByPack" desc="礼包购买英雄" type="req">
+    <protobuf type="uint8" name="id" desc="t_Mythical_Choice表fid" ></protobuf>
+</proto>
+<proto name="stMonsterNum">
+    <protobuf type="uint32" name="playerId" desc="玩家id 0表示机器人" ></protobuf>
+    <protobuf type="uint8" name="monsterNum" desc="怪物数量" ></protobuf>
+</proto>
+<proto id="10264" name="MonsterNum" desc="怪物数量同步（一秒一次）" type="revc">
+    <protobuf type="array" itemtype="stMonsterNum" name="datalist" desc="怪物数量列表"></protobuf>
+</proto>
+<proto id="10265" name="SommonTimes" desc="召唤次数" type="revc">
+    <protobuf type="uint16" name="num" desc="召唤次数" ></protobuf>
+</proto>
+<proto name="stPvPUnlockTask" desc="pvp解锁条件任务">
+    <protobuf type="uint16" name="taskType" desc="pvp解锁任务类型对应t_Pvp_Unlock_Condition的f_task_type" ></protobuf>
+    <protobuf type="uint16" name="val" desc="当前任务类型完成数量" ></protobuf>
+</proto>
+<proto id="10266" name="PvPUnlockInit" desc="pvp解锁信息初始化" type="revc">
+    <protobuf type="uint8" name="unlock" desc="是否解锁 0未解锁 1已解锁" ></protobuf>
+    <protobuf type="array" itemtype="stPvPUnlockTask" name="tasks" desc="解锁条件数据(t_Pvp_Unlock_Condition) pvp未解锁时候只发f_task_type=28(累计收集100张技能卡) pvp解锁时候这里为空" ></protobuf>
+    <protobuf type="array" itemtype="uint8" name="rewardExistIds" desc="已领了哪些奖励id,对应t_Pvp_Unlock_Condition的f_id，pvp已解锁发空"></protobuf>
+</proto>
+<proto id="10267" name="PvPUnlockTask" desc="pvp解锁条件数据变化" type="revc">
+    <protobuf type="array" itemtype="stPvPUnlockTask" name="datalist" desc="解锁条件数据(目前只有技能卡数据更新)" ></protobuf>
+</proto>
+<proto id="10268" name="PvPUnlockRewards" desc="pvp解锁奖励变化(全量)" type="revc">
+    <protobuf type="array" itemtype="uint8" name="datalist" desc="已领了哪些奖励id,对应t_Pvp_Unlock_Condition的f_id"></protobuf>
+</proto>
+<proto id="10269" name="PvPUnlock" desc="解锁pvp(领奖返回10268,解锁返回10270)" type="req">
+    <protobuf type="uint8" name="flag" desc="0领取解锁奖励 1解锁pvp(奖励都领了才能解锁)" ></protobuf>
+    <protobuf type="uint8" name="finishTrial" desc="是否完成试炼 0未完成 1已完成" ></protobuf>
+</proto>
+<proto id="10270" name="PvPUnlock" desc="解锁pvp" type="revc">
+    <protobuf type="uint8" name="unlock" desc="是否解锁 0未解锁 1已解锁" ></protobuf>
+</proto>
+<proto name="stNewInvite">
+    <protobuf type="uint8" name="pos" desc="当日邀请栏位" ></protobuf>
+    <protobuf type="uint32" name="playerId" desc="玩家id" ></protobuf>
+    <protobuf type="string" name="headUrl" desc="头像" ></protobuf>
+    <protobuf type="uint8" name="status" desc="领取状态 0不可领取 1可领取 2已领取"></protobuf>
+</proto>
+<proto id="10271" name="NewInviteInitOrFresh" desc="新邀请(初始化或系统刷新推送)" type="revc">
+    <protobuf type="uint8" name="canInvite" desc="玩家是否可邀请 0不可邀请 1可邀请"></protobuf>
+    <protobuf type="array" itemtype="stNewInvite" name="datalist" desc="邀请列表,不可邀请时候为空" ></protobuf>
+</proto>
+<proto id="10272" name="NewInvite" desc="领取新邀请奖励,返回10273" type="req">
+    <protobuf type="uint8" name="pos" desc="当日邀请栏位" ></protobuf>
+</proto>
+<proto id="10273" name="NewInvite" desc="新邀请相关变量(新邀请到了玩家或领取邀请奖励)" type="revc">
+    <protobuf type="array" itemtype="stNewInvite" name="datalist" desc="邀请列表变化,新增或领取奖励" ></protobuf>
+</proto>
+<proto id="10274" name="FirstPassRewardCoop" desc="领取pve首通奖励" type="req">
+    <protobuf type="uint8" name="id" desc="首通奖励id对应t_First_Pass_Reward_Coop的f_id" ></protobuf>
+</proto>
+<proto id="10275" name="FirstPassRewardCoop" desc="pve首通奖励变量(可领或已领变化)" type="revc">
+    <protobuf type="array" itemtype="stFirstPassRewardCoop" name="datalist" desc="pve首通奖励可领或已领变量" ></protobuf>
+</proto>
+<proto name="stMainTask">
+    <protobuf type="uint16" name="id" desc="主线任务id" ></protobuf>
+    <protobuf type="uint16" name="val" desc="任务完成数量" ></protobuf>
+    <protobuf type="uint8" name="status" desc="领取状态 0不可领取 1可领取 2已领取"></protobuf>
+</proto>
+<proto id="10276" name="MainTaskInit" desc="主线任务初始化" type="revc">
+    <protobuf type="stMainTask" name="mainTask" desc="当前主线任务" ></protobuf>
+</proto>
+<proto id="10277" name="MainTask" desc="领取主线任务奖励,返回10278" type="req">
+    <protobuf type="uint16" name="id" desc="主线任务id" ></protobuf>
+</proto>
+<proto id="10278" name="MainTask" desc="主线任务变化(领取或任务完成数量变化时推送)" type="revc">
+    <protobuf type="stMainTask" name="mainTask" desc="当前主线任务" ></protobuf>
+</proto>
+
+
+<!--好友系统-->
+<!--好友列表项-->
+<proto name="stFriendListItem">
+    <protobuf type="uint32" name="playerId" desc="玩家角色id" ></protobuf>
+    <protobuf type="uint16" name="playerLevel" desc="玩家等级" ></protobuf>
+    <protobuf type="string" name="nickName" desc="玩家昵称" ></protobuf>
+    <protobuf type="string" name="headUrl" desc="头像" ></protobuf>
+    <protobuf type="uint8" name="headFrame" desc="头像框" ></protobuf>
+    <protobuf type="uint16" name="titleId" desc="称号id" ></protobuf>
+    <protobuf type="uint32" name="trophy" desc="排位赛积分（奖杯数）" ></protobuf>
+    <protobuf type="uint32" name="friendship" desc="友情点数" ></protobuf>
+    <protobuf type="uint8" name="online" desc="0不在线 1在线"></protobuf>
+    <protobuf type="array" itemtype="stFriendTask" name="datalist" desc="好友任务列表数据" ></protobuf>
+</proto>
+<!--好友每日任务-->
+<proto name="stFriendTask">
+    <protobuf type="uint16" name="taskId" desc="任务id" ></protobuf>
+    <protobuf type="uint32" name="num" desc="任务完成数量"></protobuf>
+</proto>
+<proto id="10300" name="FriendList" desc="好友列表（全部量）" type="revc">
+    <protobuf type="uint8" name="type" desc="0申请列表 1是好友列表 2搜索列表 3推荐列表"></protobuf>
+    <protobuf type="array" itemtype="stFriendListItem" name="datalist" desc="好友列表数据" ></protobuf>
+</proto>
+<proto id="10301" name="FriendList" desc="好友列表刷新（返回10300）" type="req">
+    <protobuf type="uint8" name="type" desc="0申请列表 1是好友列表 3推荐列表"></protobuf>
+</proto>
+<proto id="10302" name="FriendManage" desc="好友管理" type="req">
+    <protobuf type="uint32" name="playerId" desc="玩家角色id（type为0或1时，playerId为0表示申请好友的全部玩家）" ></protobuf>
+    <protobuf type="uint8" name="type" desc="0拒绝 1同意 2删除 3添加好友"></protobuf>
+</proto>
+<proto id="10303" name="FriendSearch" desc="好友搜索" type="req">
+    <protobuf type="string" name="name" desc="玩家id或昵称" ></protobuf>
+</proto>
+<proto id="10305" name="FriendTaskListUpdate" desc="好友任务列表（变化量）" type="revc">
+    <protobuf type="uint32" name="playerId" desc="玩家角色id" ></protobuf>
+    <protobuf type="array" itemtype="stFriendTask" name="datalist" desc="好友任务列表数据" ></protobuf>
+</proto>
+<proto id="10306" name="FriendZan" desc="给好友点赞（返回10307）" type="req">
+    <protobuf type="uint32" name="playerId" desc="玩家id" ></protobuf>
+</proto>
+<proto id="10307" name="FriendZan" desc="给好友点赞" type="revc">
+    <protobuf type="uint32" name="playerId" desc="玩家id" ></protobuf>
+    <protobuf type="uint32" name="zan" desc="点赞数" ></protobuf>
+</proto>
+<proto id="10308" name="LotteryReward" desc="幸运转盘抽奖" type="req">
+    <protobuf type="uint8" name="flag" desc="抽奖次数0单抽 1十连抽" ></protobuf>
+</proto>
+<proto id="10309" name="LotteryReward" desc="幸运转盘抽奖" type="revc">
+    <protobuf type="uint8" name="flag" desc="抽奖次数0单抽 1十连抽" ></protobuf>
+    <protobuf type="uint8" name="id" desc="抽奖获得的奖品id(flag=0的时候>0,连抽时候=0)" ></protobuf>
+    <protobuf type="uint32" name="serial" desc="显示奖励的序列号(10分钟内有效)" ></protobuf>
+</proto>
+<proto id="10310" name="LotteryRewardShow" desc="幸运转盘抽奖" type="req">
+    <protobuf type="uint32" name="serial" desc="显示奖励的序列号" ></protobuf>
+</proto>
+<proto id="10311" name="FriendPrivateChatAction" desc="好友私聊操作" type="req">
+    <protobuf type="uint8" name="flag" desc="0删除(聊天列表删除对应聊天,没有返回,客户端直接将当前去掉) 1新增(好友列表点击聊天时候发,返回10313)" ></protobuf>
+    <protobuf type="uint32" name="friendId" desc="好友的角色id" ></protobuf>
+</proto>
+<proto name="stFriendPrivateChatRole">
+    <protobuf type="uint32" name="uid" desc="最近的聊天序列号,数字越大时间越新" ></protobuf>
+    <protobuf type="uint32" name="friendId" desc="好友的角色id" ></protobuf>
+    <protobuf type="uint16" name="level" desc="玩家当前等级" ></protobuf>
+    <protobuf type="string" name="nickName" desc="玩家昵称" ></protobuf>
+    <protobuf type="string" name="headUrl" desc="玩家头像" ></protobuf>
+    <protobuf type="uint8" name="headFrame" desc="头像框" ></protobuf>
+    <protobuf type="uint32" name="trophy" desc="角色最新的奖杯数量" ></protobuf>
+    <protobuf type="uint8" name="trophyStage" desc="当前最高奖杯所处的阶段" ></protobuf>
+    <protobuf type="uint8" name="hasRed" desc="是否有红点 0没 1有" ></protobuf>
+</proto>
+<proto id="10312" name="FriendPrivateChatRoles" desc="好友私聊的角色列表" type="req">
+</proto>
+<proto id="10313" name="FriendPrivateChatRoles" desc="好友私聊的角色列表" type="revc">
+    <protobuf type="array" itemtype="stFriendPrivateChatRole" name="datalist" desc="私聊的好友角色列表" ></protobuf>
+</proto>
+<proto id="10314" name="FriendPrivateChatContents" desc="好友私聊的消息列表" type="req">
+    <protobuf type="uint32" name="friendId" desc="好友的角色id" ></protobuf>
+</proto>
+<proto id="10315" name="FriendPrivateChatContents" desc="好友私聊的消息列表" type="revc">
+    <protobuf type="uint32" name="friendId" desc="好友的角色id" ></protobuf>
+    <protobuf type="uint8" name="isHole" desc="0变化量(数据往里面加) 1全量(直接等)" ></protobuf>
+    <protobuf type="array" itemtype="stChat" name="datalist" desc="当前好友的聊天数据" ></protobuf>
+</proto>
+<proto id="10316" name="FriendDiscuss" desc="发起好友切磋,收到10317弹出等待界面" type="req">
+    <protobuf type="uint8" name="mode" desc="1-pvp模式 2-pve模式 3-pve困难模式 4-pve年兽 5pve地域模式" ></protobuf>
+    <protobuf type="uint32" name="friendId" desc="好友的角色id" ></protobuf>
+</proto>
+<proto id="10317" name="FriendDiscuss" desc="发起好友切磋发起成功(向发起者及接收者都推送)" type="revc">
+    <protobuf type="uint8" name="flag" desc="0发起者 1受邀者" ></protobuf>
+    <protobuf type="uint8" name="mode" desc="1-pvp模式 2-pve模式 3-pve困难模式 4-pve年兽 5pve地域模式" ></protobuf>
+    <protobuf type="uint32" name="serial" desc="当前切磋的序列号(备用)" ></protobuf>
+    <protobuf type="string" name="nickName" desc="切磋发起者的昵称" ></protobuf>
+</proto>
+<proto id="10318" name="FriendDiscussCancel" desc="发起者取消好友切磋(返回原3005 code=14)" type="req">
+</proto>
+<proto id="10319" name="FriendDiscussAction" desc="受邀者操作好友切磋" type="req">
+    <protobuf type="uint8" name="action" desc="0拒绝 1接受" ></protobuf>
+</proto>
+<proto id="10320" name="FriendDiscussAction" desc="受邀者关闭好友切磋界面" type="revc">
+</proto>
+
+<proto name="stPvpTurnBasedHp">
+    <protobuf type="uint32" name="playerId" desc="玩家id" ></protobuf>
+    <protobuf type="uint8" name="hp" desc="玩家血量" ></protobuf>
+</proto>
+<proto id="10321" name="PvpTurnBasedReady" desc="pvp回合制准备结束" type="req">
+</proto>
+<proto id="10322" name="PvpTurnBasedHpList" desc="pvp回合制玩家血量" type="revc">
+    <protobuf type="array" itemtype="stPvpTurnBasedHp" name="datalist" desc="血量数据" ></protobuf>
+</proto>
+<proto id="10323" name="PvpTurnBasedHpUpdate" desc="pvp回合制玩家血量" type="revc">
+    <protobuf type="array" itemtype="stPvpTurnBasedHp" name="datalist" desc="血量数据" ></protobuf>
+</proto>
+<proto id="10324" name="PvpTurnBasedCountDown" desc="pvp回合制准备期间倒计时" type="revc">
+    <protobuf type="uint32" name="unix" desc="倒计时时间戳" ></protobuf>
+    <protobuf type="uint8" name="wave" desc="回合数" ></protobuf>
+</proto>
+<proto id="10325" name="FriendWatch" desc="好友列表点击查看好友" type="req">
+    <protobuf type="uint32" name="accountId" desc="好友角色id" ></protobuf>
+</proto>
+<proto id="10326" name="FriendWatch" desc="好友列表点击查看好友" type="revc">
+    <protobuf type="stPlayerData" name="playerData" desc="好友数据(只给需要显示的数据)" ></protobuf>
+    <protobuf type="uint32" name="zanCnt" desc="好友点赞数量" ></protobuf>
+    <protobuf type="uint8" name="zanExist" desc="当前好友有没有点赞 1已点 0未点" ></protobuf>
+    <protobuf type="uint8" name="isFriend" desc="与当前玩家是否是好友 1是 0否" ></protobuf>
+</proto>
+<proto id="10327" name="PvpTurnBasedStartFight" desc="pvp回合制准备结束开始战斗" type="revc">
+    <protobuf type="uint8" name="state" desc="1开始准备 2开始战斗 3准备结束 4开始肉鸽 5肉鸽结束" ></protobuf>
+</proto>
+<proto id="10328" name="PvpTurnBasedBuffList" desc="pvp回合制buff列表" type="revc">
+    <protobuf type="array" itemtype="stBattleBuff" name="datalist" desc="buff数据" ></protobuf>
+</proto>
+<proto id="10329" name="ChatRed" desc="聊天红点" type="revc">
+    <protobuf type="uint8" name="type" desc="类型 0默认专服内聊天 1好友私聊" ></protobuf>
+    <protobuf type="uint8" name="hasRed" desc="是否有红点 0没 1有" ></protobuf>
+</proto>
+<proto id="10330" name="FriendPrivateChatOnLeave" desc="离开好友私聊时候发送" type="req">
+    <protobuf type="uint32" name="friendId" desc="好友的角色id" ></protobuf>
+</proto>
+<proto id="10331" name="CrazyFishInitOrFresh" desc="电鱼活动初始化或刷新" type="revc">
+    <protobuf type="uint16" name="configId" desc="t_Crazy_Fish_config的f_id,若为0则活动未开启" ></protobuf>
+    <protobuf type="uint16" name="guarantee" desc="保底次数" ></protobuf>
+    <protobuf type="array" itemtype="stCommonTimes" name="datalist" desc="本期充值购买次数" ></protobuf>
+</proto>
+<proto id="10332" name="CrazyFishCharge" desc="电鱼活动充值次数变化" type="revc">
+    <protobuf type="array" itemtype="stCommonTimes" name="datalist" desc="本期充值购买次数" ></protobuf>
+</proto>
+<proto id="10333" name="CrazyFishExchange" desc="兑换电鱼道具" type="req">
+    <protobuf type="uint32" name="cnt" desc="兑换个数" ></protobuf>
+</proto>
+<proto id="10334" name="CrazyFishLottery" desc="电鱼抽奖返回的序列号" type="revc">
+    <protobuf type="uint8" name="cnt" desc="抽取次数 1单抽 10十连抽" ></protobuf>
+    <protobuf type="uint32" name="serial" desc="序列号" ></protobuf>
+    <protobuf type="uint16" name="guarantee" desc="保底次数" ></protobuf>
+</proto>
+<proto id="10335" name="CrazyFishLotteryShow" desc="电鱼抽奖展示结果" type="req">
+    <protobuf type="uint32" name="serial" desc="序列号" ></protobuf>
+</proto>
+
+<proto id="10336" name="WaveSettleReward" desc="回合结算奖励" type="revc">
+    <protobuf type="uint8" name="wave" desc="当前回合" ></protobuf>
+    <protobuf type="uint8" name="win" desc="0输 1赢" ></protobuf>
+    <protobuf type="array" itemtype="stCellValue" name="itemlist" desc="回合结算奖励数据" ></protobuf> 
+</proto>
+<proto id="10337" name="PvpTurnBasedMonsterNum" desc="pvp回合制怪物数" type="revc">
+    <protobuf type="uint32" name="playerId" desc="玩家id" ></protobuf>
+    <protobuf type="uint16" name="total" desc="总怪物数" ></protobuf>
+    <protobuf type="uint16" name="killNum" desc="杀死的怪物数" ></protobuf>
+</proto>
+<proto id="10338" name="ActivityExchange" desc="活动通用兑换" type="req">
+    <protobuf type="uint16" name="activityId" desc="活动id" ></protobuf>
+    <protobuf type="uint16" name="cnt" desc="商品购买的次数" ></protobuf>
+</proto>
+<proto name="stCoverBigGoose">
+    <protobuf type="uint8" name="pos" desc="大鹅位置" ></protobuf>
+    <protobuf type="stCellValue" name="reward" desc="大鹅位置上的奖励" ></protobuf>
+</proto>
+<proto name="stCoverBigGooseTask">
+    <protobuf type="uint8" name="id" desc="套大鹅任务配置的f_id" ></protobuf>
+    <protobuf type="uint16" name="val" desc="套大鹅任务完成的数量" ></protobuf>
+    <protobuf type="uint8" name="status" desc="领取状态 0不可领取 1可领取 2已领取"></protobuf>
+</proto>
+<proto id="10339" name="CoverBigGooseInit" desc="大鹅初始化信息" type="revc">
+    <protobuf type="uint16" name="bigPrize" desc="大奖id,t_Cover_Big_Goose_reward的f_id" ></protobuf>
+    <protobuf type="array" itemtype="stCoverBigGoose" name="datalist" desc="已开奖的大鹅信息(未开奖的不推送)" ></protobuf>
+    <protobuf type="array" itemtype="stCoverBigGooseTask" name="tasks" desc="大鹅信息任务" ></protobuf>
+</proto>
+<proto id="10340" name="CoverBigGooseChange" desc="大鹅对应奖励变量" type="revc">
+    <protobuf type="uint8" name="type" desc="0抽取变量(datalist是变量) 1重置大鹅奖励显示(datalist不传)" ></protobuf>
+    <protobuf type="array" itemtype="stCoverBigGoose" name="datalist" desc="大鹅开奖变量" ></protobuf>
+</proto>
+<proto id="10341" name="CoverBigGooseBigPrize" desc="设置大鹅大奖" type="req">
+    <protobuf type="uint16" name="id" desc="大奖id,t_Cover_Big_Goose_reward的f_id" ></protobuf>
+</proto>
+<proto id="10342" name="CoverBigGooseBigPrize" desc="设置大鹅大奖" type="revc">
+    <protobuf type="uint16" name="bigPrize" desc="大奖id,t_Cover_Big_Goose_reward的f_id" ></protobuf>
+</proto>
+<proto id="10343" name="CoverBigGooseTask" desc="领取大鹅任务奖励" type="req">
+    <protobuf type="uint8" name="id" desc="套大鹅任务配置的f_id" ></protobuf>
+</proto>
+<proto id="10344" name="CoverBigGooseTask" desc="领取大鹅任务变量" type="revc">
+    <protobuf type="array" itemtype="stCoverBigGooseTask" name="tasks" desc="大鹅任务变量" ></protobuf>
+</proto>
+<proto id="10345" name="MonsterBlood2" desc="强化怪物的减血" type="revc" >
+    <protobuf type="array" itemtype="stSubBlood" name="datalist" desc="强化怪物减血信息列表" ></protobuf> 
+</proto>
+<proto id="10346" name="PVEModes" desc="pve模式开启变化变量" type="revc" >
+    <protobuf type="uint8" name="modechange" desc="0普通模式 1困难模式 2地域模式" ></protobuf> 
+</proto>
+<proto name="stMonsterScale">
+    <protobuf type="uint8" name="uid" desc="怪物uid" ></protobuf>
+    <protobuf type="uint16" name="scale" desc="缩放万分比" ></protobuf> 
+</proto>
+<proto id="10347" name="MonsterScale" desc="怪物缩放比例" type="revc" >
+    <protobuf type="array" itemtype="stMonsterScale" name="datalist" desc="怪物缩放比例列表" ></protobuf> 
+</proto>
+<!-- 春节年兽活动排行榜的开始与结束时间 -->
+<proto name="stSpringFestivalRankTime">
+    <protobuf type="uint32" name="begin" desc="春节年兽排行榜时间的开始时间戳" ></protobuf>
+    <protobuf type="uint32" name="end" desc="春节年兽排行榜时间的结束时间戳" ></protobuf>
+</proto>
+<!-- 春节年兽签到 -->
+<proto name="stSpringFestivalSignIn">
+    <protobuf type="uint8" name="id" desc="对应t_Spring_Festival_2025_Sign的f_id" ></protobuf>
+    <protobuf type="uint8" name="state" desc="状态 0不可签到 1已签到 2可补签(补签完成变成已签到) 3可签到" ></protobuf>
+</proto>
+<!-- 春节年兽公共相关次数 -->
+<!-- 驱赶年兽发战斗匹配协议10100,战斗模式发5 -->
+<proto name="stSpringFestivalCommonTimes">
+    <protobuf type="uint8" name="category" desc="1当日驱赶年兽剩余次数 2当日购买驱赶年兽次数(非剩余)(购买走10338协议) 3当日已点赞次数(非剩余)" ></protobuf>
+    <protobuf type="uint16" name="times" desc="次数" ></protobuf>
+</proto>
+<!-- 春节年兽活动排行榜列表-->
+<proto name="stSpringFestivalRankPlayer">
+    <protobuf type="uint32" name="playerId" desc="角色id" ></protobuf>
+    <protobuf type="string" name="HeadUrl" desc="头像" ></protobuf>
+    <protobuf type="string" name="nickName" desc="昵称" ></protobuf>
+    <protobuf type="uint8" name="HeadFrame" desc="头像框" ></protobuf>
+</proto>
+<proto name="stSpringFestivalRank">
+    <protobuf type="uint32" name="rank" desc="名次" ></protobuf>
+    <protobuf type="array" itemtype="stSpringFestivalRankPlayer" name="playeres" desc="角色信息(2个角色)" ></protobuf>
+    <protobuf type="uint32" name="damage" desc="伤害数值" ></protobuf>
+    <protobuf type="uint32" name="zan" desc="赞的次数" ></protobuf>
+    <protobuf type="uint8" name="zanExist" desc="有无点赞 1已点 0未点" ></protobuf>
+    <protobuf type="string" name="uqSign" desc="当前这对组合的唯一标识" ></protobuf>
+</proto>
+<!-- 春节年兽活动累计充值奖励-->
+<proto name="stSpringFestivalCharge" desc="年兽活动每日累计充值奖励情况">
+    <protobuf type="uint16" name="id" desc="t_Spring_Festival_2025_Daily_Recharge或t_Spring_Festival_2025_Daily_Recharge_Reward的f_id" ></protobuf>
+    <protobuf type="uint32" name="val" desc="任务完成的数量" ></protobuf>
+    <protobuf type="uint8" name="status" desc="领取状态 0不可领取 1可领取 2已领取"></protobuf>
+</proto>
+<!-- 春节活动商店购买数据-->
+<proto name="stSpringFestivalShop">
+    <protobuf type="uint8" name="fid" desc="商品fid，t_Spring_Festival_2025_Shop表f_id" ></protobuf>
+    <protobuf type="uint8" name="times" desc="已购买次数" ></protobuf>
+</proto>
+<proto id="10348" name="SpringFestivalInitOrFresh" desc="年兽活动初始化或系统刷新" type="revc">
+    <protobuf type="stSpringFestivalRankTime" name="rankTime" desc="年兽活动排行榜开始与结束时间" ></protobuf>
+    <protobuf type="array" itemtype="stSpringFestivalSignIn" name="signInList" desc="春节签到列表" ></protobuf>
+    <protobuf type="array" itemtype="stSpringFestivalCommonTimes" name="timeList" desc="春节相关操作次数" ></protobuf>
+    <protobuf type="array" itemtype="stSpringFestivalCharge" name="dailyRecharge" desc="充值列表奖励数据" ></protobuf>
+    <protobuf type="array" itemtype="stSpringFestivalCharge" name="dailyRechargeSum" desc="累充列表奖励数据" ></protobuf>
+    <protobuf type="array" itemtype="stSpringFestivalShop" name="datalist" desc="商店购买数据列表" ></protobuf>
+</proto>
+<proto id="10349" name="SpringFestivalSignIn" desc="春节年兽签到" type="req">
+    <protobuf type="uint8" name="id" desc="对应t_Spring_Festival_2025_Sign的f_id" ></protobuf>
+</proto>
+<proto id="10350" name="SpringFestivalSignIn" desc="春节年兽签到变量" type="revc">
+    <protobuf type="array" itemtype="stSpringFestivalSignIn" name="datalist" desc="春节签到变量" ></protobuf>
+</proto>
+<proto id="10351" name="SpringFestivalCommonTimes" desc="春节年兽功能相关次数变化量" type="revc">
+    <protobuf type="array" itemtype="stSpringFestivalCommonTimes" name="timeList" desc="春节相关操作次数" ></protobuf>
+</proto>
+<proto id="10352" name="SpringFestivalRank" desc="打开春节活动排行榜" type="req">
+</proto>
+<proto id="10353" name="SpringFestivalRank" desc="春节年兽活动排行榜返回" type="revc">
+    <protobuf type="array" itemtype="stSpringFestivalRank" name="datalist" desc="排行榜列表" ></protobuf>
+</proto>
+<proto id="10354" name="SpringFestivalDailyRecharge" desc="领取春节活动累充奖励" type="req">
+    <protobuf type="uint8" name="flag" desc="0是下面列表页 1是上面累充" ></protobuf>
+    <protobuf type="uint16" name="id" desc="t_Spring_Festival_2025_Daily_Recharge或t_Spring_Festival_2025_Daily_Recharge_Reward的f_id" ></protobuf>
+</proto>
+<proto id="10355" name="SpringFestivalDailyRecharge" desc="春节活动累充奖励变化的变量(领取或充值达到条件变化)" type="revc">
+    <protobuf type="uint8" name="flag" desc="0是下面列表页 1是上面累充" ></protobuf>
+    <protobuf type="array" itemtype="stSpringFestivalCharge" name="datalist" desc="充值奖励变化" ></protobuf>
+</proto>
+<proto id="10356" name="SpringFestivalZan" desc="春节活动排行榜点赞,返回10351(当日点赞次数)+10360(排行榜上的数据)" type="req">
+    <protobuf type="string" name="uqSign" desc="当前这对组合的唯一标识" ></protobuf>
+</proto>
+<proto name="stMonsterAttr">
+    <protobuf type="uint32" name="uid" desc="怪的序列号" ></protobuf> 
+    <protobuf type="uint32" name="attrId" desc="属性id"></protobuf>
+</proto>
+<proto id="10357" name="MonsterAttr" desc="春节活动，年兽随机属性" type="revc">
+    <protobuf type="array" itemtype="stMonsterAttr" name="datalist" desc="年兽随机属性列表" ></protobuf>
+</proto>
+<proto id="10358" name="SpringFestivalShop" desc="春节活动，商店购买（返回10359）" type="req">
+    <protobuf type="uint8" name="fid" desc="商品fid，t_Spring_Festival_2025_Shop表f_id" ></protobuf>
+    <protobuf type="uint8" name="count" desc="购买数量" ></protobuf>
+</proto>
+<proto id="10359" name="SpringFestivalShop" desc="春节活动，商店购买" type="revc">
+    <protobuf type="array" itemtype="stSpringFestivalShop" name="datalist" desc="商店购买数据列表（变化量）" ></protobuf>
+</proto>
+<proto id="10360" name="SpringFestivalZan" desc="春节活动排行榜点赞,返回10351" type="revc">
+    <protobuf type="string" name="uqSign" desc="当前这对组合的唯一标识" ></protobuf>
+    <protobuf type="uint32" name="zan" desc="赞的次数" ></protobuf>
+    <protobuf type="uint8" name="zanExist" desc="有无点赞 1已点 0未点" ></protobuf>
+</proto>
+<proto name="stMonsterEffect" desc="怪物特效">
+    <protobuf type="uint32" name="monsterUid" desc="怪的序列号" ></protobuf> 
+    <protobuf type="uint32" name="attrId" desc="属性id"></protobuf>
+    <protobuf type="array" itemtype="stMonsterEffectTarget" name="datalist" desc="怪物特效的目标列表" ></protobuf>
+</proto>
+<proto name="stMonsterEffectTarget" desc="怪物特效的目标">
+    <protobuf type="uint8" name="type" desc="类型 1怪物 2英雄格子 3棋盘"></protobuf>
+    <protobuf type="uint32" name="uid" desc="目标的序列号" ></protobuf> 
+</proto>
+<proto id="10361" name="MonsterEffect" desc="春节活动，怪物特效" type="revc">
+    <protobuf type="array" itemtype="stMonsterEffect" name="datalist" desc="怪物特效列表" ></protobuf>
+</proto>
