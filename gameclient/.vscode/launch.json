@@ -6,13 +6,7 @@
 			"type": "chrome",
 			"request": "launch",
 		
-
-			// :8001/Project1/Client/${branch_name}/gameclient/bin/index.html?user=oTAGY7aqTU_yB-kYCWCOXTWWijXA&config=initconfig_wx_gray
-			// &config=initConfig&
-
-			//	oTAGY7aqTU_yB-kYCWCOXTWWijXA
-
-			"url": "http://127.0.0.1:8001/Project1/Client/tower_20250124/gameclient/bin/index.html?user=user001&disableSound=1&debug=1&config=initConfig&debugshow=1&enableguide=1",
+			"url": "http://127.0.0.1:8001/Project1/Client/tower_20250124/gameclient/bin/index.html?user=oTAGY7aqTU_yB-kYCWCOXTWWijXA&config=initConfig&disableSound=1&debug=1",
 			// ver=dev&disableSound=1&proto_log=1&debug=1	
 			//本地
 			// "url":"http://127.0.0.1:8001/Project1/Client/tower_20250124/gameclient/bin/index.html?&user=1&sy_url=http://127.0.0.1:8005&tcp=ws://127.0.0.1:8004&Stat1=1&debug=1&proto_log=1&disableSound=1&guideTaskId=0&timeScale=10",
