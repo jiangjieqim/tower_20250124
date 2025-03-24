@@ -1,0 +1,48 @@
+
+chenghao_5.png
+size: 256,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+c1
+  rotate: false
+  xy: 0, 87
+  size: 92, 87
+  orig: 120, 100
+  offset: 14, 6
+  index: -1
+c2
+  rotate: false
+  xy: 93, 49
+  size: 98, 39
+  orig: 100, 40
+  offset: 1, 0
+  index: -1
+dijun1
+  rotate: false
+  xy: 0, 175
+  size: 192, 76
+  orig: 200, 90
+  offset: 4, 7
+  index: -1
+dijun_1
+  rotate: true
+  xy: 93, 89
+  size: 85, 80
+  orig: 87, 82
+  offset: 1, 1
+  index: -1
+dijun_2
+  rotate: false
+  xy: 0, 54
+  size: 92, 32
+  orig: 94, 34
+  offset: 1, 1
+  index: -1
+dijun_4
+  rotate: true
+  xy: 193, 76
+  size: 175, 58
+  orig: 177, 60
+  offset: 1, 1
+  index: -1

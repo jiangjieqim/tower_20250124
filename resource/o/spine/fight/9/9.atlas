@@ -1,0 +1,146 @@
+
+9.png
+size: 256,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+20240830-114151
+  rotate: false
+  xy: 108, 0
+  size: 18, 18
+  orig: 20, 20
+  offset: 1, 1
+  index: -1
+body
+  rotate: true
+  xy: 215, 7
+  size: 47, 26
+  orig: 47, 26
+  offset: 0, 0
+  index: -1
+eyeball1
+  rotate: false
+  xy: 102, 9
+  size: 5, 5
+  orig: 5, 5
+  offset: 0, 0
+  index: -1
+eyeball2
+  rotate: false
+  xy: 102, 3
+  size: 5, 5
+  orig: 5, 5
+  offset: 0, 0
+  index: -1
+hand1
+  rotate: false
+  xy: 127, 0
+  size: 13, 18
+  orig: 13, 18
+  offset: 0, 0
+  index: -1
+hand2
+  rotate: false
+  xy: 242, 37
+  size: 12, 17
+  orig: 12, 17
+  offset: 0, 0
+  index: -1
+mouth
+  rotate: true
+  xy: 235, 67
+  size: 31, 12
+  orig: 31, 12
+  offset: 0, 0
+  index: -1
+necklace
+  rotate: true
+  xy: 235, 99
+  size: 29, 20
+  orig: 29, 20
+  offset: 0, 0
+  index: -1
+shutiao_00000
+  rotate: true
+  xy: 0, 0
+  size: 45, 82
+  orig: 60, 100
+  offset: 6, 9
+  index: -1
+shutiao_00001
+  rotate: false
+  xy: 141, 55
+  size: 46, 73
+  orig: 60, 100
+  offset: 5, 9
+  index: -1
+shutiao_00002
+  rotate: false
+  xy: 94, 54
+  size: 46, 74
+  orig: 60, 100
+  offset: 5, 9
+  index: -1
+shutiao_00003
+  rotate: false
+  xy: 188, 55
+  size: 46, 73
+  orig: 60, 100
+  offset: 5, 9
+  index: -1
+shutiao_00004
+  rotate: false
+  xy: 0, 46
+  size: 46, 82
+  orig: 60, 100
+  offset: 5, 9
+  index: -1
+shutiao_00005
+  rotate: false
+  xy: 47, 53
+  size: 46, 75
+  orig: 60, 100
+  offset: 5, 9
+  index: -1
+shutiao_00006
+  rotate: true
+  xy: 141, 8
+  size: 46, 73
+  orig: 60, 100
+  offset: 5, 9
+  index: -1
+yankuang1
+  rotate: true
+  xy: 108, 19
+  size: 34, 29
+  orig: 34, 29
+  offset: 0, 0
+  index: -1
+yuanbao1
+  rotate: false
+  xy: 83, 1
+  size: 18, 13
+  orig: 18, 13
+  offset: 0, 0
+  index: -1
+yuanbao2
+  rotate: false
+  xy: 235, 55
+  size: 15, 11
+  orig: 15, 11
+  offset: 0, 0
+  index: -1
+yuanbao3
+  rotate: true
+  xy: 242, 20
+  size: 16, 12
+  orig: 16, 12
+  offset: 0, 0
+  index: -1
+zui1
+  rotate: true
+  xy: 83, 15
+  size: 37, 24
+  orig: 37, 24
+  offset: 0, 0
+  index: -1

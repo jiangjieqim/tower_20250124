@@ -1,0 +1,76 @@
+
+e_2.png
+size: 184,184
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+e2_biyan
+  rotate: true
+  xy: 10, 33
+  size: 8, 5
+  orig: 8, 5
+  offset: 0, 0
+  index: -1
+e2_fa1
+  rotate: false
+  xy: 0, 42
+  size: 49, 38
+  orig: 49, 38
+  offset: 0, 0
+  index: -1
+e2_fa2
+  rotate: false
+  xy: 140, 50
+  size: 42, 47
+  orig: 42, 47
+  offset: 0, 0
+  index: -1
+e2_weibo
+  rotate: true
+  xy: 140, 6
+  size: 43, 40
+  orig: 43, 40
+  offset: 0, 0
+  index: -1
+e2_youjiao
+  rotate: false
+  xy: 50, 53
+  size: 22, 27
+  orig: 22, 27
+  offset: 0, 0
+  index: -1
+e2_zhenyan
+  rotate: true
+  xy: 0, 34
+  size: 7, 9
+  orig: 7, 9
+  offset: 0, 0
+  index: -1
+e2_zuojiao
+  rotate: false
+  xy: 50, 25
+  size: 22, 27
+  orig: 22, 27
+  offset: 0, 0
+  index: -1
+e_2
+  rotate: false
+  xy: 0, 81
+  size: 88, 101
+  orig: 88, 101
+  offset: 0, 0
+  index: -1
+quan
+  rotate: false
+  xy: 89, 47
+  size: 50, 50
+  orig: 50, 50
+  offset: 0, 0
+  index: -1
+yanwu3
+  rotate: false
+  xy: 89, 98
+  size: 84, 84
+  orig: 84, 84
+  offset: 0, 0
+  index: -1

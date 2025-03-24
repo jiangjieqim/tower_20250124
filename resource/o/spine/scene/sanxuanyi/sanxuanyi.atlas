@@ -1,0 +1,174 @@
+
+sanxuanyi.png
+size: 1288,1288
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+sanxuanyi_00000
+  rotate: true
+  xy: 978, 355
+  size: 187, 310
+  orig: 200, 325
+  offset: 7, 7
+  index: -1
+sanxuanyi_00001
+  rotate: true
+  xy: 978, 167
+  size: 187, 309
+  orig: 200, 325
+  offset: 7, 7
+  index: -1
+sanxuanyi_00002
+  rotate: true
+  xy: 0, 731
+  size: 186, 309
+  orig: 200, 325
+  offset: 8, 5
+  index: -1
+sanxuanyi_00003
+  rotate: true
+  xy: 310, 731
+  size: 186, 309
+  orig: 200, 325
+  offset: 8, 5
+  index: -1
+sanxuanyi_00004
+  rotate: true
+  xy: 620, 731
+  size: 186, 309
+  orig: 200, 325
+  offset: 8, 5
+  index: -1
+sanxuanyi_00005
+  rotate: true
+  xy: 930, 730
+  size: 186, 304
+  orig: 200, 325
+  offset: 8, 6
+  index: -1
+sanxuanyi_00006
+  rotate: true
+  xy: 0, 544
+  size: 186, 305
+  orig: 200, 325
+  offset: 8, 5
+  index: -1
+sanxuanyi_00007
+  rotate: true
+  xy: 969, 1103
+  size: 185, 306
+  orig: 200, 325
+  offset: 8, 5
+  index: -1
+sanxuanyi_00008
+  rotate: true
+  xy: 0, 918
+  size: 185, 310
+  orig: 200, 325
+  offset: 8, 2
+  index: -1
+sanxuanyi_00009
+  rotate: true
+  xy: 311, 918
+  size: 185, 312
+  orig: 200, 325
+  offset: 8, 0
+  index: -1
+sanxuanyi_00010
+  rotate: true
+  xy: 0, 1104
+  size: 184, 316
+  orig: 200, 325
+  offset: 8, 0
+  index: -1
+sanxuanyi_00011
+  rotate: true
+  xy: 624, 918
+  size: 185, 319
+  orig: 200, 325
+  offset: 7, 0
+  index: -1
+sanxuanyi_00012
+  rotate: true
+  xy: 306, 544
+  size: 186, 321
+  orig: 200, 325
+  offset: 7, 0
+  index: -1
+sanxuanyi_00013
+  rotate: true
+  xy: 628, 543
+  size: 186, 323
+  orig: 200, 325
+  offset: 7, 0
+  index: -1
+sanxuanyi_00014
+  rotate: true
+  xy: 952, 543
+  size: 186, 324
+  orig: 200, 325
+  offset: 7, 0
+  index: -1
+sanxuanyi_00015
+  rotate: true
+  xy: 0, 357
+  size: 186, 325
+  orig: 200, 325
+  offset: 7, 0
+  index: -1
+sanxuanyi_00016
+  rotate: true
+  xy: 326, 356
+  size: 186, 325
+  orig: 200, 325
+  offset: 7, 0
+  index: -1
+sanxuanyi_00017
+  rotate: true
+  xy: 652, 356
+  size: 186, 325
+  orig: 200, 325
+  offset: 7, 0
+  index: -1
+sanxuanyi_00018
+  rotate: true
+  xy: 0, 170
+  size: 186, 325
+  orig: 200, 325
+  offset: 7, 0
+  index: -1
+sanxuanyi_00019
+  rotate: true
+  xy: 326, 169
+  size: 186, 325
+  orig: 200, 325
+  offset: 7, 0
+  index: -1
+sanxuanyi_00020
+  rotate: true
+  xy: 652, 169
+  size: 186, 325
+  orig: 200, 325
+  offset: 7, 0
+  index: -1
+sanxuanyi_00021
+  rotate: true
+  xy: 944, 917
+  size: 185, 325
+  orig: 200, 325
+  offset: 8, 0
+  index: -1
+sanxuanyi_00022
+  rotate: true
+  xy: 317, 1104
+  size: 184, 325
+  orig: 200, 325
+  offset: 9, 0
+  index: -1
+sanxuanyi_00023
+  rotate: true
+  xy: 643, 1104
+  size: 184, 325
+  orig: 200, 325
+  offset: 9, 0
+  index: -1

@@ -1,0 +1,139 @@
+
+1012.png
+size: 432,432
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1012-0_00
+  rotate: false
+  xy: 179, 271
+  size: 89, 80
+  orig: 90, 83
+  offset: 0, 1
+  index: -1
+1012-0_01
+  rotate: false
+  xy: 86, 193
+  size: 89, 81
+  orig: 90, 83
+  offset: 0, 1
+  index: -1
+1012-0_02
+  rotate: false
+  xy: 176, 187
+  size: 88, 83
+  orig: 90, 83
+  offset: 1, 0
+  index: -1
+1012-0_03
+  rotate: false
+  xy: 265, 187
+  size: 87, 83
+  orig: 90, 83
+  offset: 2, 0
+  index: -1
+1012-0_04
+  rotate: false
+  xy: 0, 109
+  size: 86, 83
+  orig: 90, 83
+  offset: 3, 0
+  index: -1
+1012-0_05
+  rotate: false
+  xy: 0, 194
+  size: 85, 81
+  orig: 90, 83
+  offset: 4, 0
+  index: -1
+1012-0_06
+  rotate: false
+  xy: 0, 276
+  size: 87, 79
+  orig: 90, 83
+  offset: 3, 1
+  index: -1
+1012-0_07
+  rotate: false
+  xy: 209, 352
+  size: 88, 78
+  orig: 90, 83
+  offset: 2, 1
+  index: -1
+1012-0_08
+  rotate: false
+  xy: 298, 352
+  size: 89, 78
+  orig: 90, 83
+  offset: 1, 1
+  index: -1
+1012-0_09
+  rotate: false
+  xy: 88, 275
+  size: 90, 79
+  orig: 90, 83
+  offset: 0, 1
+  index: -1
+1012-1_0
+  rotate: false
+  xy: 269, 271
+  size: 90, 80
+  orig: 138, 124
+  offset: 25, 39
+  index: -1
+1012-1_1
+  rotate: false
+  xy: 87, 100
+  size: 90, 86
+  orig: 138, 124
+  offset: 25, 33
+  index: -1
+1012-1_2
+  rotate: false
+  xy: 204, 0
+  size: 105, 97
+  orig: 138, 124
+  offset: 24, 22
+  index: -1
+1012-1_3
+  rotate: false
+  xy: 178, 98
+  size: 100, 88
+  orig: 138, 124
+  offset: 21, 31
+  index: -1
+1012-1_4
+  rotate: false
+  xy: 0, 8
+  size: 100, 91
+  orig: 138, 124
+  offset: 23, 28
+  index: -1
+1012-1_5
+  rotate: false
+  xy: 101, 4
+  size: 102, 93
+  orig: 138, 124
+  offset: 23, 26
+  index: -1
+1012-1_6
+  rotate: false
+  xy: 279, 98
+  size: 105, 88
+  orig: 138, 124
+  offset: 23, 24
+  index: -1
+1012-1_7
+  rotate: false
+  xy: 100, 355
+  size: 108, 75
+  orig: 138, 124
+  offset: 23, 20
+  index: -1
+1012-1_8
+  rotate: false
+  xy: 0, 356
+  size: 99, 74
+  orig: 138, 124
+  offset: 23, 18
+  index: -1

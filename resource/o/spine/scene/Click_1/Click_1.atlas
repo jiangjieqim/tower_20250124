@@ -1,0 +1,41 @@
+
+Click_1.png
+size: 184,184
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+20240827-162639
+  rotate: true
+  xy: 76, 6
+  size: 30, 28
+  orig: 32, 29
+  offset: 1, 0
+  index: -1
+20240827-172729
+  rotate: true
+  xy: 76, 37
+  size: 44, 43
+  orig: 54, 54
+  offset: 7, 6
+  index: -1
+quan
+  rotate: false
+  xy: 0, 6
+  size: 75, 75
+  orig: 75, 75
+  offset: 0, 0
+  index: -1
+shou
+  rotate: false
+  xy: 0, 82
+  size: 96, 100
+  orig: 96, 100
+  offset: 0, 0
+  index: -1
+tiao1
+  rotate: true
+  xy: 0, 0
+  size: 5, 70
+  orig: 5, 71
+  offset: 0, 1
+  index: -1

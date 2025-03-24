@@ -1,0 +1,41 @@
+
+PHB.png
+size: 256,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+PHB_1
+  rotate: false
+  xy: 89, 18
+  size: 41, 23
+  orig: 43, 25
+  offset: 1, 1
+  index: -1
+PHB_2
+  rotate: false
+  xy: 0, 42
+  size: 87, 86
+  orig: 87, 86
+  offset: 0, 0
+  index: -1
+PHB_22
+  rotate: false
+  xy: 88, 42
+  size: 87, 86
+  orig: 87, 86
+  offset: 0, 0
+  index: -1
+PHB_3
+  rotate: false
+  xy: 0, 0
+  size: 88, 41
+  orig: 90, 43
+  offset: 1, 1
+  index: -1
+jian2
+  rotate: false
+  xy: 176, 40
+  size: 40, 88
+  orig: 50, 100
+  offset: 5, 6
+  index: -1

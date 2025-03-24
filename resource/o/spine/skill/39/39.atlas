@@ -1,0 +1,111 @@
+
+39.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+fu_baozha_00002
+  rotate: true
+  xy: 105, 11
+  size: 93, 80
+  orig: 224, 128
+  offset: 63, 5
+  index: -1
+fu_baozha_00003
+  rotate: true
+  xy: 105, 105
+  size: 118, 98
+  orig: 224, 128
+  offset: 51, 5
+  index: -1
+fu_baozha_00004
+  rotate: true
+  xy: 0, 264
+  size: 137, 102
+  orig: 224, 128
+  offset: 42, 5
+  index: -1
+fu_baozha_00005
+  rotate: true
+  xy: 0, 11
+  size: 150, 104
+  orig: 224, 128
+  offset: 36, 5
+  index: -1
+fu_baozha_00006
+  rotate: false
+  xy: 209, 194
+  size: 176, 108
+  orig: 224, 128
+  offset: 23, 6
+  index: -1
+fu_baozha_00007
+  rotate: false
+  xy: 212, 303
+  size: 193, 101
+  orig: 224, 128
+  offset: 15, 12
+  index: -1
+fu_baozha_00008
+  rotate: false
+  xy: 212, 405
+  size: 193, 106
+  orig: 224, 128
+  offset: 15, 11
+  index: -1
+fu_baozha_00010
+  rotate: false
+  xy: 0, 402
+  size: 211, 109
+  orig: 224, 128
+  offset: 6, 11
+  index: -1
+fu_baozha_00012
+  rotate: true
+  xy: 204, 19
+  size: 174, 108
+  orig: 224, 128
+  offset: 24, 12
+  index: -1
+fu_baozha_00014
+  rotate: true
+  xy: 406, 335
+  size: 176, 105
+  orig: 224, 128
+  offset: 23, 17
+  index: -1
+fu_baozha_00016
+  rotate: true
+  xy: 105, 224
+  size: 177, 103
+  orig: 224, 128
+  offset: 23, 20
+  index: -1
+fu_baozha_00018
+  rotate: true
+  xy: 406, 162
+  size: 172, 104
+  orig: 224, 128
+  offset: 25, 20
+  index: -1
+nengliangfu_00000
+  rotate: false
+  xy: 0, 169
+  size: 87, 94
+  orig: 96, 96
+  offset: 3, 1
+  index: -1
+zuoshangzhi
+  rotate: false
+  xy: 313, 56
+  size: 84, 137
+  orig: 84, 137
+  offset: 0, 0
+  index: -1
+zuoshangzhi1
+  rotate: false
+  xy: 398, 29
+  size: 72, 132
+  orig: 72, 132
+  offset: 0, 0
+  index: -1

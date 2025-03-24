@@ -1,0 +1,83 @@
+
+Prayers3.png
+size: 320,320
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+20240827-172729
+  rotate: false
+  xy: 138, 138
+  size: 180, 180
+  orig: 180, 180
+  offset: 0, 0
+  index: -1
+hero
+  rotate: false
+  xy: 90, 70
+  size: 7, 7
+  orig: 7, 7
+  offset: 0, 0
+  index: -1
+icon_cs
+  rotate: true
+  xy: 0, 27
+  size: 50, 68
+  orig: 50, 68
+  offset: 0, 0
+  index: -1
+icon_cs_1
+  rotate: true
+  xy: 253, 41
+  size: 96, 64
+  orig: 98, 65
+  offset: 1, 1
+  index: -1
+img_dl
+  rotate: false
+  xy: 0, 120
+  size: 137, 198
+  orig: 137, 198
+  offset: 0, 0
+  index: -1
+kl1
+  rotate: false
+  xy: 138, 44
+  size: 63, 51
+  orig: 63, 51
+  offset: 0, 0
+  index: -1
+kl2
+  rotate: true
+  xy: 69, 39
+  size: 38, 20
+  orig: 38, 20
+  offset: 0, 0
+  index: -1
+tx_cg
+  rotate: false
+  xy: 0, 78
+  size: 99, 41
+  orig: 100, 41
+  offset: 0, 0
+  index: -1
+tx_sb
+  rotate: false
+  xy: 138, 96
+  size: 114, 41
+  orig: 116, 41
+  offset: 1, 0
+  index: -1
+xing
+  rotate: false
+  xy: 90, 26
+  size: 42, 43
+  orig: 60, 60
+  offset: 9, 8
+  index: -1
+yanwu
+  rotate: true
+  xy: 100, 73
+  size: 46, 37
+  orig: 46, 37
+  offset: 0, 0
+  index: -1

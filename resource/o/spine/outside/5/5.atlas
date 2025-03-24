@@ -1,0 +1,118 @@
+
+5.png
+size: 256,64
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+birdhead
+  rotate: false
+  xy: 47, 26
+  size: 71, 37
+  orig: 71, 37
+  offset: 0, 0
+  index: -1
+body
+  rotate: false
+  xy: 119, 27
+  size: 52, 36
+  orig: 52, 36
+  offset: 0, 0
+  index: -1
+ear1
+  rotate: false
+  xy: 207, 31
+  size: 32, 32
+  orig: 33, 32
+  offset: 0, 0
+  index: -1
+ear2
+  rotate: false
+  xy: 172, 28
+  size: 34, 35
+  orig: 34, 36
+  offset: 0, 1
+  index: -1
+eye3
+  rotate: true
+  xy: 176, 5
+  size: 22, 21
+  orig: 22, 21
+  offset: 0, 0
+  index: -1
+eye4
+  rotate: true
+  xy: 198, 7
+  size: 20, 19
+  orig: 20, 19
+  offset: 0, 0
+  index: -1
+eyeball1
+  rotate: true
+  xy: 113, 2
+  size: 7, 6
+  orig: 8, 8
+  offset: 1, 1
+  index: -1
+eyeball2
+  rotate: false
+  xy: 120, 3
+  size: 6, 6
+  orig: 8, 8
+  offset: 1, 1
+  index: -1
+foot1
+  rotate: true
+  xy: 240, 22
+  size: 19, 16
+  orig: 19, 18
+  offset: 0, 1
+  index: -1
+foot2
+  rotate: false
+  xy: 218, 14
+  size: 18, 16
+  orig: 20, 17
+  offset: 1, 1
+  index: -1
+hand1
+  rotate: false
+  xy: 85, 2
+  size: 27, 23
+  orig: 27, 25
+  offset: 0, 1
+  index: -1
+hand2
+  rotate: true
+  xy: 152, 2
+  size: 24, 23
+  orig: 24, 24
+  offset: 0, 1
+  index: -1
+head
+  rotate: true
+  xy: 0, 0
+  size: 63, 46
+  orig: 63, 46
+  offset: 0, 0
+  index: -1
+mouth
+  rotate: false
+  xy: 113, 10
+  size: 38, 15
+  orig: 38, 15
+  offset: 0, 0
+  index: -1
+nose
+  rotate: true
+  xy: 240, 42
+  size: 21, 16
+  orig: 21, 16
+  offset: 0, 0
+  index: -1
+tail
+  rotate: false
+  xy: 47, 4
+  size: 37, 21
+  orig: 38, 21
+  offset: 1, 0
+  index: -1

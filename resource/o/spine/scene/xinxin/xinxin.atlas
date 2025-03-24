@@ -1,0 +1,20 @@
+
+xinxin.png
+size: 52,52
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+xinyou
+  rotate: false
+  xy: 26, 13
+  size: 26, 39
+  orig: 26, 39
+  offset: 0, 0
+  index: -1
+xinzuo
+  rotate: false
+  xy: 0, 12
+  size: 25, 40
+  orig: 25, 40
+  offset: 0, 0
+  index: -1

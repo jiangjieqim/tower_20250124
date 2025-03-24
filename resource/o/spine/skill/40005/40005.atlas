@@ -1,0 +1,90 @@
+
+40005.png
+size: 404,404
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+jinzhi_00000
+  rotate: false
+  xy: 301, 301
+  size: 99, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+jinzhi_00002
+  rotate: false
+  xy: 0, 201
+  size: 99, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+jinzhi_00004
+  rotate: false
+  xy: 100, 201
+  size: 99, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+jinzhi_00006
+  rotate: false
+  xy: 200, 201
+  size: 99, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+jinzhi_00008
+  rotate: false
+  xy: 300, 200
+  size: 99, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+jinzhi_00010
+  rotate: false
+  xy: 0, 302
+  size: 99, 99
+  orig: 100, 100
+  offset: 0, 1
+  index: -1
+jinzhi_00012
+  rotate: false
+  xy: 100, 302
+  size: 99, 99
+  orig: 100, 100
+  offset: 0, 1
+  index: -1
+jinzhi_00014
+  rotate: false
+  xy: 200, 302
+  size: 100, 99
+  orig: 100, 100
+  offset: 0, 1
+  index: -1
+jinzhi_00016
+  rotate: false
+  xy: 0, 100
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+jinzhi_00018
+  rotate: false
+  xy: 101, 100
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+jinzhi_00020
+  rotate: false
+  xy: 202, 99
+  size: 99, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+jinzhi_00022
+  rotate: false
+  xy: 302, 99
+  size: 99, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1

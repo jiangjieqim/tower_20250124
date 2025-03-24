@@ -1,0 +1,118 @@
+
+37.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+LiuXing_00000
+  rotate: false
+  xy: 0, 364
+  size: 141, 145
+  orig: 148, 148
+  offset: 7, 0
+  index: -1
+LiuXing_Bao_00003
+  rotate: false
+  xy: 417, 300
+  size: 63, 62
+  orig: 185, 148
+  offset: 55, 34
+  index: -1
+LiuXing_Bao_00005
+  rotate: true
+  xy: 392, 57
+  size: 108, 102
+  orig: 185, 148
+  offset: 36, 16
+  index: -1
+LiuXing_Bao_00007
+  rotate: false
+  xy: 307, 166
+  size: 118, 107
+  orig: 185, 148
+  offset: 35, 14
+  index: -1
+LiuXing_Bao_00009
+  rotate: false
+  xy: 270, 58
+  size: 121, 107
+  orig: 185, 148
+  offset: 33, 26
+  index: -1
+LiuXing_Bao_00011
+  rotate: false
+  xy: 0, 35
+  size: 132, 109
+  orig: 185, 148
+  offset: 31, 27
+  index: -1
+LiuXing_Bao_00013
+  rotate: false
+  xy: 0, 254
+  size: 137, 109
+  orig: 185, 148
+  offset: 31, 27
+  index: -1
+LiuXing_Bao_00015
+  rotate: true
+  xy: 307, 274
+  size: 130, 109
+  orig: 185, 148
+  offset: 30, 27
+  index: -1
+LiuXing_Bao_00017
+  rotate: false
+  xy: 137, 57
+  size: 132, 108
+  orig: 185, 148
+  offset: 30, 27
+  index: -1
+LiuXing_Bao_00019
+  rotate: false
+  xy: 142, 400
+  size: 135, 109
+  orig: 185, 148
+  offset: 31, 26
+  index: -1
+LiuXing_Bao_00021
+  rotate: false
+  xy: 0, 145
+  size: 136, 108
+  orig: 185, 148
+  offset: 32, 24
+  index: -1
+LiuXing_Bao_00023
+  rotate: false
+  xy: 278, 405
+  size: 140, 104
+  orig: 185, 148
+  offset: 27, 24
+  index: -1
+LiuXing_Bao_00025
+  rotate: true
+  xy: 419, 363
+  size: 146, 90
+  orig: 185, 148
+  offset: 24, 24
+  index: -1
+LiuXing_Bao_00027
+  rotate: false
+  xy: 142, 310
+  size: 155, 89
+  orig: 185, 148
+  offset: 18, 24
+  index: -1
+LiuXing_Bao_00029
+  rotate: false
+  xy: 137, 166
+  size: 155, 83
+  orig: 185, 148
+  offset: 16, 24
+  index: -1
+LiuXing_Bao_00033
+  rotate: false
+  xy: 138, 250
+  size: 168, 59
+  orig: 185, 148
+  offset: 6, 26
+  index: -1

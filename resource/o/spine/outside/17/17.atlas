@@ -1,0 +1,146 @@
+
+17.png
+size: 176,176
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arm1
+  rotate: false
+  xy: 0, 99
+  size: 44, 38
+  orig: 44, 38
+  offset: 0, 0
+  index: -1
+arm2
+  rotate: false
+  xy: 67, 63
+  size: 34, 39
+  orig: 34, 39
+  offset: 0, 0
+  index: -1
+beard1
+  rotate: false
+  xy: 91, 48
+  size: 30, 13
+  orig: 30, 13
+  offset: 0, 0
+  index: -1
+beard2
+  rotate: false
+  xy: 38, 63
+  size: 18, 33
+  orig: 18, 33
+  offset: 0, 0
+  index: -1
+belt
+  rotate: false
+  xy: 119, 70
+  size: 29, 12
+  orig: 29, 12
+  offset: 0, 0
+  index: -1
+clothes
+  rotate: false
+  xy: 119, 83
+  size: 51, 42
+  orig: 51, 42
+  offset: 0, 0
+  index: -1
+eye1
+  rotate: false
+  xy: 119, 63
+  size: 14, 6
+  orig: 14, 6
+  offset: 0, 0
+  index: -1
+eye2
+  rotate: false
+  xy: 67, 131
+  size: 11, 6
+  orig: 11, 6
+  offset: 0, 0
+  index: -1
+eyebrow1
+  rotate: false
+  xy: 45, 97
+  size: 21, 40
+  orig: 21, 40
+  offset: 0, 0
+  index: -1
+eyebrow2
+  rotate: false
+  xy: 102, 62
+  size: 16, 40
+  orig: 16, 40
+  offset: 0, 0
+  index: -1
+ginger
+  rotate: false
+  xy: 79, 103
+  size: 39, 71
+  orig: 39, 71
+  offset: 0, 0
+  index: -1
+hand1
+  rotate: false
+  xy: 122, 47
+  size: 17, 15
+  orig: 17, 15
+  offset: 0, 0
+  index: -1
+hand2
+  rotate: false
+  xy: 74, 45
+  size: 16, 17
+  orig: 16, 17
+  offset: 0, 0
+  index: -1
+head
+  rotate: false
+  xy: 119, 126
+  size: 55, 48
+  orig: 55, 48
+  offset: 0, 0
+  index: -1
+headwear1
+  rotate: false
+  xy: 0, 33
+  size: 29, 21
+  orig: 29, 21
+  offset: 0, 0
+  index: -1
+headwear2
+  rotate: false
+  xy: 74, 33
+  size: 61, 11
+  orig: 61, 11
+  offset: 0, 0
+  index: -1
+headwear3
+  rotate: false
+  xy: 38, 33
+  size: 35, 29
+  orig: 35, 29
+  offset: 0, 0
+  index: -1
+jianjia
+  rotate: false
+  xy: 0, 138
+  size: 78, 36
+  orig: 78, 36
+  offset: 0, 0
+  index: -1
+leaf
+  rotate: false
+  xy: 0, 55
+  size: 37, 43
+  orig: 37, 43
+  offset: 0, 0
+  index: -1
+neck
+  rotate: false
+  xy: 136, 33
+  size: 15, 13
+  orig: 15, 13
+  offset: 0, 0
+  index: -1

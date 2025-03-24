@@ -1,0 +1,41 @@
+
+chenghao_4.png
+size: 256,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+cc44
+  rotate: false
+  xy: 0, 111
+  size: 188, 64
+  orig: 200, 90
+  offset: 6, 13
+  index: -1
+s1
+  rotate: true
+  xy: 189, 116
+  size: 59, 30
+  orig: 61, 32
+  offset: 1, 1
+  index: -1
+s2
+  rotate: false
+  xy: 0, 176
+  size: 233, 57
+  orig: 233, 57
+  offset: 0, 0
+  index: -1
+s3
+  rotate: false
+  xy: 0, 16
+  size: 101, 30
+  orig: 103, 32
+  offset: 1, 1
+  index: -1
+s4
+  rotate: false
+  xy: 0, 47
+  size: 187, 63
+  orig: 189, 65
+  offset: 1, 1
+  index: -1

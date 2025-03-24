@@ -1,0 +1,139 @@
+
+23.png
+size: 356,356
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+beads
+  rotate: false
+  xy: 265, 301
+  size: 86, 53
+  orig: 86, 53
+  offset: 0, 0
+  index: -1
+cloud
+  rotate: false
+  xy: 2, 15
+  size: 194, 92
+  orig: 194, 92
+  offset: 0, 0
+  index: -1
+ear
+  rotate: false
+  xy: 315, 56
+  size: 36, 38
+  orig: 36, 38
+  offset: 0, 0
+  index: -1
+eye
+  rotate: true
+  xy: 340, 241
+  size: 58, 12
+  orig: 58, 12
+  offset: 0, 0
+  index: -1
+eyebrow
+  rotate: true
+  xy: 225, 72
+  size: 79, 27
+  orig: 79, 27
+  offset: 0, 0
+  index: -1
+face
+  rotate: true
+  xy: 173, 153
+  size: 102, 75
+  orig: 102, 75
+  offset: 0, 0
+  index: -1
+foot1
+  rotate: false
+  xy: 225, 25
+  size: 49, 34
+  orig: 49, 34
+  offset: 0, 0
+  index: -1
+foot2
+  rotate: false
+  xy: 315, 22
+  size: 34, 32
+  orig: 34, 32
+  offset: 0, 0
+  index: -1
+hand1
+  rotate: true
+  xy: 323, 206
+  size: 32, 31
+  orig: 32, 31
+  offset: 0, 0
+  index: -1
+hand2
+  rotate: false
+  xy: 276, 24
+  size: 37, 35
+  orig: 37, 35
+  offset: 0, 0
+  index: -1
+head
+  rotate: false
+  xy: 2, 109
+  size: 169, 146
+  orig: 169, 146
+  offset: 0, 0
+  index: -1
+jianjia
+  rotate: false
+  xy: 254, 61
+  size: 59, 40
+  orig: 59, 40
+  offset: 0, 0
+  index: -1
+jianjiadaizi
+  rotate: true
+  xy: 254, 103
+  size: 71, 59
+  orig: 71, 59
+  offset: 0, 0
+  index: -1
+jingubang
+  rotate: false
+  xy: 2, 257
+  size: 261, 97
+  orig: 280, 108
+  offset: 9, 6
+  index: -1
+skirt
+  rotate: true
+  xy: 315, 96
+  size: 78, 32
+  orig: 78, 32
+  offset: 0, 0
+  index: -1
+sleeves1
+  rotate: false
+  xy: 265, 240
+  size: 73, 59
+  orig: 73, 59
+  offset: 0, 0
+  index: -1
+sleeves2
+  rotate: false
+  xy: 250, 176
+  size: 71, 62
+  orig: 71, 62
+  offset: 0, 0
+  index: -1
+weiba2
+  rotate: true
+  xy: 198, 17
+  size: 134, 25
+  orig: 134, 25
+  offset: 0, 0
+  index: -1
+yunqiu
+  rotate: false
+  xy: 323, 180
+  size: 24, 24
+  orig: 24, 24
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,167 @@
+
+18.png
+size: 272,272
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arm1
+  rotate: false
+  xy: 205, 234
+  size: 50, 38
+  orig: 50, 38
+  offset: 0, 0
+  index: -1
+arm2
+  rotate: false
+  xy: 236, 148
+  size: 35, 38
+  orig: 35, 38
+  offset: 0, 0
+  index: -1
+body1
+  rotate: false
+  xy: 0, 163
+  size: 57, 66
+  orig: 57, 66
+  offset: 0, 0
+  index: -1
+closeeye1
+  rotate: false
+  xy: 253, 221
+  size: 15, 5
+  orig: 15, 5
+  offset: 0, 0
+  index: -1
+closeeye2
+  rotate: false
+  xy: 133, 201
+  size: 12, 5
+  orig: 12, 5
+  offset: 0, 0
+  index: -1
+clothes
+  rotate: false
+  xy: 205, 191
+  size: 47, 42
+  orig: 47, 42
+  offset: 0, 0
+  index: -1
+eye1
+  rotate: false
+  xy: 256, 227
+  size: 16, 9
+  orig: 16, 9
+  offset: 0, 0
+  index: -1
+eye2
+  rotate: false
+  xy: 58, 184
+  size: 13, 8
+  orig: 13, 8
+  offset: 0, 0
+  index: -1
+face
+  rotate: false
+  xy: 149, 226
+  size: 55, 46
+  orig: 55, 46
+  offset: 0, 0
+  index: -1
+hand1
+  rotate: false
+  xy: 256, 237
+  size: 16, 35
+  orig: 16, 35
+  offset: 0, 0
+  index: -1
+hand2
+  rotate: false
+  xy: 253, 187
+  size: 14, 33
+  orig: 14, 33
+  offset: 0, 0
+  index: -1
+hand3
+  rotate: false
+  xy: 133, 207
+  size: 12, 13
+  orig: 12, 13
+  offset: 0, 0
+  index: -1
+hand4
+  rotate: false
+  xy: 58, 193
+  size: 14, 13
+  orig: 14, 13
+  offset: 0, 0
+  index: -1
+head
+  rotate: false
+  xy: 84, 221
+  size: 64, 51
+  orig: 64, 51
+  offset: 0, 0
+  index: -1
+headwear
+  rotate: false
+  xy: 149, 188
+  size: 47, 37
+  orig: 47, 37
+  offset: 0, 0
+  index: -1
+jianjia1
+  rotate: false
+  xy: 58, 169
+  size: 12, 14
+  orig: 12, 14
+  offset: 0, 0
+  index: -1
+jianjia2
+  rotate: false
+  xy: 120, 206
+  size: 12, 14
+  orig: 12, 14
+  offset: 0, 0
+  index: -1
+moon
+  rotate: false
+  xy: 82, 180
+  size: 37, 40
+  orig: 37, 40
+  offset: 0, 0
+  index: -1
+moon2
+  rotate: false
+  xy: 120, 147
+  size: 37, 40
+  orig: 37, 40
+  offset: 0, 0
+  index: -1
+moon3
+  rotate: false
+  xy: 158, 147
+  size: 37, 40
+  orig: 37, 40
+  offset: 0, 0
+  index: -1
+moon4
+  rotate: false
+  xy: 197, 150
+  size: 38, 40
+  orig: 38, 40
+  offset: 0, 0
+  index: -1
+ribbon
+  rotate: false
+  xy: 0, 230
+  size: 83, 42
+  orig: 83, 42
+  offset: 0, 0
+  index: -1
+tail
+  rotate: false
+  xy: 58, 207
+  size: 23, 22
+  orig: 23, 22
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,286 @@
+
+Button_debuff.png
+size: 848,848
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+DEBUFF_00000
+  rotate: false
+  xy: 370, 682
+  size: 183, 87
+  orig: 225, 150
+  offset: 21, 18
+  index: -1
+DEBUFF_00001
+  rotate: false
+  xy: 0, 771
+  size: 188, 77
+  orig: 225, 150
+  offset: 22, 19
+  index: -1
+DEBUFF_00002
+  rotate: false
+  xy: 189, 770
+  size: 190, 78
+  orig: 225, 150
+  offset: 25, 19
+  index: -1
+DEBUFF_00003
+  rotate: false
+  xy: 554, 681
+  size: 187, 87
+  orig: 225, 150
+  offset: 29, 19
+  index: -1
+DEBUFF_00004
+  rotate: false
+  xy: 360, 589
+  size: 182, 92
+  orig: 225, 150
+  offset: 35, 20
+  index: -1
+DEBUFF_00005
+  rotate: false
+  xy: 511, 485
+  size: 175, 100
+  orig: 225, 150
+  offset: 41, 20
+  index: -1
+DEBUFF_00006
+  rotate: false
+  xy: 139, 283
+  size: 169, 106
+  orig: 225, 150
+  offset: 47, 20
+  index: -1
+DEBUFF_00007
+  rotate: false
+  xy: 601, 256
+  size: 162, 107
+  orig: 225, 150
+  offset: 54, 21
+  index: -1
+DEBUFF_00008
+  rotate: false
+  xy: 253, 171
+  size: 149, 108
+  orig: 225, 150
+  offset: 67, 21
+  index: -1
+DEBUFF_00009
+  rotate: false
+  xy: 403, 163
+  size: 140, 108
+  orig: 225, 150
+  offset: 75, 22
+  index: -1
+DEBUFF_00010
+  rotate: false
+  xy: 544, 147
+  size: 133, 108
+  orig: 225, 150
+  offset: 82, 22
+  index: -1
+DEBUFF_00011
+  rotate: false
+  xy: 678, 147
+  size: 123, 108
+  orig: 225, 150
+  offset: 91, 23
+  index: -1
+DEBUFF_00012
+  rotate: false
+  xy: 479, 272
+  size: 121, 107
+  orig: 225, 150
+  offset: 93, 24
+  index: -1
+DEBUFF_00013
+  rotate: false
+  xy: 0, 178
+  size: 129, 107
+  orig: 225, 150
+  offset: 84, 25
+  index: -1
+DEBUFF_00014
+  rotate: false
+  xy: 0, 286
+  size: 138, 106
+  orig: 225, 150
+  offset: 75, 26
+  index: -1
+DEBUFF_00015
+  rotate: false
+  xy: 481, 380
+  size: 146, 104
+  orig: 225, 150
+  offset: 66, 28
+  index: -1
+DEBUFF_00016
+  rotate: false
+  xy: 0, 393
+  size: 155, 102
+  orig: 225, 150
+  offset: 56, 30
+  index: -1
+DEBUFF_00017
+  rotate: false
+  xy: 183, 493
+  size: 163, 98
+  orig: 225, 150
+  offset: 47, 33
+  index: -1
+DEBUFF_00018
+  rotate: false
+  xy: 543, 586
+  size: 172, 94
+  orig: 225, 150
+  offset: 37, 37
+  index: -1
+DEBUFF_00019
+  rotate: false
+  xy: 0, 593
+  size: 179, 91
+  orig: 225, 150
+  offset: 29, 40
+  index: -1
+DEBUFF_00020
+  rotate: false
+  xy: 0, 685
+  size: 183, 85
+  orig: 225, 150
+  offset: 22, 46
+  index: -1
+DEBUFF_00021
+  rotate: false
+  xy: 380, 770
+  size: 186, 78
+  orig: 225, 150
+  offset: 17, 53
+  index: -1
+DEBUFF_00022
+  rotate: false
+  xy: 567, 769
+  size: 184, 79
+  orig: 225, 150
+  offset: 15, 52
+  index: -1
+DEBUFF_00023
+  rotate: false
+  xy: 184, 684
+  size: 185, 85
+  orig: 225, 150
+  offset: 11, 45
+  index: -1
+DEBUFF_00024
+  rotate: false
+  xy: 0, 496
+  size: 182, 95
+  orig: 225, 150
+  offset: 10, 35
+  index: -1
+DEBUFF_00025
+  rotate: false
+  xy: 156, 390
+  size: 176, 102
+  orig: 225, 150
+  offset: 11, 28
+  index: -1
+DEBUFF_00026
+  rotate: false
+  xy: 309, 280
+  size: 169, 106
+  orig: 225, 150
+  offset: 11, 23
+  index: -1
+DEBUFF_00027
+  rotate: false
+  xy: 124, 62
+  size: 160, 108
+  orig: 225, 150
+  offset: 12, 21
+  index: -1
+DEBUFF_00028
+  rotate: false
+  xy: 559, 36
+  size: 150, 110
+  orig: 225, 150
+  offset: 12, 19
+  index: -1
+DEBUFF_00029
+  rotate: false
+  xy: 285, 53
+  size: 142, 109
+  orig: 225, 150
+  offset: 12, 19
+  index: -1
+DEBUFF_00030
+  rotate: false
+  xy: 428, 37
+  size: 130, 109
+  orig: 225, 150
+  offset: 13, 18
+  index: -1
+DEBUFF_00031
+  rotate: false
+  xy: 0, 69
+  size: 123, 108
+  orig: 225, 150
+  offset: 13, 18
+  index: -1
+DEBUFF_00032
+  rotate: false
+  xy: 130, 175
+  size: 122, 107
+  orig: 225, 150
+  offset: 13, 18
+  index: -1
+DEBUFF_00033
+  rotate: false
+  xy: 716, 570
+  size: 131, 106
+  orig: 225, 150
+  offset: 14, 18
+  index: -1
+DEBUFF_00034
+  rotate: false
+  xy: 628, 364
+  size: 140, 104
+  orig: 225, 150
+  offset: 14, 18
+  index: -1
+DEBUFF_00035
+  rotate: false
+  xy: 333, 387
+  size: 147, 102
+  orig: 225, 150
+  offset: 15, 18
+  index: -1
+DEBUFF_00036
+  rotate: false
+  xy: 687, 469
+  size: 154, 100
+  orig: 225, 150
+  offset: 16, 18
+  index: -1
+DEBUFF_00037
+  rotate: false
+  xy: 347, 490
+  size: 163, 98
+  orig: 225, 150
+  offset: 17, 18
+  index: -1
+DEBUFF_00038
+  rotate: true
+  xy: 752, 677
+  size: 171, 96
+  orig: 225, 150
+  offset: 17, 18
+  index: -1
+DEBUFF_00039
+  rotate: false
+  xy: 180, 592
+  size: 179, 91
+  orig: 225, 150
+  offset: 18, 18
+  index: -1
