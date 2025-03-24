@@ -1,0 +1,860 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "编译",
+            "type": "shell",
+            // "command": "cd cmd & compile.bat", // "command": "layaair2-cmd compile",
+            "problemMatcher": [],
+            "dependsOn":[
+                "simple----------------------->最快编译"
+            ]
+        },
+        // {
+        //     "label": "cleanup current project",
+        //     "type": "shell",
+        //     // "command": "cd cmd & mini.bat",
+        //     "command":"cd../../../ & dir & svn cleanup & svn up",
+        //     "problemMatcher": []
+        // },
+        {
+            "label": "cleanup",
+            "type": "shell",
+            "command":"cd../../../ && svn cleanup ",
+            "problemMatcher": []
+        },
+        {
+            "label": "mini",
+            "type": "shell",
+            // "command": "cd cmd & mini.bat",
+            "command":"cd../../../ && call project_config cmd mini ${workspaceFolder}",
+
+            "problemMatcher": []
+        },
+        {
+            "label": "uglifyjs1",
+            "type": "shell",
+            "command": "cd cmd & uglifyjs1.bat",
+
+            "problemMatcher": []
+        },
+        
+        {
+            "label": "login",
+            "type": "shell",
+            // "command": "cd cmd & login.bat",
+            "command":"cd../../../ && call project_config cmd login ${workspaceFolder}",
+            "problemMatcher": []
+        },
+        // {
+        //     "label": "online_excel",
+        //     "type": "shell",
+        //     "command": "cd cmd & online_excel.bat",
+        //     "problemMatcher": []
+        // },
+        {
+            "label": "online_excel",
+            "type": "shell",
+            "command":"echo off & cd ../../../../ & cd Project1/cmd & call online_excel ${workspaceFolder}",
+            "problemMatcher": []
+        },
+        {
+            "label": "SVN_conflict 检查冲突",
+            "type": "shell",
+            "command":"echo off & cd ../../../../ & cd Project1/cmd & call SVN_conflict C true & svn status",
+            "problemMatcher": [],
+        },
+        {
+            "label": "SVN 解决冲突之后查看状态",
+            "type": "shell",
+            "command":"echo off & cd ../../../../ & cd Project1 & svn status",
+            "problemMatcher": [],
+            "dependsOn":["SVN_conflict 检查冲突"]
+        },
+        // {
+        //     "label": "SVN_conflict 解决Project1中的冲突",
+        //     "type": "shell",
+        //     "command":"echo off & cd ../../../../ & cd Project1/cmd & call SVN_conflict C true",
+        //     "problemMatcher": []
+        // },
+        {
+            "label": "copycmd",
+            "type": "shell",
+            "command": "cd cmd & copycmd.bat",
+            "problemMatcher": []
+        },
+        {
+            "label": "all",
+            "type": "shell",
+            "command": "cd cmd & all.bat",
+            "problemMatcher": []
+        },
+        {
+            "label": "showinfo",
+            "type": "shell",
+            //打印版本信息
+            "command": "cd cmd & showinfo.bat",
+            "problemMatcher": []
+        },
+        {
+            "label": "HTTP read.md",
+            "type": "shell",
+            //打印版本信息
+            "command": "cd cmd & openread.bat",
+            "problemMatcher": []
+        },
+        {
+            "label": "commit_upload",
+            "type": "shell",
+            //打印版本信息
+            "command": "cd cmd & commit_upload.bat",
+            "problemMatcher": []
+        },
+        {
+            "label": "tinycompile",
+            "type": "shell",
+            "command": "cd cmd & tinycompile.bat", // "command": "layaair2-cmd compile",
+            "problemMatcher": []
+        },
+        {
+            "label": "fontcompress",
+            "type": "shell",
+            "command": "echo off & cd cmd & fontcompress.bat", // "command": "layaair2-cmd compile",
+            "problemMatcher": []
+        },
+        // {
+        //     "label": "编译tsc",
+        //     "type": "shell",
+        //     "command": "cd cmd & compile_tsc.bat",// "command": "layaair2-cmd compile",
+        //     "problemMatcher": []
+        // },
+        // {
+        //     "label": "发布",
+        //     "type": "shell",
+        //     "command": "cd cmd & publish.bat",
+        //     "problemMatcher": []
+        // },
+        // {
+        //     "label": "只发布代码",
+        //     "type": "shell",
+        //     "command": "cd cmd & publishCode.bat",
+        //     "problemMatcher": []
+        // },
+        {
+            "label": "export ui",
+            "type": "shell",
+            "command": "echo off & cd cmd & exportUI.bat",
+            "problemMatcher": []
+        },
+        {
+            "label": "export ui&atlas",
+            "type": "shell",
+            "command": "echo off & cd cmd & exportUI_Atlas.bat",
+            "problemMatcher": []
+        },
+        // {
+        //     "label": "exportUI_war3(魔兽)",
+        //     "type": "shell",
+        //     "command": "cd cmd & exportUI_war.bat",
+        //     "problemMatcher": []
+        // },
+        // 清理缓存
+        // {
+        //     "label": "清理缓存",
+        //     "type": "shell",
+        //     "command": "cd cmd & clear.bat",
+        //     "problemMatcher": []
+        // },
+        // {
+        //     "label": "清理缓存",
+        //     "type": "shell",
+        //     "command": "clear.bat",
+        //     "problemMatcher": []
+        // },
+        {
+            "label": "build local config------------>(生成配置本地)",
+            "type": "shell",
+            // "command": "cd cmd & buildxlsx_new.bat",
+            "command":"echo off & cd../../../ && call project_config cmd buildxlsx_new ${workspaceFolder}",
+
+            "problemMatcher": []
+        },
+        {
+            "label": "build proto(生成协议)",
+            "type": "shell",
+            // "command": "cd cmd & buildproto.bat",
+            "command":"cd../../../ && call project_config cmd buildproto ${workspaceFolder}",
+
+            "problemMatcher": []
+        },
+        // {
+        //     "label": "svn更新",
+        //     "type": "shell",
+        //     "command": "svn up & svn log -l 5",
+        //     "problemMatcher": []
+        // },
+        {
+            "label": "svn log ${file}",
+            "type": "shell",
+            "command": "svn log ${file} -l 3",
+            "problemMatcher": []
+        },
+        {
+            "label": "update ${file}",
+            "type": "shell",
+            "command": "svn up ${file}",
+            // & svn log ${file} -l 1 -v
+            "problemMatcher": []
+        },
+        // {
+        //     "label": "tsc",
+        //     "type": "shell",
+        //     "command": "cd cmd & tsc.bat",// "command": "layaair2-cmd compile",
+        //     "problemMatcher": []
+        // },
+        {
+            "label": "tsccheck",
+            "type": "shell",
+            // "command": "cd cmd & tsccheck.bat",
+            "command":"cd../../../ && call project_config cmd tsccheck ${workspaceFolder}",
+            "problemMatcher": []
+        },
+        // {
+        //     "label": "start_server",
+        //     "type": "shell",
+        //     "command": "cd cmd & start_server.bat",
+        //     "problemMatcher": []
+        // },
+        // {
+        //     "label": "revert_resource",
+        //     "type": "shell",
+        //     "command": "cd cmd & revert_resource.bat",
+        //     "problemMatcher": []
+        // },
+        
+        // {
+        //     "label": "启动服务器",
+        //     "type": "shell",
+        //     "command": "cd cmd & startServeri.bat",
+        //     "problemMatcher": []
+        // },
+        // {
+        //     "label": "clearDB",
+        //     "type": "shell",
+        //     "command": "cd cmd & clearDB.bat",
+        //     "problemMatcher": []
+        // },
+        {
+            "label": "commit--------------------->提交UI工程,代码,lang.json",
+            "type": "shell",
+            // "command": "cd cmd & commit.bat",
+            "command":"cd../../../ && call project_config cmd commit ${workspaceFolder}",
+            // commit
+            "problemMatcher": [],
+        },
+        {
+            "label": "commit export",
+            "type": "shell",
+            "command":"echo off & cd../../../ && call project_config cmd commit_export ${workspaceFolder}",
+            "problemMatcher": [],
+        },
+        //提交代码3
+        {
+            "label": "commit_code----------------------->(提交src和BaseProto.xml,version.json,lang.json)",
+            "type": "shell",
+            // "command": "cd cmd & commit_code.bat",
+            "command":"echo off & cd../../../ && call project_config cmd commit_code ${workspaceFolder}",
+
+            "problemMatcher": []
+        },
+        {
+            "label": "commit_js",
+            "type": "shell",
+            "command":"echo off & cd../../../ && call project_config cmd commit_js ${workspaceFolder}",
+            "problemMatcher": []
+        },
+
+        // {
+        //     "label": "commit_bundle",
+        //     "type": "shell",
+        //     "command": "cd cmd & commit_bundle.bat",
+        //     "problemMatcher": []
+        // },
+        // {
+        //     "label": "build server",
+        //     "type": "shell",
+        //     "command": "cd cmd & buildserver.bat",
+        //     "problemMatcher": []
+        // },
+        // {
+		// 	//更新配置表
+        //     "label": "update excel",
+        //     "type": "shell",
+        //     "command":"svn cleanup ../../../excel & svn up ../../../client/excel",
+        //     "problemMatcher": []
+        // },
+        // {
+        // //更新配置表
+        //     "label": "nginx reload--------------->(重启nginx)",
+        //     "type": "shell",
+        //     "command":"cd cmd & nginx_start.bat",
+        //     "problemMatcher": []
+        // },
+        // {
+		// 	//更新配置表
+        //     "label": "nginx quit",
+        //     "type": "shell",
+        //     "command":"cd cmd & nginx_quit.bat",
+        //     "problemMatcher": []
+        // },
+        // D:\project1\Client\tools\nginx-1.18.0
+        {
+            "label": "nginx_start",
+            "type": "shell",
+            "command":"cd../../../ && call project_config cmd nginx_start",
+            "problemMatcher": []
+        },
+        {
+            //更新配置表
+            "label": "nginx quit",
+            "type": "shell",
+            "command":"cd../../../ && call project_config cmd nginx_quit",    
+            "problemMatcher": []
+        },
+        // {
+		// 	//更新
+        //     "label": "up_all",
+        //     "type": "shell",
+        //     "command":"cd cmd & up_all",
+        //     "problemMatcher": []
+        // },
+        {
+            "label": "commit_font",
+            "type": "shell",
+            "command": "cd cmd & commit_font.bat",
+            "problemMatcher": []
+        },
+        {
+            "label": "commit ${file}",
+            "type": "shell",
+            // "command":"cd cmd & commit_file.bat ${file}",
+            // "command": "TortoiseProc.exe /command:commit /path:${file} /closeonend:0 /logmsg commit_cur_file_${file}",
+            // "command":"cd../../../ && call project_config cmd commit_file ${file} ${fileBasename} ${lineNumber}",
+            "command":"echo off & cd../../../ && call project_config cmd commit_file ${file}",
+            "problemMatcher": []
+        },
+        // {
+        //     "label": "fileLog",
+        //     "type": "shell",
+        //     "command": "svn log ${file} -l 5",
+        //     "problemMatcher": []
+        // },
+
+        // ${env:trunk}/resource/o/font
+
+        {
+            "label": "commitUI",
+            "type": "shell",
+            // "command":"cd cmd& commitUI.bat",
+            "command":"echo off & cd../../../ && call project_config cmd commitUI ${workspaceFolder}",
+            "problemMatcher": []
+        },
+        {
+            "label": "commit_wx_bundle (微信 抖音 美团)",
+            "type": "shell",
+            // "command":"cd cmd& commit_wx_bundle.bat",
+            "command":"cd../../../ && call project_config cmd commit_bundle ${workspaceFolder}",
+            "problemMatcher": []
+        },
+        // {
+        //     "label": "clean",
+        //     "type": "shell",
+        //     "command":"cd cmd& clean.bat",
+        //     "problemMatcher": []
+        // },  
+        {
+            "label": "visualizer_show",
+            "type": "shell",
+            "command":"cd cmd& visualizer_show.bat",
+            "problemMatcher": []
+        }, 
+        {
+            "label": "wx微信 抖音0.1 美团",
+            "type": "shell",
+            "command": "cd cmd & wx.bat",
+            "problemMatcher": []
+        },
+        {
+            "label": "discount",
+            "type": "shell",
+            "command": "cd ../../../cmd & call discount",
+            "problemMatcher": []
+        },
+        {
+            "label": "simple----------------------->最快编译",
+            "type": "shell",
+            // "command": "cd cmd & simple.bat 0",
+            "command":"echo off & cd../../../ && call project_config cmd simple ${workspaceFolder}",
+            "problemMatcher": []
+        },
+        {  
+            "label": "create_branch",
+            "type": "shell",
+            "command": "cd cmd & create_branch.bat",
+            "problemMatcher": []
+        },
+        {  
+            "label": "create_config",
+            "type": "shell",
+            "command": "cd cmd & create_config.bat",
+            "problemMatcher": []
+        },
+        {  
+            "label": "littlegame(前置小游戏)",
+            "type": "shell",
+            "command": "cd cmd & littlegame.bat",
+            "problemMatcher": []
+        },
+        {  
+            "label": "quick\t(快速本地发布)",
+            "type": "shell",
+            "command": "cd cmd & quick.bat",
+            "problemMatcher": []
+        },
+        {
+            "label": "open excel",
+            "type": "shell",
+            "command":"echo off & cd ../../../../ & cd Project1/cmd & call openexcel ${workspaceFolder}",
+            // "command": "cd cmd & openexcel.bat ${workspaceFolder}",
+            "problemMatcher": []
+        },
+        // {
+        //     "label": "open war3 excel",
+        //     "type": "shell",
+        //     "command":"explorer ${env:project_disc}\\Project1\\Client\\excel\\war3 ",
+        //     "problemMatcher": []
+        // },
+        // {
+        //     "label": "commit war3 ui.bin",
+        //     "type": "shell",
+        //    "command":"TortoiseProc.exe /command:commit /path:${env:project_disc}\\Project1\\Client\\trunk\\resource_war\\o\\config\\export\\ui.bin /logmsg . /closeonend:0",
+        //     "problemMatcher": [],
+        //     // "dependsOn":["command war3 res"]
+        // },
+        // {
+        //     "label": "commit war3 res",
+        //     "type": "shell",
+        //    "command":"TortoiseProc.exe /command:commit /path:${env:project_disc}\\Project1\\Client\\trunk\\resource_war\\res /logmsg . /closeonend:0 & TortoiseProc.exe /command:commit /path:${env:project_disc}\\Project1\\Client\\trunk\\resource_war\\static /logmsg . /closeonend:0",
+        //     "problemMatcher": [],
+        // },
+        // {
+        //     "label": "commit war3 all.bin",
+        //     "type": "shell",
+        //     "command":"echo off & TortoiseProc.exe /command:commit /path:${env:project_disc}\\Project1\\Client\\war3\\resource\\all.bin /logmsg . /closeonend:0",
+        //     "problemMatcher": [],
+        // },
+        // {
+        //     "label": "commit ui.bin",
+        //     "type": "shell",
+        //    "command":"TortoiseProc.exe /command:commit /path:${env:project_disc}\\Project1\\Client\\trunk\\resource\\o\\config\\export\\ui.bin /logmsg . /closeonend:0",
+        //     "problemMatcher": [],
+        //     // "dependsOn":["command war3 res"]
+        // },
+        {
+            "label": "env CHECK",
+            "type": "shell",
+            "command":" echo off & if \"${env:project_disc}\" == \"\" ( echo \"WARNNING! env not ready\" ) else ( echo \"env ok\" ) ",
+             "problemMatcher": []
+        },
+        {
+            "label": "ci_task_cmd\t(提交tasks.json和cmd)",
+            "type": "shell",
+            "command": "cd cmd & ci_task_cmd.bat",
+            "problemMatcher": []
+        },
+        ///////////////////////////////////////////////////////////////////////////////
+        // online
+        // {  
+        //     "label": "online quick\t(远程发布)",
+        //     "type": "shell",
+        //     "command": "cd cmd & runJK.bat quick r",
+        //     "problemMatcher": []
+        // },
+        // {  
+        //     "label": "online trunk_ServerDev\t(远程重启服务器)",
+        //     "type": "shell",
+        //     // "command": "cd cmd & restart_dev",
+        //     "command": "cd../../../cmd && run_jenkins trunk_ServerDev build",
+        //     "problemMatcher": []
+        // },
+        // {  
+        //     "label": "online test",
+        //     "type": "shell",
+        //     "command": "cd cmd & runJK.bat test r",
+        //     "problemMatcher": []
+        // },
+        {  
+            "label": "online test build",
+            "type": "shell",
+            // "command": "cd cmd & runJK.bat test r",
+            "command": "cd../../../cmd && run_jenkins test build",
+            "problemMatcher": []
+        },
+        {  
+            "label": "online test console",
+            "type": "shell",
+            "command": "cd../../../cmd && run_jenkins test console",
+            "problemMatcher": []
+        },
+        {  
+            "label": "online quick build",
+            "type": "shell",
+            // "command": "cd cmd & runJK.bat test r",
+            "command": "cd../../../cmd && run_jenkins quick build",
+            "problemMatcher": []
+        },
+        { 
+            "label": "online project1_simple_svn build",
+            "type": "shell",
+            // "command": "cd cmd & runJK.bat test r",
+            "command": "cd../../../cmd && run_jenkins project1_simple_svn build",
+            "problemMatcher": []
+        },
+        
+        // {  
+            // "label": "online ui------------>(远程打包UI)",
+            // "type": "shell",
+            // "command": "cd cmd & runJK.bat ui r",
+            // "problemMatcher": []
+        // },
+        // {  
+            // "label": "online trunk_auto\t(远程trunk_auto)",
+            // "type": "shell",
+            // "command": "cd cmd & runJK.bat trunk_auto r",
+            // "problemMatcher": []
+        // },
+        // {  
+            // "label": "online trunk_autoBuildExcel\t(远程查看excel打表日志)",
+            // "type": "shell",
+            // "command": "cd cmd & runJK.bat trunk_autoBuildExcel w",
+            // "command": "cd../../../cmd && run_jenkins trunk_autoBuildExcel console",
+
+
+            // trunk_autoBuildExcel
+            // trunk_auto
+            // quick
+            // clean
+
+            // "problemMatcher": []
+        // },
+        // {  
+            // "label": "online watch quick-------------------->(远程查看quick)",
+            // "type": "shell",
+            // "command": "cd cmd & runJK.bat quick w",
+// 
+            // "problemMatcher": []
+        // },
+        // {
+        //     "label": "restart_dev\t(重启)",
+        //     "type": "shell",
+        //     "command": "cd cmd & restart_dev.bat",
+        //     "problemMatcher": []
+        // },
+        // {
+            // "label": "open cmd fold\t(打开cmd文件夹)",
+            // "type": "shell",
+            // "command":"cd cmd & explorer .",
+
+            // "problemMatcher": []
+        // },
+        {
+            "label": "commit src",
+            "type": "shell",
+            "command":"echo off & cd ../../../../ & cd Project1/cmd & call commit_src ${workspaceFolder}",
+            "problemMatcher": []
+        },
+        {
+            "label": "commit bundle",
+            "type": "shell",
+            "command":"echo off & cd ../../../../ & cd Project1/cmd & call commit_bundle ${workspaceFolder}",
+            // "command":"explorer .",
+            "problemMatcher": []
+        },
+        {
+            "label": "commit_cmd",
+            "type": "shell",
+            "command":"cd cmd & commit_cmd.bat",
+            "problemMatcher": []
+        },
+        {
+            "label": "buildInitConfig--------------------->构建initconfig.js",
+            "type": "shell",
+            "command":"cd cmd & buildInitConfig.bat",
+            "problemMatcher": []
+        },
+
+        {
+            "label": "copyfromtrunk",
+            "type": "shell",
+            "command":"cd cmd && copyfromtrunk.bat",
+            "problemMatcher": []
+        },
+		// D:\project1\Client\ts_fengzhi39_D1\gameclient\cmd
+        {
+            "label": "trunk->all.bin,D39->all2.bin To trunk/resource",
+            "type": "shell",
+            // "command":"cd ../../ & cd ts_fengzhi39_D1/gameclient/cmd & call buildxlsx_new",
+            "command":"echo off & cd ../../../../ & cd Project1/cmd & call build_trunk_excel",
+            "problemMatcher": [],
+        },
+        {
+            "label": "生成war3本地配置",
+            "type": "shell",
+            "command":"echo off & cd ../../ & cd war3/gameclient/cmd & call buildxlsx_new",
+            "problemMatcher": []
+        },
+        {
+            "label": "上传配置 online_excel ts_fengzhi39_D1",
+            "type": "shell",
+            "command": "cd ../../ & cd ts_fengzhi39_D1/gameclient/cmd & call online_excel",
+            "problemMatcher": []
+        },
+        // {
+        //     "label": "上传war3配置",
+        //     "type": "shell",
+        //     "command":"cd ../../ & cd war3/gameclient/cmd & call online_excel",
+        //     "problemMatcher": []
+        // },
+        {
+            "label": "copyplatform",
+            "type": "shell",
+            "command":"cd cmd && call copyplatform",
+            "problemMatcher": []
+        },
+        {
+            "label": "美团debug",
+            "type": "shell",
+            "command":"cd ../../ & cd meituan & call debug",
+            // "command":"cd ../../../../ & cd tools/meituan & call debug",
+
+            "problemMatcher": [],
+            "dependsOn":["wx微信 抖音0.1 美团"]
+        },
+        {
+            "label": "美团publish",
+            "type": "shell",
+            "command":"cd ../../ & cd meituan & call publish",
+            // "command":"cd ../../../../ & cd tools/meituan & call publish",
+            "problemMatcher": [],
+            "dependsOn":[
+                "wx微信 抖音0.1 美团"
+            ]
+        },
+        {
+            "label": "chrome ${file}",
+            "type": "shell",
+            "command":"cd ../../../../github/jjqmdlib/cmd & call opendoc ${file}",
+            "problemMatcher": []
+        },
+
+        {
+            "label": "svn up project1",
+            "type": "shell",
+            "command":"cd ../../../../project1 & svn up",
+            "problemMatcher": []
+        }, 
+        {
+            "label": "spine预览",
+            "type": "shell",
+            "command":"cd ../../../../project4_war3/cmd & buildfile & %USERPROFILE%/AppData/Local/Google/Chrome/Application/chrome.exe http://127.0.0.1:8001/project4_war3/art/web/bin/",
+            "problemMatcher": []
+        },
+        {
+            "label": "jenkins",
+            "type": "shell",
+            "command":"%USERPROFILE%/AppData/Local/Google/Chrome/Application/chrome.exe http://101.132.177.145:8080",
+            "problemMatcher": []
+        },
+        {
+            "label": "ssh_entry",
+            "type": "shell",
+            "command":"cd ../../../../ & cd Project1/cmd & call ssh_entry",
+            "problemMatcher": []
+        },
+        {
+            "label": "login window",
+            "type": "shell",
+            "command":"cd ../../../../ & call ssh_win",
+            "problemMatcher": []
+        },
+        // {
+        //     "label": "open lang.json",
+        //     "type": "shell",
+        //     "command":"cd .. & cd resource/o/font & code lang.json",
+        //     "problemMatcher": []
+        // },
+        {
+            "label": "open lang.json",
+            "type": "shell",
+            "command":"cd ../../../../ & cd Project1/cmd & call openlang ${workspaceFolder}",
+            "problemMatcher": []
+        },
+        {
+            "label": "open read.md",
+            "type": "shell",
+            "command":"cd ../../../Client/doc & code read.md",
+            "problemMatcher": []
+        },
+        // { 
+        //     "label": "watch SVN conflict",
+        //     "type": "shell",
+        //     "command":"echo off & cd ../../../../ & cd Project1/cmd & call SVN_conflict",
+        //     "problemMatcher": []
+        // },
+        // {
+        //     "label": "commit js,ui.bin",
+        //     "type": "shell",
+        //     "command":"cd ../../../../ & cd Project1/cmd & call commit_js ${workspaceFolder}",
+        //     "problemMatcher": []
+        // },
+        {
+            "label": "copy_code_from_trunk",
+            "type": "shell",
+            "command":"cd ../../../../ & cd Project1/cmd & call copy_code_from_trunk ${workspaceFolder}",
+            "problemMatcher": []
+        },
+        {
+            "label": "svn_remote_project1",
+            "type": "shell",
+            "command":"echo off & cd ../../../../ & cd Project1/cmd & call svn_remote_project1",
+            "problemMatcher": [],
+        },
+        {
+            "label": "start server",
+            "type": "shell",
+            "command":"cd ../../../../github/nodeServer/cmd & call project1_main.bat",
+            "problemMatcher": [],
+        },
+        {
+            "label": "svn status",
+            "type": "shell",
+            "command":"cd ../../../ & svn status",
+            "problemMatcher": [],
+        },
+        {
+            "label": "commit all.bin",
+            "type": "shell",
+            "command":"cd ../../../../ & cd Project1/cmd & call commit_all_bin ${workspaceFolder}",
+            "problemMatcher": [],
+        },
+        {
+            "label": "sub分包",
+            "type": "shell",
+            "command":"cd cmd & sub",
+            "problemMatcher": [],
+        },
+        {
+            "label": "local http server",
+            "type": "shell",
+            "command":"cd ../../../../ & cd github/nodeServer/cmd & call project1_main",
+            "problemMatcher": [],
+        },
+        {
+            "label": "local socket server",
+            "type": "shell",
+            "command":"cd ../../../../ & cd github/nodeServer/cmd & call server_socket",
+            "problemMatcher": [],
+        },
+        {
+            "label": "local socket server",
+            "type": "shell",
+            "command":"cd ../../../../ & cd github/nodeServer/cmd & call server_socket",
+            "problemMatcher": [],
+        },
+        {
+            "label": "commit_rev_out",
+            "type": "shell",
+            "command":"echo off & cd ../../../../ & cd Project1/cmd & call commit_rev_out ${workspaceFolder}",
+            "problemMatcher": [],
+        },
+        {
+            "label": "open ../workspaceFolder",
+            "type": "shell",
+            "command":"cd .. & explorer .",
+            "problemMatcher": [],
+        },
+        {
+            "label": "clear",
+            "type": "shell",
+            "command":"echo off & cd../../../ && call project_config cmd clear ${workspaceFolder}",
+            "problemMatcher": []
+        },
+        {
+            "label": "svn status ../workspaceFolder",
+            "type": "shell",
+            "command":"cd .. & svn status",
+            "problemMatcher": []
+        },
+        {
+            "label": "delete rev",
+            "type": "shell",
+            "command":"echo off & cd../../../ & call project_config cmd delete_rev ${workspaceFolder}",
+            "problemMatcher": []
+        },
+        {
+            "label": "revert_files",
+            "type": "shell",
+            "command": "echo off & cd../../../ & call project_config cmd revert_files ${workspaceFolder}",
+            "problemMatcher": []
+        },
+        {
+            "label": "startLocalServer",
+            "type": "shell",
+            "command": "echo off & cd../../../../ & cd github/nodeServer/cmd/ & call startLocalServer",
+            "problemMatcher": []
+        },
+        {
+            "label": "spine2Ani",
+            "type": "shell",
+            "command": "echo off & cd../../../ & call project_config cmd spine2Ani ${workspaceFolder}",
+            "problemMatcher": []
+        },
+        {
+            "label": "copy2rev_out",
+            "type": "shell",
+            "command": "echo off & cd../../../ & call project_config cmd copy2rev_out ${workspaceFolder}",
+            "problemMatcher": []
+        },
+        {
+            "label": "create_towner_branch",
+            "type": "shell",
+            "command": "echo off & cd../../../ & call project_config cmd create_towner_branch ${workspaceFolder}",
+            "problemMatcher": []
+        },
+        {
+            "label": "gamelib build",
+            "type": "shell",
+            // "command": "cd cmd & simple.bat 0",
+            "command":"echo off & cd../gamelib & build",
+            "problemMatcher": []
+        },
+        {
+            "label": "commit excel",
+            "type": "shell",
+            "command":"echo off & cd ../../../../ & cd Project1/cmd & call commit_excel ${workspaceFolder}",
+            "problemMatcher": []
+        },
+        {
+            "label": "buildWorkspaceCfg",
+            "type": "shell",
+            "command":"echo off & cd ../../../../ & cd Project1/cmd & call buildWorkspaceCfg ${workspaceFolder}",
+            "problemMatcher": []
+        },
+        {
+            "label": "open tower initConfig.js",
+            "type": "shell",
+            "command":"cd ../../../Client/tower_config & code initConfig.js",
+            "problemMatcher": []
+        },
+    ]
+}
