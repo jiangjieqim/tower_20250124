@@ -1,0 +1,1 @@
+{"type":"View","props":{"width":103,"height":47},"compId":2,"child":[{"type":"Image","props":{"var":"img","skin":"remote/fight/btn_s.png"},"compId":3},{"type":"Label","props":{"y":12,"x":29,"var":"tf","text":"表情","strokeColor":"#953F00","stroke":3,"fontSize":22,"font":"BOLD","color":"#FFFFFF"},"compId":4}],"loadList":["remote/fight/btn_s.png"],"loadList3D":[]}

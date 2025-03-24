@@ -1,0 +1,1 @@
+{"type":"View","props":{"width":276,"height":120},"compId":2,"child":[{"type":"Image","props":{"y":60,"x":138,"var":"img","runtime":"GameTex","anchorY":0.5,"anchorX":0.5},"compId":4},{"type":"Sprite","props":{"y":52,"x":130,"var":"sp"},"compId":5}],"loadList":[],"loadList3D":[]}

@@ -1,0 +1,1 @@
+{"type":"View","props":{"width":350,"height":544},"compId":2,"child":[{"type":"Image","props":{"y":272,"x":175,"var":"icon","runtime":"GameImage","anchorY":0.5,"anchorX":0.5},"compId":3},{"type":"Image","props":{"y":274,"x":175,"var":"qua","skin":"static/img_kp1.png","runtime":"GameImage","anchorY":0.5,"anchorX":0.5},"compId":4}],"loadList":["static/img_kp1.png"],"loadList3D":[]}

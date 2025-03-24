@@ -1,0 +1,1 @@
+{"type":"View","props":{"width":121,"height":119},"compId":2,"child":[{"type":"Image","props":{"skin":"remote/fight/bottom_ljzh.png"},"compId":3},{"type":"Label","props":{"y":104,"x":16,"text":"立即召唤","strokeColor":"#6B2F11","stroke":3,"fontSize":22,"font":"BOLD","color":"#ffF771"},"compId":4}],"loadList":["remote/fight/bottom_ljzh.png"],"loadList3D":[]}

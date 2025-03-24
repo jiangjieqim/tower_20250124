@@ -1,0 +1,1 @@
+{"type":"View","props":{"width":160,"height":53},"compId":2,"child":[{"type":"Image","props":{"var":"img","skin":"remote/task/btn_xz.png"},"compId":3},{"type":"Label","props":{"y":16,"x":52,"var":"tf","text":"所有","strokeColor":"#9F7505","stroke":6,"fontSize":28,"font":"BOLD","color":"#FFFFFF"},"compId":4}],"loadList":["remote/task/btn_xz.png"],"loadList3D":[]}

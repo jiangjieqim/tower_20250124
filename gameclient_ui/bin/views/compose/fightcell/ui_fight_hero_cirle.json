@@ -1,0 +1,1 @@
+{"type":"View","props":{"width":100,"height":100},"compId":2,"child":[{"type":"Image","props":{"width":272,"var":"bg","skin":"remote/fight/img_y_w.png","height":272,"anchorY":0.5,"anchorX":0.5},"compId":4}],"loadList":["remote/fight/img_y_w.png"],"loadList3D":[]}

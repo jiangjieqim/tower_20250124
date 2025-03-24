@@ -1,0 +1,1 @@
+{"type":"View","props":{"width":128,"height":130},"compId":2,"child":[{"type":"ui_slot_item","props":{"y":9,"x":0,"var":"view","runtime":"ui.views.common.ui_slot_itemUI"},"compId":3},{"type":"Sprite","props":{"y":0,"x":84,"var":"sp","texture":"remote/base/icon_x.png"},"compId":4}],"loadList":["views/common/ui_slot_item.scene","remote/base/icon_x.png"],"loadList3D":[]}

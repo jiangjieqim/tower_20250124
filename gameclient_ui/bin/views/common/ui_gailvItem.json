@@ -1,0 +1,1 @@
+{"type":"View","props":{"width":550,"height":65},"compId":2,"child":[{"type":"Image","props":{"y":4,"x":0,"var":"img","skin":"remote/base/gl5.png"},"compId":4},{"type":"Image","props":{"y":54,"x":0,"width":546,"skin":"remote/base/line_zsbz.png","sizeGrid":"0,48,0,50","height":9},"compId":5}],"loadList":["remote/base/gl5.png","remote/base/line_zsbz.png"],"loadList3D":[]}

@@ -1,0 +1,1 @@
+{"type":"View","props":{"width":50,"height":50},"compId":2,"child":[{"type":"Image","props":{"y":-3,"x":-9,"var":"img1","skin":"remote/fight/finger.png"},"compId":3}],"loadList":["remote/fight/finger.png"],"loadList3D":[]}

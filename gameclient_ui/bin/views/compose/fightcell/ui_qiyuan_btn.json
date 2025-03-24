@@ -1,0 +1,1 @@
+{"type":"View","props":{"width":104,"height":104},"compId":2,"child":[{"type":"Image","props":{"skin":"remote/fight/qy0.png"},"compId":3},{"type":"Image","props":{"y":-6,"x":16,"var":"icon","skin":"remote/fight/qy2.png"},"compId":4}],"loadList":["remote/fight/qy0.png","remote/fight/qy2.png"],"loadList3D":[]}

@@ -1,0 +1,1 @@
+{"type":"View","props":{"width":57,"height":55},"compId":2,"child":[{"type":"Image","props":{"y":3,"x":1,"var":"bg","skin":"remote/base/btn_n_3.png","sizeGrid":"0,0,0,0"},"compId":4},{"type":"Image","props":{"y":10,"x":15,"var":"gou","skin":"remote/base/btn_s3.png"},"compId":11}],"loadList":["remote/base/btn_n_3.png","remote/base/btn_s3.png"],"loadList3D":[]}
