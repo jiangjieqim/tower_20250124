@@ -856,5 +856,11 @@
             "command":"cd ../../../Client/tower_config & code initConfig.js",
             "problemMatcher": []
         },
+        {
+            "label": "git commit ${file}",
+            "type": "shell",
+            "command": "TortoiseGitProc.exe /command:commit /path:${file} /closeonend:0 /logmsg:.",
+            "problemMatcher": []
+        },
     ]
 }
