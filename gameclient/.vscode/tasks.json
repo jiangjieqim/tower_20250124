@@ -857,9 +857,9 @@
             "problemMatcher": []
         },
         {
-            "label": "git commit ${file}",
+            "label": "git commit ${workspaceFolder}",
             "type": "shell",
-            "command": "TortoiseGitProc.exe /command:commit /path:${file} /closeonend:0 /logmsg:.",
+            "command": "TortoiseGitProc.exe /command:commit /path:${workspaceFolder} /closeonend:0 /logmsg:.",
             "problemMatcher": []
         },
     ]
