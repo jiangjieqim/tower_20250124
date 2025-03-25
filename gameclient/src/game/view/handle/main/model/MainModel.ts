@@ -534,7 +534,7 @@ export class MainModel extends BaseModel{
         if(parseInt(System_RefreshTimeProxy.Ins.getVal(ESystemRefreshTime.FIGHT_GUIDE_DISABLE)) == 1){
             return false;
         }
-
+        //pve引导开启的时候关闭pvp引导
         if(FunctionModel.Ins.isOpenByFuncId(EFuncDef.PVEGuide,false)){
             return false;
         }
