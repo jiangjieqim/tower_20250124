@@ -862,5 +862,11 @@
             "command": "TortoiseGitProc.exe /command:commit /path:${workspaceFolder} /closeonend:0 /logmsg:.",
             "problemMatcher": []
         },
+        {
+            "label": "git commit ${file}",
+            "type": "shell",
+            "command": "TortoiseGitProc.exe /command:commit /path:${file} /closeonend:0 /logmsg:.",
+            "problemMatcher": []
+        },
     ]
 }
