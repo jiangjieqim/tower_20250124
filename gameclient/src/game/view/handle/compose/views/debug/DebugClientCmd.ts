@@ -2,7 +2,7 @@ import { EViewType } from "../../../../../common/defines/EnumDefine";
 // import { EventID } from "../../../../../event/EventID";
 import { E } from "../../../../../G";
 import { LayerMgr } from "../../../../../layer/LayerMgr";
-import { CommonClaimRewards_req, FightWin_req, MonsterEffect_revc, MonsterScale_revc, RougeList_revc, stBattleBuff, stCommonTimes, stElement, stFCard, stFuncCardEffect, stHero, stMonsterEffect, stMonsterEffectTarget, stMonsterScale, WatchCommonRankDetail_req, WaveSettleReward_revc } from "../../../../../network/protocols/BaseProto";
+import { CommonClaimRewards_req, FightWin_req, MonsterEffect_revc, MonsterScale_revc, RedDotUpdate_req, RougeList_revc, stBattleBuff, stCommonTimes, stElement, stFCard, stFuncCardEffect, stHero, stMonsterEffect, stMonsterEffectTarget, stMonsterScale, stRedDot, WatchCommonRankDetail_req, WaveSettleReward_revc } from "../../../../../network/protocols/BaseProto";
 import { SocketMgr } from "../../../../../network/SocketMgr";
 import { BaseCfgConstuctor } from "../../../../../static/json/data/BaseCfg";
 import { FightGuideUtils } from "../../../guide/FightGuideUtils";
@@ -90,6 +90,17 @@ attrid  uid     type
 `);
 
         this.regFunc(this.setFps,"设置序列帧的fps");
+        this.regFunc(this.clearRed,"清理红点");
+    }
+
+    private clearRed(fid:string){
+        let id = parseInt(fid);
+        let req = new RedDotUpdate_req();
+        let redObj = new stRedDot();
+        redObj.id = id;
+        redObj.type = 0;
+        req.datalist = [redObj];
+        SocketMgr.Ins.SendMessageBin(req);
     }
 
     // private showHeroId(p1:string){
