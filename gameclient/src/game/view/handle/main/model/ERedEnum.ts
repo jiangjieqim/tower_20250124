@@ -9,7 +9,7 @@ export enum ERedEnum{
     SHENHUAZIXUAN = 6
 }
 
-export enum ECommonClaimRewards{
+// export enum ECommonClaimRewards{
     /**新手引导奖励 */
-    FIGHT_GUIDE_REWARD = 1
-}
+    // FIGHT_GUIDE_REWARD = 1
+// }

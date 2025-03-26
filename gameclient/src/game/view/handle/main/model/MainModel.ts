@@ -39,7 +39,7 @@ import { ERewardType } from "../vos/ECellType";
 import { ItemVo } from "../vos/ItemVo";
 import { MainRoleVo } from "../vos/MainRoleVo";
 import { EFuncDef } from "./EFuncDef";
-import { ECommonClaimRewards, ERedEnum } from "./ERedEnum";
+import {  ERedEnum } from "./ERedEnum";
 import { ErrCodeProxy } from "./ErrCodeProxy";
 import { GameEvent } from "./GameEvent";
 import { GmTest } from "./GmTest";
@@ -53,6 +53,9 @@ enum ELoginCode{
 }
 
 export enum ECommonClaimType{
+    /**PVP新手引导奖励 */
+    FIGHT_GUIDE_REWARD = 1,
+
     /** 1 PVE 启动新手引导 0不启动PVE新手引导*/
     USE_PVE_GUIDE = 4,
 
@@ -444,14 +447,27 @@ export class MainModel extends BaseModel{
     }
 
     /**通用奖励是否已经领取 */
-    isCommonLingQu(flag:ECommonClaimRewards){
+    isCommonLingQu(flag:ECommonClaimType){
         let cell = this.commonTimes.find(o=>o.flag == flag);
         return cell && cell.times > 0;
+    }
+    private debugDelCommtime(){
+        if(Laya.Utils.getQueryString("commonTimesGuide1Clear")){
+            // this.commonTimes = [];
+            for(let i = 0;i < this.commonTimes.length;i++){
+                let vo = this.commonTimes[i];
+                if(vo.flag == ECommonClaimType.FIGHT_GUIDE_REWARD){
+                    this.commonTimes.splice(i,1);
+                    i--;
+                }
+            }
+        }
     }
     /**
      * 3010初始化推送
      */
     private onInitRevc(data:Init_revc){
+        this.debugDelCommtime();
         E.LangMgr.rebuild();
         //初始化完成
         E.taLoginTrack("3010initComplete");
@@ -535,11 +551,11 @@ export class MainModel extends BaseModel{
             return false;
         }
         //pve引导开启的时候关闭pvp引导
-        if(FunctionModel.Ins.isOpenByFuncId(EFuncDef.PVEGuide,false)){
+/*      if(FunctionModel.Ins.isOpenByFuncId(EFuncDef.PVEGuide,false)){
             return false;
-        }
+        }       */
 
-        if(this.isCommonLingQu(ECommonClaimRewards.FIGHT_GUIDE_REWARD)){
+        if(this.isCommonLingQu(ECommonClaimType.FIGHT_GUIDE_REWARD)){
             return false;
         }
         return true;
@@ -699,7 +715,7 @@ export class MainModel extends BaseModel{
     finishGuideReward(){
         this.red.save(ERedEnum.FIGHT_GUIDE,1);//存储新手引导状态
         let req = new CommonClaimRewards_req();
-        req.flag = ECommonClaimRewards.FIGHT_GUIDE_REWARD;
+        req.flag = ECommonClaimType.FIGHT_GUIDE_REWARD;
         SocketMgr.Ins.SendMessageBin(req);
     }
 

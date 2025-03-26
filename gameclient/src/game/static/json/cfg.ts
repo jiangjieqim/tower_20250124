@@ -2593,6 +2593,8 @@ public f_id:number;
 public f_TaskID:number;
 /*引导位置*/
 public f_GuidePosition:string;
+/*参数*/
+public f_param:string;
 /*是否是弱引导*/
 public f_weak:number;
 /*隐藏掉相关的image*/
@@ -2635,8 +2637,6 @@ public f_closeUI:number;
 public f_spine_anim:string;
 /*右边栏任务面板*/
 public f_guidetask:string;
-/*参数*/
-public f_param:string;
 /*是否是视图内部的指引*/
 public f_inside_arrow:number;
 /*特殊行为检测*/

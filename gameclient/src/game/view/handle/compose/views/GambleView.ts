@@ -45,8 +45,18 @@ export class GambleView extends ViewBase {
             //     // cell.init();
             //     this._ui.con1.addChild(cell);
             // }
-            this.bindClose(this._ui.btn_close);
+            
+            // this.bindClose(this._ui.btn_close);
+            ButtonCtl.CreateBtn(this._ui.btn_close,this,this.onCloseHandler1);
         }
+    }
+
+    private onCloseHandler1(){
+        Laya.timer.once(100,this,this.onCloseLater);
+    }
+
+    private onCloseLater(){
+        E.ViewMgr.Close(this.ViewType);
     }
 
     protected onInit(): void {
