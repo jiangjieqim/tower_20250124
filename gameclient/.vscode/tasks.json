@@ -868,5 +868,12 @@
             "command": "TortoiseGitProc.exe /command:commit /path:${file} /closeonend:0 /logmsg:.",
             "problemMatcher": []
         },
+        {
+            "label": "copyJSON",
+            "type": "shell",
+            "command": "cd ../resource/o/config/export & call copyJSON",
+            "problemMatcher": []
+        },
+
     ]
 }
