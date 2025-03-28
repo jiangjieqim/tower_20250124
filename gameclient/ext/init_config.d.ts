@@ -162,7 +162,7 @@ declare interface IinitConfig {
     /**禁用声音 */
     disableSound:boolean;
     /**强制引导 */
-    enableguide:boolean;
+    // enableguide:boolean;
 
     /**H5指定代码文件 */
     bundle:string;

@@ -39,8 +39,13 @@ window["initConfig"] = initConfig
 
 
 var initConfig = {
+	// rev_out
+	// resource
 	asset:"/Project1/Client/tower_20250124/resource/",
+	// asset:"https://cdnserver-game.wanhuir.com/cbsg/tower_20250328/rev_out/",
 	platform:0,
 	sy_url:"https://dev-server-game.wanhuir.com/tower",
+	bundlebin:"bundle"
+
 }
 window["initConfig"] = initConfig
