@@ -1,4 +1,6 @@
 // import { ButtonCtl } from "../../../../../frame/view/ButtonCtl";
+import value from "*.glsl";
+import { ViewBase } from "../../../../../frame/view/ViewBase";
 import { ui } from "../../../../../ui/layaMaxUI";
 import { EViewType } from "../../../../common/defines/EnumDefine";
 import { E, ScreenAdapter } from "../../../../G";
@@ -15,7 +17,7 @@ import { ComposeModel } from "../../compose/ComposeModel";
 import { DianYuModel } from "../../dianyu/model/DianYuModel";
 import { FriendModel } from "../../friend/model/FriendModel";
 import { FunctionModel } from "../../funs/FunctionModel";
-import { MainIconProxy } from "../../funs/proxy/FunctionProxy";
+import { FuncProxy, MainIconProxy } from "../../funs/proxy/FunctionProxy";
 import { System_RefreshTimeProxy } from "../../main/ctl/System_RefreshTimeProxy";
 import { ValCtl } from "../../main/ctl/ValLisCtl";
 import { EFuncDef } from "../../main/model/EFuncDef";
@@ -70,7 +72,12 @@ export class TowertMainFightView extends ui.views.main.ui_tower_main_fight_viewU
         super();
         this.onInit();
     }
+    private readonly offsetY:number = 60;
     private onInit(){
+        //-------------------------------------
+        this.btn_qd.visible = false;
+        this.btn_hz.y = this.offsetY;//修改突围战按钮位置
+
         // super.createChildren();
         this.on(Laya.Event.DISPLAY,this,this.onDisplay);
         this.on(Laya.Event.UNDISPLAY,this,this.onUnDisplay);
@@ -157,7 +164,21 @@ export class TowertMainFightView extends ui.views.main.ui_tower_main_fight_viewU
     }
 
     private onBtnFightClick(){
-        ComposeModel.Ins.startMatchPvpRound();
+
+        if(FunctionModel.Ins.isOpenByFuncId(EFuncDef.DFS,false)){
+
+            if(MainModel.Ins.isPvpFightGuide){
+                // MainModel.Ins.guideInit();
+                // ComposeModel.Ins.enterBattle();
+                MainModel.Ins.startGame();
+                return;
+            }
+
+
+            this.onBtnQDClick();
+        }else{
+            ComposeModel.Ins.startMatchPvpRound();
+        }
     }
 
     private onBtnQDClick(){
@@ -393,14 +414,26 @@ export class TowertMainFightView extends ui.views.main.ui_tower_main_fight_viewU
             DotManager.removeDot(this.btn_a);
         }
     }
-
+    private pwsImg:Laya.Image;
     private playSE(){
-        this._se = new SimpleEffect(this.sp_f, `o/spine/succeed/PWS_TXT/PWS_TXT`,this.sp_f.width*0.5,this.sp_f.height*0.5);
-        this._se.play(0,true);
+        //排位赛特效
+        // this._se = new SimpleEffect(this.sp_f, `o/spine/succeed/PWS_TXT/PWS_TXT`,this.sp_f.width*0.5,this.sp_f.height*0.5);
+        // this._se.play(0,true);
+        if(!this.pwsImg){
+            this.pwsImg = new Laya.Image();
+            this.pwsImg.y = this.offsetY;
+            this.pwsImg.skin = `static/bottom_pws_main.png`;
+            this.sp_f.addChild(this.pwsImg);
+        }
+
+        //突围战特效
         this._se1 = new SimpleEffect(this.sp_r, `o/spine/succeed/TWZ_TXT/TWZ_TXT`,this.sp_r.width*0.5,this.sp_r.height*0.5);
         this._se1.play(0,true);
+        
+        //巅峰赛特效
         this._se3 = new SimpleEffect(this.sp_d, `o/spine/succeed/dianfeng/dianfeng`,this.sp_d.width*0.5,this.sp_d.height*0.5);
         this._se3.play(0,true);
+
         this._se2 = new SimpleEffect(this.sp_hy, `o/spine/succeed/FKYQ/FKYQ`,this.sp_hy.width*0.5,-this.btn1.height*0.5);
         this._se2.play(0,true);
         this._yun1 = new SimpleEffect(this.yun1, `o/spine/scene/UI_zhu/UI_zhu`,this.yun1.width*0.5,this.yun1.height*0.5);
@@ -415,6 +448,7 @@ export class TowertMainFightView extends ui.views.main.ui_tower_main_fight_viewU
         }
         this._hz = new SimpleEffect(this.hz, `o/spine/succeed/yunhouzi/houzi`,this.hz.width*0.5,this.hz.height*0.5);
         this.playHZEnd();
+
     }
 
     private playHZ(){
@@ -562,6 +596,15 @@ export class TowertMainFightView extends ui.views.main.ui_tower_main_fight_viewU
         if(TowerMainFightModel.Ins.lvList.length){
             let a = TowerMainFightModel.Ins.lvList[0];
             let b = TowerMainFightModel.Ins.lvList[1];
+
+            let dfLv:number = FuncProxy.Ins.getCfgByFuncId(EFuncDef.DFS).f_level;
+            if (dfLv >= 0) {
+                if (b >= dfLv && a < dfLv) {
+                    E.ViewMgr.Open(EViewType.DianFengSucceedView);
+                }
+            }
+
+
             E.ViewMgr.Open(EViewType.LevelView,null,[a,b]);
             TowerMainFightModel.Ins.lvList = [];
         }
@@ -662,4 +705,30 @@ export class TowertMainFightView extends ui.views.main.ui_tower_main_fight_viewU
             }
         }
     }
+}
+export class DianFengSucceedView extends ViewBase{
+    protected mHitFull:boolean = true;
+    protected autoFree:boolean = true;
+    protected mMask:boolean = true;
+    private _ui:ui.views.common.ui_game_dfs_tipsUI;
+    protected onAddLoadRes(): void {
+
+        // ui_game_dfs_tips
+        // tower_20250124
+        // throw new Error("Method not implemented.");
+    }
+    protected onExit(): void {
+        // throw new Error("Method not implemented.");
+    }
+    protected onFirstInit(): void {
+        // throw new Error("Method not implemented.");
+        if(!this.UI){
+            this.UI = this._ui = new ui.views.common.ui_game_dfs_tipsUI();
+            this.UI.on(Laya.Event.CLICK,this,this.Close);
+        }
+    }
+    protected onInit(): void {
+        // throw new Error("Method not implemented.");
+    }
+    
 }

@@ -32,6 +32,8 @@ import { TWZView } from "./view/TWZView";
 import { TWZView1 } from "./view/TWZView1";
 import { MainActivityView } from "./view/mainactivity/MainActivityView";
 import { AttrLevelView } from "./view/AttrLevelView";
+import { FuncProxy } from "../funs/proxy/FunctionProxy";
+import { EFuncDef } from "../main/model/EFuncDef";
 
 export class TowertMainModule extends BaseModel{
     private static _ins:TowertMainModule;

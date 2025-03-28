@@ -239,9 +239,9 @@ export class FightDebugView extends ViewBase{
             // btn.tf.text = `add hero ${heroid}`;
         });
 
-        this.addFuncBtn("跳过引导",this,()=>{
-            MainModel.Ins.finishGuideReward();
-        });
+        // this.addFuncBtn("跳过引导",this,()=>{
+        //     MainModel.Ins.finishGuideReward();
+        // });
 
         this.initCmdList([
             // {lb:"召唤神话",cmd:s1},

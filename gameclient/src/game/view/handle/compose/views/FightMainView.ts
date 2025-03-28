@@ -1065,7 +1065,7 @@ export class FightMainView extends Laya.Sprite implements IFightMainView{
         }
         this.topDragLayer.clear(``);
         this.model.clearFight();
-        MainModel.Ins.guideInit();
+        // MainModel.Ins.guideInit();
         LogSys.Log("FightMainView onExit...");
         //=================================================
     }

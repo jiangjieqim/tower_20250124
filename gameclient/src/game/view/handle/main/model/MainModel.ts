@@ -19,6 +19,7 @@ import { ComposeModel, ERoomStatus } from "../../compose/ComposeModel";
 import { FightFactory } from "../../compose/FightFactory";
 import { EFightSceneStatus } from "../../compose/vos/EFightEnum";
 import { FunctionModel, IRedNameKey } from "../../funs/FunctionModel";
+import { FuncProxy } from "../../funs/proxy/FunctionProxy";
 import { FightGuide } from "../../guide/FightGuide";
 import { EGuideEvent, GuideModel } from "../../guide/GuideModel";
 import { MainGuide } from "../../guide/MainGuide";
@@ -538,12 +539,25 @@ export class MainModel extends BaseModel{
         this.guideAdapter.onInitRevc();
         GuideModel.Ins.taskId = -1;
     }
+    /*
 
+
++---------+     +------+       +-------+
+|pvp回合制|---->|巅峰赛|-----> | 突围战 |
++---------+     +------+       +-------+
+
+
+
+需求2:
+5级后强制进入“巅峰竞技场”，原来的进不去；10级开放突围战
+
+1.pvp回合制战斗 在5级之后 切换成巅峰竞技场(开放巅峰竞技场时走一下巅峰竞技场新手引导) 
+2.接着10级后开放突围战
+
+
+    */
     /**是否是PVP战斗引导状态 */
     get isPvpFightGuide() {
-        if(Laya.Utils.getQueryString("enableguide") || initConfig.enableguide){
-            return true;
-        }
         if(this.red.getValByID(ERedEnum.FIGHT_GUIDE)){
             return false;
         }
@@ -558,6 +572,13 @@ export class MainModel extends BaseModel{
         if(this.isCommonLingQu(ECommonClaimType.FIGHT_GUIDE_REWARD)){
             return false;
         }
+        if(!FunctionModel.Ins.isOpenByFuncId(EFuncDef.DFS,false)){
+            return false;
+        }
+        if(this.mRoleData && this.mRoleData && this.mRoleData.mPlayer.level >= FuncProxy.Ins.getCfgByFuncId(EFuncDef.DFS).f_level ){
+            return false;
+        }
+
         return true;
     }
 
@@ -607,7 +628,7 @@ export class MainModel extends BaseModel{
         this.startGame();
     }
 
-    private startGame(){
+    startGame(){
         /*
         //PVP 引导流程
         let _sceneInfo:FightSceneInfo_revc = ComposeModel.Ins.sceneInfo;

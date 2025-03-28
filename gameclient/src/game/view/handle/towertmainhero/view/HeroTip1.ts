@@ -239,14 +239,15 @@ export class HeroTip1 extends ViewBase{
                 }
 
                 this._ui.img6.visible = true;
-                let num = parseInt(nextCfg.f_global_attribute.split(":")[1]);
+
+                let num = TowertMainHeroModel.Ins.convertGlobalAttribute(nextCfg);//parseInt(nextCfg.f_global_attribute.split(":")[1]);
                 let num1 = 0;
                 if(this._cfg.f_global_attribute != ""){
-                    num1 = parseInt(this._cfg.f_global_attribute.split(":")[1]);
+                    num1 = TowertMainHeroModel.Ins.convertGlobalAttribute(this._cfg);//parseInt(this._cfg.f_global_attribute.split(":")[1]);
                 }
                 num -= num1;
                 num = num / 100;
-                this._ui.lab6.text = E.getLang("heroattr1",num.toFixed(1));
+                this._ui.lab6.text = E.getLang("heroattr1",num.toFixed(3));
 
                 this._ui.lab_icon.width = this._ui.lab_icon.textField.textWidth;
                 this._ui.bg_icon.width = this._ui.lab_icon.width + 77;
@@ -318,7 +319,7 @@ export class HeroTip1 extends ViewBase{
             }
             if(this._cfg.f_global_attribute != ""){
                 this._ui.img6.visible = true;
-                let num = parseInt(this._cfg.f_global_attribute.split(":")[1]) / 100;
+                let num = TowertMainHeroModel.Ins.convertGlobalAttribute(this._cfg) /100;//parseInt(this._cfg.f_global_attribute.split(":")[1]) / 100;
                 this._ui.lab6.text = E.getLang("heroattr2",num.toFixed(1));
             }else{
                 this._ui.img6.visible = false;

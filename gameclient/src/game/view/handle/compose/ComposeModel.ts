@@ -30,6 +30,7 @@ import { ECellType } from "../main/vos/ECellType";
 import { ItemVo } from "../main/vos/ItemVo";
 import { TaoDaeItem } from "../taodae/view/TaoDaeItem";
 import { TowerMainFightModel } from "../towertmain/model/TowerMainFightModel";
+import { DianFengSucceedView } from "../towertmain/view/TowertMainFightView";
 import { TowertMainCardModel } from "../towertmaincard/model/TowertMainCardModel";
 import { t_Function_Card } from "../towertmaincard/proxy/t_Function_Card";
 import { CardComponent, FightCardCell } from "../towertmaincard/view/item/CardComponent";
@@ -309,6 +310,7 @@ export class ComposeModel extends BaseModel implements IComposeModel{
         this.Reg(new PvproundResult(EViewType.PvproundResult,ELayerType.subFrameLayer));
         this.Reg(new PvpRoundTipsView(EViewType.PvpRoundTipsView,ELayerType.subFrameLayer));
         this.Reg(new PvpRoundReward(EViewType.PvpRoundReward,ELayerType.subFrameLayer));
+        this.Reg(new DianFengSucceedView(EViewType.DianFengSucceedView,ELayerType.subFrameLayer));
 
         this.Reg(new FightTaskView(EViewType.FightTask,ELayerType.subFrameLayer));
         this.Reg(new FightPossessView(EViewType.FightPossess,ELayerType.subFrameLayer));
@@ -1484,7 +1486,7 @@ export class ComposeModel extends BaseModel implements IComposeModel{
     }
 
     /**进入战斗 */
-    private enterBattle(){
+    enterBattle(){
         E.ViewMgr.CloseAll();
         // GuideModel.Ins.removeYD();
         LogSys.Log(`enterBattle进入战斗...`);

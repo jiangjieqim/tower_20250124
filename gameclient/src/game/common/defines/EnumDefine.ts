@@ -171,7 +171,8 @@ export enum EViewType {
     TaoDaePackageView = 162,//套大鹅礼包
     NewYearView = 163,
     TaoDaeSelReward = 164,//套大鹅奖励选择
-    NewYearView1 = 165
+    NewYearView1 = 165,
+    DianFengSucceedView = 166,//巅峰弹出框
 }
 
 //页面类型

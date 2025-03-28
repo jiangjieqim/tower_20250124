@@ -1,5 +1,5 @@
 import { E } from "../../../G";
-import { ComposeUpdate_revc, FCardInnerChange_revc, FCardInnerInit_revc, Gamble_revc, MonsterBirth_revc, PvPRoomInfo_revc, stCellValue, stElement, stFCardInner, stMonsterBirth, stPlayerInRoom, ValChanel_revc, WatchHero_revc } from "../../../network/protocols/BaseProto";
+import { ComposeUpdate_revc, FCardInnerChange_revc, FCardInnerInit_revc, FightSceneInfo_revc, Gamble_revc, MonsterBirth_revc, PvPRoomInfo_revc, stCellValue, stElement, stFCardInner, stMonsterBirth, stPlayerInRoom, ValChanel_revc, WatchHero_revc } from "../../../network/protocols/BaseProto";
 import { ComposeConfig } from "../compose/ComposeConfig";
 import { ComposeModel } from "../compose/ComposeModel";
 import { t_Battle_Config, EBattle_Config, EMonsterType } from "../compose/t_Battle_Config";
@@ -100,8 +100,16 @@ export class FightGuideUtils {
 
     private static createBirMonstersCell(curMs: number, playerId: number, waveVo: FightGuideWaveVo, _brithInfoList: ClientMonsterBirthVo[]) {
         if (!this.model.sceneInfo) {
-            LogSys.Error(`sceneInfo已经被销毁`);
-            return;
+            //LogSys.Error(`sceneInfo已经被销毁`);
+
+
+            let revc = new FightSceneInfo_revc();
+            revc.heros = [];
+            revc.mode=0;
+            revc.monsters = [];
+            revc.status = 0;
+            // return;
+            this.model.sceneInfo = revc;
         }
         let revc: MonsterBirth_revc = new MonsterBirth_revc();
         // revc.serverTime = TimeUtil.serverTimeMS/1000;

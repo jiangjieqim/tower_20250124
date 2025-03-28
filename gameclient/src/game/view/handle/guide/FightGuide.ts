@@ -146,7 +146,7 @@ export class FightGuide extends Laya.EventDispatcher implements IFightGuide {
     /**英雄的品质伤害 */
     // private _hurtQua: number[] = [];
     // private _stopList:StopGuideVo[] = [];
-    private ai:HeroAi = new HeroAi();
+    private ai:HeroAi;// = new HeroAi();
     private static _ins: FightGuide;
     static get Ins() {
         if (!this._ins) {
@@ -289,6 +289,7 @@ export class FightGuide extends Laya.EventDispatcher implements IFightGuide {
         // this.on(FightGuideEvent.FightResult,this,this.onFightResult);
         this.fightStopMgr = new FightStopMgr();
         this.fightStopMgr.init("t_FightGuideStop");
+        this.ai = new HeroAi();
         this.ai.init(t_FightGuideConfig.Ins.getValueById(EFightGuide.HerosHurtAi));
         this._cfgData.init();
         // this.model.curAdapter = this.model.fightAdapterGuide;

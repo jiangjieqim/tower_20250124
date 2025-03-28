@@ -621,6 +621,17 @@ export module ui.views.common {
         }
     }
     REG("ui.views.common.ui_gailvViewUI",ui_gailvViewUI);
+    export class ui_game_dfs_tipsUI extends View {
+		public lb0:Laya.Label;
+		public lb1:Laya.Label;
+		public lb2:Laya.Label;
+        constructor(){ super()}
+        createChildren():void {
+            super.createChildren();
+            this.loadScene("views/common/ui_game_dfs_tips");
+        }
+    }
+    REG("ui.views.common.ui_game_dfs_tipsUI",ui_game_dfs_tipsUI);
     export class ui_game_maskUI extends View {
 		public bg:Laya.Image;
 		public tf:Laya.Label;

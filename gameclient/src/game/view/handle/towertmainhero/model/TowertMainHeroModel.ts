@@ -1,5 +1,6 @@
 import { stHero } from "../../../../network/protocols/BaseProto";
 import { FunctionModel } from "../../funs/FunctionModel";
+import { System_RefreshTimeProxy } from "../../main/ctl/System_RefreshTimeProxy";
 import { EFuncDef } from "../../main/model/EFuncDef";
 import { TowerMainModel } from "../../towertmain/model/TowerMainModel";
 import { HeroListLvProxy, HeroListProxy } from "../proxy/HeroProxy";
@@ -115,12 +116,19 @@ export class TowertMainHeroModel extends Laya.EventDispatcher{
         for(let i:number=0;i<arr.length;i++){
             let cfg = HeroListLvProxy.Ins.getCfgByIdAndLv(arr[i].id,arr[i].level);
             if(cfg.f_global_attribute != ""){
-                num += parseInt(cfg.f_global_attribute.split(":")[1]);
+                num += this.convertGlobalAttribute(cfg);// parseInt(cfg.f_global_attribute.split(":")[1]);
             }
         }
         return num;
     }
     
+    convertGlobalAttribute(cfg:Configs.t_Hero_upgrade_dat){
+        let v =parseInt(System_RefreshTimeProxy.Ins.getVal(122))/10000;
+        let b = parseInt(cfg.f_global_attribute.split(":")[1])*v;
+        return b;
+
+    }
+
     /**当前的皮肤id列表*/
     getHeroSkins(){
         let _heroSkins:number[] = [];

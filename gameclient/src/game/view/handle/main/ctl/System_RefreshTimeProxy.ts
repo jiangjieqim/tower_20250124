@@ -23,6 +23,7 @@ export class System_RefreshTimeProxy extends BaseCfg{
         return "";
     }
 
+
     // public isEnable(id:ESystemRefreshTime){
     // let val = this.getNumberVal(id);
     // return val == "1";

@@ -126,7 +126,8 @@ export class GetHeroView extends ViewBase{
             this._ui.l1.visible = true;
             let count = TowertMainHeroModel.Ins.getAttr();
             let cfg = HeroListLvProxy.Ins.getCfgByIdAndLv(hData.id, hData.level);
-            let num = parseInt(cfg.f_global_attribute.split(":")[1]);
+            
+            let num = TowertMainHeroModel.Ins.convertGlobalAttribute(cfg);//parseInt(cfg.f_global_attribute.split(":")[1]);
             let cc = count - num;
             this._ui.a.text = (cc / 100).toFixed(1) + "%";
             this._ui.a1.text = (count / 100).toFixed(1) + "%";
