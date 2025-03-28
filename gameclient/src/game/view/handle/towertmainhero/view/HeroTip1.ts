@@ -14,7 +14,7 @@ import { MainModel } from "../../main/model/MainModel";
 import { ItemVo } from "../../main/vos/ItemVo";
 import { SkillItem } from "../../skill/view/SkillItem";
 import { TowerMainModel } from "../../towertmain/model/TowerMainModel";
-import { TowertMainHeroModel } from "../model/TowertMainHeroModel";
+import { showFix, TowertMainHeroModel } from "../model/TowertMainHeroModel";
 import { ETowerAttr, HeroListLvProxy, HeroListProxy } from "../proxy/HeroProxy";
 import { HeroItem2 } from "./item/HeroItem2";
 import { HeroItem3 } from "./item/HeroItem3";
@@ -247,7 +247,7 @@ export class HeroTip1 extends ViewBase{
                 }
                 num -= num1;
                 num = num / 100;
-                this._ui.lab6.text = E.getLang("heroattr1",num.toFixed(3));
+                this._ui.lab6.text = E.getLang("heroattr1",num.toFixed(showFix));
 
                 this._ui.lab_icon.width = this._ui.lab_icon.textField.textWidth;
                 this._ui.bg_icon.width = this._ui.lab_icon.width + 77;
@@ -320,7 +320,7 @@ export class HeroTip1 extends ViewBase{
             if(this._cfg.f_global_attribute != ""){
                 this._ui.img6.visible = true;
                 let num = TowertMainHeroModel.Ins.convertGlobalAttribute(this._cfg) /100;//parseInt(this._cfg.f_global_attribute.split(":")[1]) / 100;
-                this._ui.lab6.text = E.getLang("heroattr2",num.toFixed(1));
+                this._ui.lab6.text = E.getLang("heroattr2",num.toFixed(showFix));
             }else{
                 this._ui.img6.visible = false;
             }

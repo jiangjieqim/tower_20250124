@@ -1,7 +1,7 @@
 import { ViewBase } from "../../../../../frame/view/ViewBase";
 import { ui } from "../../../../../ui/layaMaxUI";
 import { stHero } from "../../../../network/protocols/BaseProto";
-import { TowertMainHeroModel } from "../../towertmainhero/model/TowertMainHeroModel";
+import { showFix, TowertMainHeroModel } from "../../towertmainhero/model/TowertMainHeroModel";
 import { HeroListLvProxy } from "../../towertmainhero/proxy/HeroProxy";
 
 export class AttrLevelView extends ViewBase{
@@ -36,8 +36,8 @@ export class AttrLevelView extends ViewBase{
         }
         num -= num1;
         let cc = count - num;
-        this._ui.lab.text = (cc / 100).toFixed(1) + "%";
-        this._ui.lab1.text = (count / 100).toFixed(1) + "%";
+        this._ui.lab.text = (cc / 100).toFixed(showFix) + "%";
+        this._ui.lab1.text = (count / 100).toFixed(showFix) + "%";
     }
 
     protected onExit(): void {

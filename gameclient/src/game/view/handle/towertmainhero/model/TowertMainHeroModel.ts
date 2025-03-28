@@ -5,7 +5,7 @@ import { EFuncDef } from "../../main/model/EFuncDef";
 import { TowerMainModel } from "../../towertmain/model/TowerMainModel";
 import { HeroListLvProxy, HeroListProxy } from "../proxy/HeroProxy";
 import { t_Hero_Skin } from "../proxy/t_Hero_Skin";
-
+export let showFix:number = 2;
 export class TowertMainHeroModel extends Laya.EventDispatcher{
     private static _ins: TowertMainHeroModel;
     

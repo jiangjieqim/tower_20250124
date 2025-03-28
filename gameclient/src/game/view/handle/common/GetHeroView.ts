@@ -9,7 +9,7 @@ import { IconUtils } from "../main/model/IconUtils";
 import { MainModel } from "../main/model/MainModel";
 import { ItemProxy } from "../main/proxy/ItemProxy";
 import { TowerMainFightModel } from "../towertmain/model/TowerMainFightModel";
-import { TowertMainHeroModel } from "../towertmainhero/model/TowertMainHeroModel";
+import { showFix, TowertMainHeroModel } from "../towertmainhero/model/TowertMainHeroModel";
 import { HeroListLvProxy, HeroListProxy } from "../towertmainhero/proxy/HeroProxy";
 
 export class GetHeroView extends ViewBase{
@@ -129,8 +129,8 @@ export class GetHeroView extends ViewBase{
             
             let num = TowertMainHeroModel.Ins.convertGlobalAttribute(cfg);//parseInt(cfg.f_global_attribute.split(":")[1]);
             let cc = count - num;
-            this._ui.a.text = (cc / 100).toFixed(1) + "%";
-            this._ui.a1.text = (count / 100).toFixed(1) + "%";
+            this._ui.a.text = (cc / 100).toFixed(showFix) + "%";
+            this._ui.a1.text = (count / 100).toFixed(showFix) + "%";
         }else{
             this._ui.sp12.visible = false;
             this._ui.sp11.visible = true;
